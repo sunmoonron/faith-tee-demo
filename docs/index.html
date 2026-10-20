@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Still Waters Apparel</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: full-width bands (drop bar, header, hero, story, footer) whose inner .wrap carries the gutter; a 1120px column; the product grid auto-fills; the cart is a right-side drawer; demo notes float bottom-left. Palette: pale sage sheet, deep green ink, olive accent, brass eyebrows. */
+:root{
+  --bg:#F3F5F0; --surface:#FFFFFF; --surface-2:#E8ECE3; --ink:#1E2A22; --ink-2:#5B6A5F; --line:#D2D9CE;
+  --accent:#3E6B4C; --accent-ink:#F6F7F2; --brass:#A4822A; --good:#2E7D4F; --warn:#A86300;
+  --shadow:0 14px 36px rgba(30,42,34,.14);
+  --display:"Fraunces",Georgia,"Times New Roman",serif;
+  --body:"Figtree","Helvetica Neue",Arial,sans-serif;
+  --r:12px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1512;--surface:#171F1A;--surface-2:#1F2A23;--ink:#ECF0E8;--ink-2:#A7B3A9;--line:#2C3A30;--accent:#8CC29B;--accent-ink:#0F1512;--brass:#D9B458;--good:#6FCF97;--warn:#F2B653;--shadow:0 14px 36px rgba(0,0,0,.5);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0F1512;--surface:#171F1A;--surface-2:#1F2A23;--ink:#ECF0E8;--ink-2:#A7B3A9;--line:#2C3A30;--accent:#8CC29B;--accent-ink:#0F1512;--brass:#D9B458;--good:#6FCF97;--warn:#F2B653;--shadow:0 14px 36px rgba(0,0,0,.5);color-scheme:dark}
+
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--display);font-weight:600;line-height:1.05;margin:0;text-wrap:balance;letter-spacing:-.01em}
+p{margin:0}
+a{color:inherit}
+button{font:inherit;color:inherit}
+img,svg{max-width:100%}
+:focus-visible{outline:3px solid var(--brass);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font:600 12.5px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--brass)}
+.muted{color:var(--ink-2)}
+.num{font-variant-numeric:tabular-nums}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;border-radius:999px;border:1.5px solid transparent;font-weight:600;font-size:15px;cursor:pointer;text-decoration:none;min-height:44px;transition:transform .12s ease,background .12s ease}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-ink{background:var(--ink);color:var(--bg)}
+.btn-ghost{background:transparent;border-color:var(--line);color:var(--ink)}
+.btn-ghost:hover{background:var(--surface-2)}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+.btn-sm{padding:8px 14px;min-height:36px;font-size:14px}
+
+.bar{background:var(--ink);color:var(--bg);font-size:14px;font-weight:500}
+.bar .wrap{display:flex;gap:14px;justify-content:center;align-items:center;min-height:38px;text-align:center;flex-wrap:wrap;padding-block:6px}
+.bar .dot{opacity:.5}
+
+.hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:saturate(1.3) blur(10px);border-bottom:1px solid var(--line)}
+.hdr .wrap{display:flex;align-items:center;gap:20px;min-height:68px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
+.brand .mark{width:40px;height:40px;flex:none}
+.brand b{font-family:var(--display);font-size:23px;font-weight:600;line-height:1;display:block;white-space:nowrap;letter-spacing:-.01em}
+.brand small{display:block;font:600 10.5px/1 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);margin-top:4px}
+.nav{display:flex;gap:4px;margin-left:auto}
+.nav a{text-decoration:none;font-weight:500;font-size:15px;padding:8px 12px;border-radius:999px;color:var(--ink-2)}
+.nav a:hover{background:var(--surface-2);color:var(--ink)}
+.cartbtn{margin-left:auto;flex:none}
+.nav + .cartbtn{margin-left:0}
+.cartbtn .count{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 6px;border-radius:999px;background:var(--accent);color:var(--accent-ink);font-size:12px;font-weight:700}
+@media (max-width:760px){.nav{display:none}.brand b{font-size:20px}}
+
+.hero{padding-block:52px 24px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(46px,7vw,82px);font-weight:600;margin:16px 0 18px;font-variation-settings:"opsz" 144}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--accent)}
+.hero .lede{font-size:19px;color:var(--ink-2);max-width:32em}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.hero .meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:30px;font-size:14px;color:var(--ink-2)}
+.hero .meta b{display:block;color:var(--ink);font-family:var(--display);font-size:26px;font-weight:600;line-height:1;margin-bottom:3px}
+.art{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:28px 28px 18px;overflow:hidden;box-shadow:var(--shadow);min-width:0}
+.art::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(60% 50% at 50% 42%,color-mix(in srgb,var(--brass) 14%,transparent),transparent 70%)}
+.art::after{content:"";position:absolute;left:-10%;right:-10%;bottom:14%;height:2px;background:var(--line);transform:rotate(-2deg);pointer-events:none}
+.art .shirt{position:relative;display:block;width:min(100%,360px);height:auto;margin:0 auto;filter:drop-shadow(0 18px 24px rgba(30,42,34,.18));z-index:1}
+.swatches{display:flex;gap:10px;align-items:center;justify-content:center;margin-top:12px;position:relative;z-index:1}
+.sw{width:30px;height:30px;border-radius:50%;border:2px solid var(--surface);box-shadow:0 0 0 1.5px var(--line);cursor:pointer;padding:0;flex:none}
+.sw[aria-pressed="true"]{box-shadow:0 0 0 2.5px var(--ink)}
+.art .cap{position:relative;text-align:center;font-size:13px;color:var(--ink-2);margin-top:10px;z-index:1}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero{padding-block:32px 16px}}
+
+.trust{padding-block:16px 8px}
+.trust .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.trust .item{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);min-width:0}
+.trust svg{width:26px;height:26px;flex:none;color:var(--accent)}
+.trust b{display:block;font-weight:600}
+.trust span{font-size:14px;color:var(--ink-2)}
+
+.tenth{padding-block:24px 0}
+.tenth .wrap>div{display:flex;gap:16px;align-items:center;flex-wrap:wrap;justify-content:space-between;padding:16px 20px;border-radius:var(--r);background:color-mix(in srgb,var(--brass) 10%,var(--surface));border:1px solid color-mix(in srgb,var(--brass) 35%,var(--line))}
+.tenth p{max-width:60em}
+.tenth .eyebrow{flex:none}
+
+section.block{padding-block:56px 24px}
+.sechead{display:flex;align-items:end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.sechead h2{font-size:clamp(34px,4.5vw,46px);margin-top:8px}
+.sechead p{color:var(--ink-2);max-width:38em}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:20px}
+.card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;min-width:0;transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.card .hit{position:absolute;inset:0;background:none;border:0;cursor:pointer;border-radius:16px;z-index:1}
+.card .thumb{background:var(--surface-2);padding:22px 30px 10px;position:relative}
+.card .thumb .shirt{display:block;width:100%;height:auto}
+.card .tag{position:absolute;top:12px;left:12px;font:600 11px/1 var(--body);letter-spacing:.1em;text-transform:uppercase;padding:6px 9px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--ink-2)}
+.card .tag.hot{background:var(--accent);color:var(--accent-ink);border-color:transparent}
+.card .body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:8px}
+.card .row{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+.card h3{font-family:var(--body);font-size:16px;font-weight:600;line-height:1.3;letter-spacing:0}
+.card .verse{font-family:var(--display);font-style:italic;font-size:14px;color:var(--ink-2)}
+.card .price{font-family:var(--display);font-size:22px;font-weight:600;white-space:nowrap}
+.card .dots{display:flex;gap:6px}
+.card .dots i{width:14px;height:14px;border-radius:50%;display:inline-block;box-shadow:inset 0 0 0 1px rgba(0,0,0,.18)}
+.card .small{font-size:14px;color:var(--ink-2)}
+.card.is-soon .thumb .shirt{opacity:.5}
+.card.is-soon:hover{transform:none;box-shadow:none}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;min-width:0}
+.panel h3{font-size:30px;margin:8px 0 6px}
+.panel .price{font-family:var(--display);font-size:22px;color:var(--accent);font-weight:600}
+.panel ol,.panel ul{margin:12px 0 0;padding-left:20px;color:var(--ink-2)}
+.panel li+li{margin-top:6px}
+.panel.featured{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 18%,transparent)}
+.sizenote{font-size:14px;color:var(--ink-2);margin-top:12px}
+
+.story{margin-top:48px;background:var(--ink);color:var(--bg)}
+.story .wrap{padding-block:48px;display:grid;grid-template-columns:1fr 1.4fr;gap:32px;align-items:center}
+.story h2{font-size:clamp(34px,4.5vw,50px);margin-top:10px}
+.story h2 em{font-style:italic;font-weight:500;color:var(--brass)}
+.story p{font-size:18px;opacity:.9;max-width:36em}
+.story .eyebrow{color:var(--brass)}
+@media (max-width:760px){.story .wrap{grid-template-columns:1fr}}
+
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:15px}
+th,td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+tbody tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right}
+tr.sep td{background:var(--surface-2);font-weight:600;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);padding-block:8px}
+
+.faq{display:grid;gap:10px;max-width:760px}
+details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:0 18px}
+summary{cursor:pointer;font-weight:600;padding:16px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--display);font-size:24px;line-height:1;color:var(--ink-2);flex:none}
+details[open] summary::after{content:"–"}
+details p{padding:0 0 16px;color:var(--ink-2)}
+
+footer{margin-top:56px;border-top:1px solid var(--line);background:var(--surface)}
+footer .wrap{padding-block:40px 28px;display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:28px}
+footer h4{font-size:20px;margin:0 0 10px}
+footer p,footer li{font-size:15px;color:var(--ink-2)}
+footer ul{list-style:none;margin:0;padding:0}
+footer li+li{margin-top:6px}
+footer button.link{background:none;border:0;padding:0;text-decoration:underline;cursor:pointer;font:inherit;color:var(--ink-2)}
+footer .bottom{grid-column:1/-1;border-top:1px solid var(--line);padding-top:18px;font-size:13px;color:var(--ink-2);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media (max-width:760px){footer .wrap{grid-template-columns:1fr}}
+
+dialog{border:0;padding:0;background:var(--surface);color:var(--ink);border-radius:20px;box-shadow:var(--shadow);width:min(720px,calc(100vw - 32px));max-height:calc(100vh - 32px)}
+dialog::backdrop{background:rgba(12,18,14,.6)}
+.dhead{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 22px;border-bottom:1px solid var(--line)}
+.dhead h2{font-size:26px}
+.x{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--surface);cursor:pointer;display:grid;place-items:center;font-size:22px;line-height:1;flex:none}
+.dbody{padding:22px;overflow:auto;max-height:calc(100vh - 32px - 77px)}
+.dbody h4{font-size:19px;margin:18px 0 6px}
+.dbody ol,.dbody ul{margin:0;padding-left:20px;color:var(--ink-2)}
+.dbody li+li{margin-top:4px}
+dialog.drawer{position:fixed;inset:0 0 0 auto;margin:0;height:100%;max-height:100%;width:min(460px,100vw);border-radius:0;flex-direction:column;padding-right:env(safe-area-inset-right,0px);padding-top:env(safe-area-inset-top,0px)}
+dialog.drawer[open]{display:flex}
+dialog.drawer .dbody{flex:1;max-height:none}
+dialog.drawer .dfoot{padding:16px 22px calc(16px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);background:var(--surface)}
+dialog.drawer .dfoot:empty{display:none}
+
+.sheet{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media (max-width:640px){.sheet{grid-template-columns:1fr}}
+.sheet .thumb{background:var(--surface-2);border-radius:16px;padding:24px;align-self:start}
+.sheet .thumb .shirt{display:block;width:100%;height:auto}
+.sheet h2{font-size:36px;margin-top:6px}
+.sheet .verse{font-family:var(--display);font-style:italic;font-size:17px;color:var(--ink-2);margin-top:4px}
+.sheet .price{font-family:var(--display);font-size:28px;font-weight:600;margin-top:6px}
+.opt{margin-top:18px}
+.opt .lab{display:flex;justify-content:space-between;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);font-weight:600;margin-bottom:8px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{padding:9px 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);cursor:pointer;font-weight:500;min-width:46px}
+.chip[aria-pressed="true"]{border-color:var(--ink);background:var(--ink);color:var(--bg)}
+.qty{display:inline-flex;align-items:center;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;flex:none}
+.qty button{width:40px;height:40px;border:0;background:transparent;cursor:pointer;font-size:18px}
+.qty output{min-width:30px;text-align:center;font-weight:600}
+.note{display:flex;gap:10px;align-items:flex-start;background:var(--surface-2);border-radius:12px;padding:12px 14px;font-size:14px;color:var(--ink-2);margin-top:18px}
+.note svg{width:20px;height:20px;flex:none;color:var(--accent);margin-top:1px}
+.addrow{display:flex;gap:12px;align-items:center;margin-top:20px;flex-wrap:wrap}
+.msg{font-size:13px;margin-top:8px;min-height:18px}
+.msg.ok{color:var(--good)}.msg.bad{color:var(--warn)}
+
+.items{display:flex;flex-direction:column;gap:14px}
+.item{display:grid;grid-template-columns:72px 1fr auto;gap:12px;align-items:start}
+.item .thumb{background:var(--surface-2);border-radius:10px;padding:6px}
+.item .thumb .shirt{display:block;width:100%;height:auto}
+.item b{display:block;font-weight:600}
+.item .sub{display:block;font-size:13px;color:var(--ink-2)}
+.item .rm{background:none;border:0;color:var(--ink-2);text-decoration:underline;cursor:pointer;font-size:13px;padding:0;margin-top:6px}
+.item .lineprice{font-weight:600;text-align:right}
+.item .qty{margin-top:8px}
+.item .qty button{width:32px;height:32px;font-size:16px}
+.empty{text-align:center;padding:36px 10px;color:var(--ink-2)}
+.empty .shirt{width:120px;height:auto;margin:0 auto 10px;display:block;opacity:.6}
+.promo{display:flex;gap:8px;margin-top:22px}
+.promo input{flex:1;min-width:0;padding:10px 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;text-transform:uppercase}
+.deliv{display:grid;gap:8px;margin-top:18px}
+.deliv label{display:flex;gap:12px;align-items:center;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;cursor:pointer}
+.deliv label:has(input:checked){border-color:var(--ink)}
+.deliv input{accent-color:var(--accent);flex:none}
+.deliv b{display:block;font-weight:600}
+.deliv span{font-size:13px;color:var(--ink-2)}
+.deliv .p{margin-left:auto;font-weight:600;white-space:nowrap;text-align:right}
+.deliv .p small{display:block;font-weight:500;font-size:11.5px;color:var(--ink-2)}
+.totals{margin-top:18px;display:grid;gap:6px;font-size:15px}
+.totals div{display:flex;justify-content:space-between;gap:12px}
+.totals .tot{font-family:var(--display);font-size:26px;font-weight:600;border-top:1px solid var(--line);padding-top:10px;margin-top:4px}
+.fine{font-size:12.5px;color:var(--ink-2);margin-top:10px;text-align:center}
+
+.co{display:grid;gap:16px}
+.co .stripe{border:1.5px dashed var(--line);border-radius:14px;padding:16px;background:var(--surface-2)}
+.co .stripe b{display:block;margin-bottom:6px}
+.co .lines{font-size:14px;color:var(--ink-2)}
+.done{text-align:center;padding:10px 0}
+.done .check{width:64px;height:64px;border-radius:50%;background:var(--good);color:#fff;display:grid;place-items:center;margin:0 auto 14px;font-size:30px}
+.done h3{font-size:32px}
+.done .ordno{font-family:var(--display);font-size:42px;font-weight:600;letter-spacing:.01em;margin:10px 0 4px}
+.done ol{text-align:left;color:var(--ink-2);margin:16px auto 0;max-width:340px;padding-left:20px}
+
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:14px 0 16px}
+.tile{background:var(--surface-2);border-radius:12px;padding:12px 14px;min-width:0}
+.tile small{display:block;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.tile b{font-family:var(--display);font-size:26px;font-weight:600}
+.pill{display:inline-block;padding:4px 9px;border-radius:999px;font-size:12px;font-weight:600;white-space:nowrap}
+.pill.paid{background:color-mix(in srgb,var(--warn) 18%,transparent);color:var(--warn)}
+.pill.sent{background:color-mix(in srgb,var(--accent) 18%,transparent);color:var(--accent)}
+.pill.ship{background:color-mix(in srgb,var(--brass) 20%,transparent);color:var(--brass)}
+.pill.done{background:color-mix(in srgb,var(--good) 18%,transparent);color:var(--good)}
+
+.demo{position:fixed;left:calc(16px + env(safe-area-inset-left,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;background:var(--ink);color:var(--bg);border:0;border-radius:999px;padding:10px 16px;font-weight:600;font-size:14px;box-shadow:var(--shadow);cursor:pointer;display:inline-flex;gap:8px;align-items:center}
+.demo i{width:8px;height:8px;border-radius:50%;background:var(--brass);display:inline-block}
+.toast{position:fixed;left:50%;top:calc(86px + env(safe-area-inset-top,0px));transform:translateX(-50%);z-index:40;background:var(--ink);color:var(--bg);padding:12px 16px;border-radius:12px;box-shadow:var(--shadow);display:flex;gap:14px;align-items:center;max-width:calc(100vw - 32px);font-size:14px}
+.toast button{background:none;border:0;color:var(--brass);font-weight:700;cursor:pointer;text-decoration:underline;white-space:nowrap}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="bar"><div class="wrap"><span>Christmas drop is open</span><span class="dot">•</span><span>Pre-orders close November 15</span><span class="dot">•</span><span>Ships by December 1 · free shipping over $75</span></div></div>
+
+<header class="hdr"><div class="wrap">
+  <a class="brand" href="#top" aria-label="Still Waters Apparel, home">
+    <svg class="mark" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" style="fill:var(--accent)"/><path d="M9 17q5.5-5 11 0t11 0M9 25q5.5-5 11 0t11 0" fill="none" style="stroke:var(--accent-ink)" stroke-width="2.6" stroke-linecap="round"/></svg>
+    <span><b>Still Waters</b><small>Apparel</small></span>
+  </a>
+  <nav class="nav" aria-label="Site">
+    <a href="#shop">Shop</a><a href="#shipping">Shipping &amp; pickup</a><a href="#sizes">Size guide</a><a href="#faq">FAQ</a>
+  </nav>
+  <button class="btn btn-ghost cartbtn" id="openCart" type="button">Cart <span class="count num" id="cartCount">0</span></button>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap">
+  <div>
+    <p class="eyebrow">Christmas drop · pre-orders open</p>
+    <h1>Wear what <em>you believe.</em></h1>
+    <p class="lede">Scripture-inspired tees designed in Toronto and printed to order, so nothing sits in a box. Order by November 15 and it ships by December 1, in time for Christmas.</p>
+    <div class="ctas"><a class="btn btn-primary" href="#shop">Shop the drop</a><a class="btn btn-ghost" href="#shipping">Shipping &amp; pickup</a></div>
+    <div class="meta"><div><b>Nov 15</b>pre-orders close</div><div><b>Dec 1</b>orders ship</div><div><b>$75</b>free shipping over</div></div>
+  </div>
+  <div class="art">
+    <div id="heroShirt"></div>
+    <div class="swatches" role="group" aria-label="Preview colour" id="heroSwatches"></div>
+    <p class="cap" id="heroCap">Be Still Tee · Sand · $35</p>
+  </div>
+</div></section>
+
+<section class="trust"><div class="wrap">
+  <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16v12H4z"/><path d="M4 11h16M9 7V5h6v2"/></svg><div><b>Printed to order in Ontario</b><span>Soft ring-spun cotton, printed once per drop in Mississauga.</span></div></div>
+  <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg><div><b>Free shipping over $75</b><span>$9.99 flat otherwise, Canada and the US, tracked.</span></div></div>
+  <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg><div><b>Easy size exchanges</b><span>Wrong size? Email us within 14 days and we swap it.</span></div></div>
+  <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><div><b>Secure checkout</b><span>Payments handled by Stripe. Apple Pay and Google Pay accepted.</span></div></div>
+</div></section>
+
+<section class="tenth"><div class="wrap"><div><p class="eyebrow">Our tenth</p><p>A tenth of every order goes to the youth program at our church. We post the year's total each January.</p></div></div></section>
+
+<section class="block" id="shop"><div class="wrap">
+  <div class="sechead"><div><p class="eyebrow">The Christmas drop</p><h2>Six designs, one message</h2></div><p>Every shirt is printed to order. We collect orders until November 15, print once, and ship by December 1. Nothing sits in a box and nothing is wasted.</p></div>
+  <div class="grid" id="grid"></div>
+</div></section>
+
+<section class="block" id="shipping"><div class="wrap">
+  <div class="sechead"><div><p class="eyebrow">Getting your shirt</p><h2>Shipped to you, or picked up in Toronto</h2></div></div>
+  <div class="two">
+    <div class="panel featured"><p class="eyebrow" style="color:var(--accent)">Canada and the US</p><h3>Shipping</h3><p class="price num">$9.99 flat · free over $75</p><ol><li>Order by November 15. We send the whole drop to the printer the next morning.</li><li>Shirts ship by December 1 with tracking by email. Canada takes 3 to 7 business days.</li><li>US orders print in the US, so they arrive in 3 to 5 business days with no customs charges.</li></ol></div>
+    <div class="panel"><p class="eyebrow">Toronto</p><h3>Local pickup</h3><p class="price">Free</p><ul><li>Choose local pickup at checkout.</li><li>From December 1 we email you to arrange a time, usually at the rink on skate nights or after church on Sunday.</li><li>Bring your name or order number.</li></ul></div>
+  </div>
+</div></section>
+
+<section class="story"><div class="wrap">
+  <div><p class="eyebrow">Our story</p><h2>It started at a <em>skating rink.</em></h2></div>
+  <p>Still Waters began with three shirts printed for friends at our Tuesday skate, and a question we kept hearing: where can I get one? Every design starts with a verse that steadied us, set in a hand we would actually wear. We keep the drops small, print to order, and give a tenth away.</p>
+</div></section>
+
+<section class="block" id="sizes"><div class="wrap">
+  <div class="sechead"><div><p class="eyebrow">Fit</p><h2>Size guide</h2></div><p>Unisex fit. Lay a tee you like flat, measure across the chest, and compare. Between sizes? Go up. The shirts are pre-shrunk but still cotton.</p></div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Size</th><th class="num">Body width, inches</th><th class="num">Body width, cm</th><th class="num">Length, inches</th><th class="num">Length, cm</th></tr></thead>
+    <tbody>
+      <tr class="sep"><td colspan="5">Kids and youth</td></tr>
+      <tr><td>YS</td><td class="num">16</td><td class="num">41</td><td class="num">20.5</td><td class="num">52</td></tr>
+      <tr><td>YM</td><td class="num">17</td><td class="num">43</td><td class="num">22</td><td class="num">56</td></tr>
+      <tr><td>YL</td><td class="num">18</td><td class="num">46</td><td class="num">23.5</td><td class="num">60</td></tr>
+      <tr><td>YXL</td><td class="num">19</td><td class="num">48</td><td class="num">25</td><td class="num">64</td></tr>
+      <tr class="sep"><td colspan="5">Adult</td></tr>
+      <tr><td>S</td><td class="num">18</td><td class="num">46</td><td class="num">28</td><td class="num">71</td></tr>
+      <tr><td>M</td><td class="num">20</td><td class="num">51</td><td class="num">29</td><td class="num">74</td></tr>
+      <tr><td>L</td><td class="num">22</td><td class="num">56</td><td class="num">30</td><td class="num">76</td></tr>
+      <tr><td>XL</td><td class="num">24</td><td class="num">61</td><td class="num">31</td><td class="num">79</td></tr>
+      <tr><td>2XL</td><td class="num">26</td><td class="num">66</td><td class="num">32</td><td class="num">81</td></tr>
+      <tr><td>3XL</td><td class="num">28</td><td class="num">71</td><td class="num">33</td><td class="num">84</td></tr>
+    </tbody>
+  </table></div>
+  <p class="sizenote">Body width is measured flat, one inch below the armhole. Length runs from the high point of the shoulder to the hem.</p>
+</div></section>
+
+<section class="block" id="faq"><div class="wrap">
+  <div class="sechead"><div><p class="eyebrow">Questions</p><h2>Good to know</h2></div></div>
+  <div class="faq">
+    <details><summary>When do pre-orders close?</summary><p>November 15 at midnight. We print once for the whole drop, so we cannot add orders after that. The next drop opens before Easter.</p></details>
+    <details><summary>When will my order ship?</summary><p>By December 1, with tracking by email. Canada takes 3 to 7 business days. US orders print in the US and usually arrive in 3 to 5 business days.</p></details>
+    <details><summary>Do you ship to the US?</summary><p>Yes, at the same flat rate, and with no customs charges, because US orders are printed and shipped inside the US.</p></details>
+    <details><summary>What if the size is wrong?</summary><p>Email us within 14 days and we send the right size. Return the first one unworn and we cover the label.</p></details>
+    <details><summary>How do I pay, and is it safe?</summary><p>Cards, Apple Pay and Google Pay through Stripe's secure checkout page. We never see or store your card number.</p></details>
+    <details><summary>Which Bible translation do you use?</summary><p>Short phrases and references, mostly in the wording of the King James Version, which is public domain. We keep quotes short on purpose.</p></details>
+    <details><summary>Can my church or youth group order together?</summary><p>Yes. Email hello@stillwatersapparel.ca with sizes and quantities for group pricing on 12 or more shirts, and we can set up a private order page.</p></details>
+    <details><summary>Is tax included?</summary><p>Prices are in Canadian dollars. HST is added at checkout for Canadian orders. US orders pay no Canadian tax.</p></details>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div><h4>Still Waters Apparel</h4><p>Toronto, Ontario</p><p>hello@stillwatersapparel.ca</p><p style="margin-top:10px">Instagram: @stillwaters.apparel</p></div>
+  <div><h4>Shop</h4><ul><li><a href="#shop">The drop</a></li><li><a href="#shipping">Shipping &amp; pickup</a></li><li><a href="#sizes">Size guide</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+  <div><h4>Policies</h4><ul><li><button class="link" type="button" data-policy="returns">Returns &amp; exchanges</button></li><li><button class="link" type="button" data-policy="shipping">Shipping</button></li><li><button class="link" type="button" data-policy="privacy">Privacy</button></li><li><button class="link" type="button" data-policy="terms">Terms</button></li></ul></div>
+  <div class="bottom"><span>Prices in CAD. Secure checkout by Stripe.</span><span>© 2026 Still Waters Apparel</span></div>
+</div></footer>
+
+<dialog id="sheet" aria-labelledby="sheetTitle"><div class="dhead"><h2 id="sheetTitle">Product</h2><button class="x" type="button" data-close aria-label="Close">×</button></div><div class="dbody" id="sheetBody"></div></dialog>
+
+<dialog id="cart" class="drawer" aria-labelledby="cartTitle"><div class="dhead"><h2 id="cartTitle">Your cart</h2><button class="x" type="button" data-close aria-label="Close cart">×</button></div><div class="dbody" id="cartBody"></div><div class="dfoot" id="cartFoot"></div></dialog>
+
+<dialog id="notes" aria-labelledby="notesTitle"><div class="dhead"><h2 id="notesTitle">Demo notes</h2><button class="x" type="button" data-close aria-label="Close">×</button></div>
+<div class="dbody">
+  <p class="eyebrow">For our meeting</p>
+  <h3 style="font-size:30px;margin:8px 0 12px">What this demo is</h3>
+  <p class="muted">A working preview of the Starter package: a fast store with pre-order drops, print-to-order fulfillment, shipping and local pickup, a promo code and Stripe's secure checkout. Nothing here is charged; the payment step is simulated.</p>
+  <h4>Try it</h4>
+  <ol><li>Open a shirt, pick a colour and a size, add it to the cart.</li><li>In the cart, enter the code <b>FAITH10</b>.</li><li>Switch between shipping and local pickup, then Checkout and Place demo order.</li></ol>
+  <h4>Placeholders to replace</h4>
+  <ul><li>Brand name, logo, colours and photos. The shirts are illustrations; real print-shop mockups or photos go here.</li><li>The designs and verses are examples. Short phrases and references are fine; longer quotes from modern translations need the publisher's permission.</li><li>Prices, dates, the give-back line, the story, and the policy drafts in the footer.</li></ul>
+  <h4>What is real in the live build</h4>
+  <ul><li>Stripe's hosted checkout with Apple Pay and Google Pay, and receipts by email.</li><li>Order emails to the owner, who places each order with the print shop in about two minutes, or automatically in the Shop package.</li><li>Free hosting on the brand's own domain, and visitor analytics without a cookie banner.</li></ul>
+  <div class="addrow"><button class="btn btn-ink" type="button" id="openOwner">Preview the owner view (Shop package)</button><button class="btn btn-ghost" type="button" id="resetDemo">Reset demo</button></div>
+</div></dialog>
+
+<dialog id="owner" aria-labelledby="ownerTitle"><div class="dhead"><h2 id="ownerTitle">Owner view · example</h2><button class="x" type="button" data-close aria-label="Close">×</button></div>
+<div class="dbody">
+  <p class="muted">What the owner sees in the Shop package, with example numbers. Paid orders go to the print shop on their own and tracking appears here. In the Starter package you get the order email and place it with the print shop yourself, about two minutes each.</p>
+  <div class="tiles"><div class="tile"><small>Orders this drop</small><b class="num">38</b></div><div class="tile"><small>Revenue</small><b class="num">$1,480</b></div><div class="tile"><small>Waiting on you</small><b class="num" id="waitCount">2</b></div><div class="tile"><small>Top design</small><b>Be Still</b></div></div>
+  <div class="tablewrap"><table id="orders"><thead><tr><th>Order</th><th>Customer</th><th>Items</th><th>Delivery</th><th>Status</th><th></th></tr></thead><tbody></tbody></table></div>
+</div></dialog>
+
+<dialog id="policy" aria-labelledby="policyTitle"><div class="dhead"><h2 id="policyTitle">Policy</h2><button class="x" type="button" data-close aria-label="Close">×</button></div><div class="dbody" id="policyBody"></div></dialog>
+
+<button class="demo" type="button" id="openNotes"><i></i>Demo notes</button>
+<div class="toast" id="toast" hidden role="status"></div>
+
+<script>
+(function(){
+const $=(s,r=document)=>r.querySelector(s);
+const money=n=>'$'+n.toFixed(2);
+const ADULT=['S','M','L','XL','2XL','3XL'], YOUTH=['YS','YM','YL','YXL'];
+const LIGHT='#F4F2EA', DARK='#1E2A22';
+const COLORS={
+  sand:{name:'Sand',hex:'#D9CBAA',ink:DARK,dark:false},
+  forest:{name:'Forest',hex:'#23513E',ink:LIGHT,dark:true},
+  black:{name:'Black',hex:'#17191E',ink:LIGHT,dark:true},
+  white:{name:'White',hex:'#F3F2EE',ink:DARK,dark:false},
+  navy:{name:'Navy',hex:'#1B2A49',ink:LIGHT,dark:true},
+  heather:{name:'Heather Grey',hex:'#9AA1A9',ink:DARK,dark:false},
+  olive:{name:'Olive',hex:'#6B7A4B',ink:LIGHT,dark:true},
+  rose:{name:'Dusty Rose',hex:'#D8A7A7',ink:DARK,dark:false},
+  cream:{name:'Cream',hex:'#F1E9D8',ink:DARK,dark:false},
+  royal:{name:'Royal',hex:'#2A5BD7',ink:'#FFFFFF',dark:true},
+  pink:{name:'Pink',hex:'#F0A3BF',ink:DARK,dark:false},
+  oat:{name:'Oat',hex:'#E3D7BF',ink:DARK,dark:false}
+};
+const PRODUCTS=[
+  {id:'bestill',name:'Be Still Tee',verse:'Psalm 46:10',price:35,type:'tee',design:'bestill',colors:['sand','forest','black'],sizes:ADULT,tag:'Best seller',desc:'Psalm 46:10 in a quiet hand on the chest. Soft ring-spun cotton, unisex fit, the shirt you reach for on a slow Sunday.'},
+  {id:'fearnot',name:'Fear Not Tee',verse:'Isaiah 41:10',price:35,type:'tee',design:'fearnot',colors:['white','navy'],sizes:ADULT,desc:'Isaiah 41:10, set bold. The verse people get tattooed, on a shirt you can wear to the rink.'},
+  {id:'walk',name:'Walk by Faith Tee',verse:'2 Corinthians 5:7',price:35,type:'tee',design:'walk',colors:['heather','olive'],sizes:ADULT,desc:'2 Corinthians 5:7, stacked tall down the chest. Not by sight.'},
+  {id:'grace',name:'Grace Upon Grace Tee',verse:'John 1:16',price:36,type:'tee',design:'grace',colors:['rose','cream'],sizes:ADULT,tag:'Most gifted',desc:'John 1:16 in soft italics on a dusty rose or cream tee. The one people buy two of.'},
+  {id:'follow',name:'Follow Me Tee',verse:'Matthew 4:19',price:34,type:'tee',design:'fish',colors:['black','sand'],sizes:ADULT,desc:'The oldest Christian symbol, drawn in one line, with Matthew 4:19 underneath.'},
+  {id:'light',name:'Kids Little Light Tee',verse:'Matthew 5:16',price:26,type:'tee',design:'light',colors:['royal','pink'],sizes:YOUTH,tag:'Kids',desc:'Matthew 5:16 for the small ones who shine. Youth sizes S to XL in the same soft cotton as the adult tees.'},
+  {id:'abide',name:'Abide Hoodie',verse:'John 15:4',price:62,type:'hoodie',design:'abide',colors:['forest'],sizes:ADULT,soon:true,desc:'Coming in the winter drop.'},
+  {id:'toque',name:'Still Waters Toque',verse:'',price:24,type:'toque',design:'band',colors:['oat'],sizes:['One size'],soon:true,desc:'Coming in the winter drop.'}
+];
+const FR='Fraunces, Georgia, serif', FG='Figtree, Arial, sans-serif';
+const DESIGNS={
+  bestill:(ink)=>`<text x="45" y="36" text-anchor="middle" font-family="${FR}" font-style="italic" font-weight="500" font-size="27" fill="${ink}">be still</text><text x="45" y="54" text-anchor="middle" font-family="${FG}" font-weight="700" font-size="7.5" letter-spacing="2.5" fill="${ink}">PSALM 46:10</text>`,
+  fearnot:(ink)=>`<text x="45" y="30" text-anchor="middle" font-family="${FG}" font-weight="700" font-size="28" letter-spacing="1" fill="${ink}">FEAR</text><text x="45" y="57" text-anchor="middle" font-family="${FG}" font-weight="700" font-size="28" letter-spacing="1" fill="${ink}">NOT</text><text x="45" y="68" text-anchor="middle" font-family="${FG}" font-weight="700" font-size="6.5" letter-spacing="2" fill="${ink}">ISAIAH 41:10</text>`,
+  walk:(ink)=>`<text x="45" y="22" text-anchor="middle" font-family="${FG}" font-weight="700" font-size="21" letter-spacing="1" fill="${ink}">WALK</text><text x="45" y="41" text-anchor="middle" font-family="${FG}" font-weight="700" font-size="21" letter-spacing="1" fill="${ink}">BY</text><text x="45" y="60" text-anchor="middle" font-family="${FG}" font-weight="700" font-size="21" letter-spacing="1" fill="${ink}">FAITH</text><text x="45" y="69" text-anchor="middle" font-family="${FR}" font-style="italic" font-size="8" fill="${ink}">not by sight</text>`,
+  grace:(ink)=>`<text x="45" y="25" text-anchor="middle" font-family="${FR}" font-style="italic" font-weight="500" font-size="24" fill="${ink}">grace</text><text x="45" y="41" text-anchor="middle" font-family="${FR}" font-style="italic" font-weight="400" font-size="13" fill="${ink}">upon</text><text x="45" y="63" text-anchor="middle" font-family="${FR}" font-style="italic" font-weight="500" font-size="24" fill="${ink}">grace</text>`,
+  fish:(ink)=>`<path d="M8 34Q36 8 66 34Q36 60 8 34Z" fill="none" stroke="${ink}" stroke-width="3" stroke-linejoin="round"/><path d="M66 34L82 22M66 34L82 46" fill="none" stroke="${ink}" stroke-width="3" stroke-linecap="round"/><circle cx="24" cy="31" r="2" fill="${ink}"/><text x="45" y="66" text-anchor="middle" font-family="${FG}" font-weight="700" font-size="8" letter-spacing="2.5" fill="${ink}">FOLLOW ME</text>`,
+  light:(ink)=>`<text x="40" y="26" text-anchor="middle" font-family="${FR}" font-style="italic" font-weight="500" font-size="17" fill="${ink}">little</text><text x="45" y="55" text-anchor="middle" font-family="${FG}" font-weight="700" font-size="27" letter-spacing="1" fill="${ink}">LIGHT</text><path d="M72 8l2.2 5.3 5.3 2.2-5.3 2.2L72 23l-2.2-5.3-5.3-2.2 5.3-2.2z" fill="${ink}"/>`,
+  abide:(ink)=>`<text x="45" y="34" text-anchor="middle" font-family="${FR}" font-style="italic" font-weight="500" font-size="26" fill="${ink}">abide</text><text x="45" y="52" text-anchor="middle" font-family="${FG}" font-weight="700" font-size="7.5" letter-spacing="2.5" fill="${ink}">JOHN 15:4</text>`,
+  band:(ink)=>`<text x="40" y="19" text-anchor="middle" font-family="${FG}" font-weight="700" font-size="10.5" letter-spacing="2.5" fill="${ink}">STILL WATERS</text>`,
+  none:()=>''
+};
+const S='rgba(0,0,0,.22)';
+const BODY={
+  tee:h=>`<path d="M78 22C86 40 114 40 122 22L160 36L186 80L146 96L142 86V200H58V86L54 96L14 80L40 36Z" fill="${h}" stroke="${S}" stroke-width="1.5" stroke-linejoin="round"/><path d="M78 22C86 40 114 40 122 22" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="5" stroke-linecap="round"/><path d="M58 86L54 96M142 86L146 96" stroke="${S}" stroke-width="1.5"/>`,
+  ls:h=>`<path d="M78 22C86 40 114 40 122 22L160 36L192 150L158 158L142 104V200H58V104L42 158L8 150L40 36Z" fill="${h}" stroke="${S}" stroke-width="1.5" stroke-linejoin="round"/><path d="M78 22C86 40 114 40 122 22" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="5" stroke-linecap="round"/><path d="M10 143L44 151M156 151L190 143" stroke="${S}" stroke-width="1.5"/>`,
+  hoodie:h=>`<path d="M64 46C64 12 136 12 136 46C122 38 78 38 64 46Z" fill="${h}" stroke="${S}" stroke-width="1.5"/><path d="M72 42C80 58 120 58 128 42L160 46L186 90L146 106L142 96V206H58V96L54 106L14 90L40 46Z" fill="${h}" stroke="${S}" stroke-width="1.5" stroke-linejoin="round"/><path d="M72 42C80 58 120 58 128 42" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="4"/><path d="M92 58V92M108 58V92" stroke="rgba(255,255,255,.55)" stroke-width="2" stroke-linecap="round"/><path d="M66 154H134V200H66Z" fill="rgba(0,0,0,.14)"/>`,
+  toque:h=>`<circle cx="100" cy="50" r="17" fill="${h}" stroke="${S}" stroke-width="1.5"/><circle cx="100" cy="50" r="17" fill="rgba(255,255,255,.22)"/><path d="M44 152C44 68 156 68 156 152Z" fill="${h}" stroke="${S}" stroke-width="1.5"/><rect x="38" y="140" width="124" height="42" rx="10" fill="${h}" stroke="${S}" stroke-width="1.5"/><path d="M52 146V176M68 146V176M132 146V176M148 146V176" stroke="rgba(0,0,0,.14)" stroke-width="3"/>`
+};
+const DBOX={tee:{x:55,y:72,w:90,h:70,vb:'0 0 90 70'},ls:{x:55,y:72,w:90,h:70,vb:'0 0 90 70'},hoodie:{x:60,y:98,w:80,h:50,vb:'0 0 90 70'},toque:{x:60,y:148,w:80,h:28,vb:'0 0 80 28'}};
+function shirtSVG(p,colorKey){
+  const c=COLORS[colorKey]||COLORS.sand, d=DBOX[p.type];
+  const design=p.design==='none'?'':`<svg x="${d.x}" y="${d.y}" width="${d.w}" height="${d.h}" viewBox="${d.vb}" overflow="visible">${DESIGNS[p.design](c.ink,c.hex,c.dark)}</svg>`;
+  return `<svg class="shirt" viewBox="0 0 200 220" role="img" aria-label="${p.name} in ${c.name}">${BODY[p.type](c.hex)}${design}</svg>`;
+}
+const byId=id=>PRODUCTS.find(p=>p.id===id);
+
+/* state */
+const SHIP=9.99, FREE_OVER=75, TAX=0.13, PROMO='FAITH10';
+let state={cart:[],promo:null,delivery:'ship',step:'cart',order:null};
+function load(){try{const s=JSON.parse(localStorage.getItem('sw-cart'));if(s&&Array.isArray(s.cart)){state.cart=s.cart.filter(i=>byId(i.id));state.promo=s.promo||null;state.delivery=s.delivery==='pickup'?'pickup':'ship';}}catch(e){}}
+function save(){try{localStorage.setItem('sw-cart',JSON.stringify({cart:state.cart,promo:state.promo,delivery:state.delivery}))}catch(e){}}
+function totals(){
+  const sub=state.cart.reduce((a,i)=>a+byId(i.id).price*i.qty,0);
+  const disc=state.promo===PROMO?Math.round(sub*10)/100:0;
+  const after=sub-disc;
+  const freeShip=after>=FREE_OVER;
+  const ship=(state.delivery==='ship'&&state.cart.length&&!freeShip)?SHIP:0;
+  const tax=Math.round((after+ship)*TAX*100)/100;
+  return {sub,disc,ship,freeShip,tax,total:Math.round((after+ship+tax)*100)/100,count:state.cart.reduce((a,i)=>a+i.qty,0)};
+}
+
+/* hero */
+let heroColor='sand';
+function renderHero(){
+  const p=byId('bestill');
+  $('#heroShirt').innerHTML=shirtSVG(p,heroColor);
+  $('#heroSwatches').innerHTML=p.colors.map(k=>`<button type="button" class="sw" style="background:${COLORS[k].hex}" aria-label="${COLORS[k].name}" aria-pressed="${k===heroColor}" data-hero="${k}"></button>`).join('');
+  $('#heroCap').textContent=`${p.name} · ${COLORS[heroColor].name} · ${money(p.price)}`;
+}
+$('#heroSwatches').addEventListener('click',e=>{const b=e.target.closest('[data-hero]');if(!b)return;heroColor=b.dataset.hero;renderHero();});
+
+/* grid */
+function renderGrid(){
+  $('#grid').innerHTML=PRODUCTS.map(p=>{
+    const dots=p.colors.map(k=>`<i style="background:${COLORS[k].hex}" title="${COLORS[k].name}"></i>`).join('');
+    const tag=p.soon?'<span class="tag">Winter drop</span>':(p.tag?`<span class="tag${p.tag==='Best seller'?' hot':''}">${p.tag}</span>`:'');
+    const range=p.soon?'<span class="small">Coming soon</span>':`<span class="small">${p.sizes[0]}–${p.sizes[p.sizes.length-1]}</span>`;
+    return `<article class="card${p.soon?' is-soon':''}">${p.soon?'':`<button class="hit" type="button" data-open="${p.id}" aria-label="View ${p.name}, ${money(p.price)}"></button>`}
+      <div class="thumb">${tag}${shirtSVG(p,p.colors[0])}</div>
+      <div class="body"><div class="row"><h3>${p.name}</h3><span class="price num">${money(p.price)}</span></div>
+      <div class="row">${p.verse?`<span class="verse">${p.verse}</span>`:'<span class="verse">&nbsp;</span>'}${range}</div>
+      <div class="row"><span class="dots" aria-label="${p.colors.length} colour${p.colors.length>1?'s':''}">${dots}</span></div></div></article>`;
+  }).join('');
+}
+$('#grid').addEventListener('click',e=>{const b=e.target.closest('[data-open]');if(b)openSheet(b.dataset.open);});
+
+/* product sheet */
+let sel={id:null,color:null,size:null,qty:1};
+function openSheet(id){const p=byId(id);if(!p||p.soon)return;sel={id,color:p.colors[0],size:null,qty:1};renderSheet();$('#sheet').showModal();}
+function renderSheet(){
+  const p=byId(sel.id), c=COLORS[sel.color];
+  $('#sheetTitle').textContent=p.name;
+  $('#sheetBody').innerHTML=`<div class="sheet">
+    <div class="thumb">${shirtSVG(p,sel.color)}</div>
+    <div>
+      <p class="eyebrow">${p.tag||'Pre-order'}</p>
+      <h2>${p.name}</h2>
+      ${p.verse?`<p class="verse">${p.verse}</p>`:''}
+      <p class="price num">${money(p.price)}</p>
+      <p class="muted" style="margin-top:10px">${p.desc}</p>
+      <div class="opt"><div class="lab"><span>Colour</span><span>${c.name}</span></div><div class="chips">${p.colors.map(k=>`<button type="button" class="sw" style="background:${COLORS[k].hex}" aria-label="${COLORS[k].name}" aria-pressed="${k===sel.color}" data-color="${k}"></button>`).join('')}</div></div>
+      <div class="opt"><div class="lab"><span>Size</span><a href="#sizes" data-close-sheet style="color:var(--ink-2)">Size guide</a></div><div class="chips">${p.sizes.map(s=>`<button type="button" class="chip" aria-pressed="${s===sel.size}" data-size="${s}">${s}</button>`).join('')}</div></div>
+      <div class="addrow"><div class="qty" role="group" aria-label="Quantity"><button type="button" data-q="-1" aria-label="Decrease quantity">−</button><output class="num" id="qtyOut">${sel.qty}</output><button type="button" data-q="1" aria-label="Increase quantity">+</button></div><button class="btn btn-primary" id="addBtn" type="button">Add to cart · ${money(p.price*sel.qty)}</button></div>
+      <p class="msg bad" id="sizeMsg" aria-live="polite"></p>
+      <div class="note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Pre-order. Orders close November 15; the drop is printed to order and ships by December 1, or is ready for local pickup in Toronto then.</span></div>
+    </div></div>`;
+}
+$('#sheetBody').addEventListener('click',e=>{
+  const col=e.target.closest('[data-color]'); if(col){sel.color=col.dataset.color;renderSheet();return;}
+  const sz=e.target.closest('[data-size]'); if(sz){sel.size=sz.dataset.size;$('#sheetBody').querySelectorAll('[data-size]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.size===sel.size)));$('#sizeMsg').textContent='';return;}
+  const q=e.target.closest('[data-q]'); if(q){sel.qty=Math.min(10,Math.max(1,sel.qty+Number(q.dataset.q)));$('#qtyOut').textContent=sel.qty;$('#addBtn').textContent='Add to cart · '+money(byId(sel.id).price*sel.qty);return;}
+  if(e.target.closest('#addBtn')){
+    if(!sel.size){$('#sizeMsg').textContent='Pick a size first.';return;}
+    addToCart(sel.id,sel.color,sel.size,sel.qty);
+    $('#sheet').close();
+    toast(`Added ${byId(sel.id).name}, ${COLORS[sel.color].name}, ${sel.size}`,true);
+    return;
+  }
+  if(e.target.closest('[data-close-sheet]')){$('#sheet').close();}
+});
+
+/* cart */
+function addToCart(id,color,size,qty){
+  const k=state.cart.find(i=>i.id===id&&i.color===color&&i.size===size);
+  if(k)k.qty+=qty; else state.cart.push({id,color,size,qty});
+  save(); renderCount();
+}
+function renderCount(){const t=totals();$('#cartCount').textContent=t.count;}
+function openCart(){if(state.step==='done')state.step='cart';renderCart();const d=$('#cart');if(!d.open)d.showModal();}
+function shipLabel(t){return state.delivery==='pickup'?'Local pickup, Toronto':'Shipping';}
+function shipValue(t){if(state.delivery==='pickup')return 'Free';return t.freeShip?'Free over $75':money(t.ship);}
+function renderCart(){
+  const t=totals(), body=$('#cartBody'), foot=$('#cartFoot');
+  $('#cartTitle').textContent=state.step==='checkout'?'Secure checkout':state.step==='done'?'Order confirmed':`Your cart${t.count?` (${t.count})`:''}`;
+  if(state.step==='done'){
+    const o=state.order;
+    body.innerHTML=`<div class="done"><div class="check" aria-hidden="true">✓</div><h3>Thank you. It is on its way soon.</h3><p class="muted">Order number</p><p class="ordno num">${o.no}</p><p class="muted">A receipt would land in your inbox from Stripe.</p>
+      <ol>${o.delivery==='pickup'?'<li>We send the drop to the printer after November 15.</li><li>From December 1 we email you to arrange a pickup time in Toronto.</li><li>Bring your name or order number.</li>':'<li>We send the drop to the printer after November 15.</li><li>Your order ships by December 1 with tracking by email.</li><li>Wrong size? Email us within 14 days and we swap it.</li>'}</ol></div>`;
+    foot.innerHTML=`<button class="btn btn-ink" type="button" data-close style="width:100%">Continue shopping</button>`;
+    return;
+  }
+  if(state.step==='checkout'){
+    body.innerHTML=`<div class="co">
+      <div class="lines">${state.cart.map(i=>`<div style="display:flex;justify-content:space-between;gap:12px"><span>${i.qty} × ${byId(i.id).name}, ${COLORS[i.color].name}, ${i.size}</span><span class="num">${money(byId(i.id).price*i.qty)}</span></div>`).join('')}</div>
+      <div class="totals">${t.disc?`<div><span>Discount (${PROMO})</span><span class="num">−${money(t.disc)}</span></div>`:''}<div><span>${shipLabel(t)}</span><span class="num">${shipValue(t)}</span></div><div><span>HST 13%</span><span class="num">${money(t.tax)}</span></div><div class="tot"><span>Total</span><span class="num">${money(t.total)}</span></div></div>
+      <div class="stripe"><b>This is where Stripe takes over.</b><p class="lines">In the live store, this button sends you to Stripe's secure checkout page: card, Apple Pay or Google Pay, with your email and address for shipping. The shop never sees your card number. For the demo, we skip the payment.</p></div>
+      <button class="btn btn-primary" type="button" id="placeOrder" style="width:100%">Place demo order · ${money(t.total)}</button>
+      <button class="btn btn-ghost" type="button" id="backToCart" style="width:100%">Back to cart</button>
+    </div>`;
+    foot.innerHTML='';
+    return;
+  }
+  if(!state.cart.length){
+    body.innerHTML=`<div class="empty">${shirtSVG(byId('bestill'),'sand')}<p>Nothing here yet.</p><p>The Be Still tee is a good place to start.</p><p style="margin-top:14px"><button class="btn btn-ghost btn-sm" type="button" data-close data-goto="#shop">Shop the drop</button></p></div>`;
+    foot.innerHTML='';
+    return;
+  }
+  const toFree=Math.max(0,FREE_OVER-(t.sub-t.disc));
+  body.innerHTML=`<div class="items">${state.cart.map((i,n)=>{const p=byId(i.id);return `<div class="item"><div class="thumb">${shirtSVG(p,i.color)}</div><div><b>${p.name}</b><span class="sub">${COLORS[i.color].name} · ${i.size}</span><div class="qty" role="group" aria-label="Quantity"><button type="button" data-cq="-1" data-n="${n}" aria-label="Decrease">−</button><output class="num">${i.qty}</output><button type="button" data-cq="1" data-n="${n}" aria-label="Increase">+</button></div></div><div><div class="lineprice num">${money(p.price*i.qty)}</div><button class="rm" type="button" data-rm="${n}">Remove</button></div></div>`;}).join('')}</div>
+    <form class="promo" id="promoForm"><label for="promoIn" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Promo code</label><input id="promoIn" placeholder="Promo code" autocomplete="off" value="${state.promo||''}"><button class="btn btn-ghost btn-sm" type="submit">Apply</button></form>
+    <p class="msg ${state.promo?'ok':''}" id="promoMsg" aria-live="polite">${state.promo?`${PROMO} applied: 10% off.`:''}</p>
+    <div class="deliv" role="radiogroup" aria-label="Delivery">
+      <label><input type="radio" name="deliv" value="ship" ${state.delivery==='ship'?'checked':''}><span><b>Ship to Canada or the US</b><span>Tracked, 3 to 7 business days</span></span><span class="p num">${t.freeShip?'Free':money(SHIP)}<small>${t.freeShip?'over $75':`free over $75`}</small></span></label>
+      <label><input type="radio" name="deliv" value="pickup" ${state.delivery==='pickup'?'checked':''}><span><b>Local pickup, Toronto</b><span>We email you to arrange a time</span></span><span class="p">Free</span></label>
+    </div>
+    ${state.delivery==='ship'&&!t.freeShip?`<p class="fine" style="text-align:left">Add ${money(toFree)} more for free shipping.</p>`:''}
+    <div class="totals"><div><span>Subtotal</span><span class="num">${money(t.sub)}</span></div>${t.disc?`<div><span>Discount (${PROMO})</span><span class="num">−${money(t.disc)}</span></div>`:''}<div><span>${shipLabel(t)}</span><span class="num">${shipValue(t)}</span></div><div><span>HST 13%</span><span class="num">${money(t.tax)}</span></div><div class="tot"><span>Total</span><span class="num">${money(t.total)}</span></div></div>`;
+  foot.innerHTML=`<button class="btn btn-primary" type="button" id="toCheckout" style="width:100%">Checkout · ${money(t.total)}</button><p class="fine">Secure checkout by Stripe. Apple Pay and Google Pay accepted.</p>`;
+}
+$('#cart').addEventListener('click',e=>{
+  const q=e.target.closest('[data-cq]'); if(q){const i=state.cart[Number(q.dataset.n)];if(!i)return;i.qty=Math.max(0,Math.min(10,i.qty+Number(q.dataset.cq)));if(i.qty===0)state.cart.splice(Number(q.dataset.n),1);save();renderCount();renderCart();return;}
+  const rm=e.target.closest('[data-rm]'); if(rm){state.cart.splice(Number(rm.dataset.rm),1);save();renderCount();renderCart();return;}
+  if(e.target.closest('#toCheckout')){state.step='checkout';renderCart();$('#cartBody').scrollTop=0;return;}
+  if(e.target.closest('#backToCart')){state.step='cart';renderCart();return;}
+  if(e.target.closest('#placeOrder')){
+    let n=2041; try{n=Number(localStorage.getItem('sw-orderno'))||2041;localStorage.setItem('sw-orderno',String(n+1));}catch(err){}
+    state.order={no:'SW-'+n,delivery:state.delivery};
+    state.cart=[];state.promo=null;save();renderCount();state.step='done';renderCart();return;
+  }
+  const go=e.target.closest('[data-goto]'); if(go){const t=go.dataset.goto;setTimeout(()=>{const el=document.querySelector(t);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});},50);}
+});
+$('#cart').addEventListener('change',e=>{if(e.target.name==='deliv'){state.delivery=e.target.value;save();renderCart();}});
+$('#cart').addEventListener('submit',e=>{
+  if(e.target.id!=='promoForm')return; e.preventDefault();
+  const v=$('#promoIn').value.trim().toUpperCase(), m=$('#promoMsg');
+  if(!v){state.promo=null;save();renderCart();return;}
+  if(v===PROMO){state.promo=PROMO;save();renderCart();}
+  else{m.className='msg bad';m.textContent=`"${v}" is not a valid code. Try ${PROMO}.`;}
+});
+$('#openCart').addEventListener('click',openCart);
+
+/* owner view */
+const ORDERS=[
+  {no:'SW-2040',who:'Priya S.',items:'Be Still Tee, Sand, M ×1',deliv:'Ship · Canada',status:'paid'},
+  {no:'SW-2039',who:'Marcus T.',items:'Fear Not Tee, Navy, L ×2',deliv:'Ship · Canada',status:'sent'},
+  {no:'SW-2038',who:'Grace Community youth group',items:'Kids Little Light Tee, Royal, YM ×6 · Grace Upon Grace Tee, Cream, S ×2',deliv:'Local pickup',status:'pickup'},
+  {no:'SW-2037',who:'Dana K.',items:'Walk by Faith Tee, Olive, XL ×1',deliv:'Ship · US',status:'shipped'},
+  {no:'SW-2036',who:'Ahmed R.',items:'Follow Me Tee, Black, 2XL ×1',deliv:'Ship · Canada',status:'delivered'}
+];
+function renderOrders(){
+  const pill=s=>({paid:'<span class="pill paid">Paid · not sent</span>',sent:'<span class="pill sent">At the printer</span>',pickup:'<span class="pill paid">Awaiting pickup</span>',shipped:'<span class="pill ship">Shipped</span>',delivered:'<span class="pill done">Delivered</span>',picked:'<span class="pill done">Picked up</span>'})[s];
+  const act=(o,n)=>o.status==='paid'?`<button class="btn btn-ghost btn-sm" type="button" data-act="sent" data-n="${n}">Send to printer</button>`:o.status==='pickup'?`<button class="btn btn-ghost btn-sm" type="button" data-act="picked" data-n="${n}">Mark picked up</button>`:'';
+  $('#orders tbody').innerHTML=ORDERS.map((o,n)=>`<tr><td class="num">${o.no}</td><td>${o.who}</td><td style="min-width:220px">${o.items}</td><td style="white-space:nowrap">${o.deliv}</td><td>${pill(o.status)}</td><td>${act(o,n)}</td></tr>`).join('');
+  $('#waitCount').textContent=ORDERS.filter(o=>o.status==='paid'||o.status==='pickup').length;
+}
+$('#orders').addEventListener('click',e=>{const b=e.target.closest('[data-act]');if(!b)return;ORDERS[Number(b.dataset.n)].status=b.dataset.act;renderOrders();});
+$('#openOwner').addEventListener('click',()=>{$('#notes').close();renderOrders();$('#owner').showModal();});
+$('#openNotes').addEventListener('click',()=>$('#notes').showModal());
+$('#resetDemo').addEventListener('click',()=>{state={cart:[],promo:null,delivery:'ship',step:'cart',order:null};try{localStorage.removeItem('sw-cart');localStorage.removeItem('sw-orderno');}catch(e){}renderCount();$('#notes').close();toast('Demo reset. Cart emptied.',false);});
+
+/* policies */
+const POLICIES={
+  returns:{t:'Returns & exchanges',b:`<p>Wrong size? Email hello@stillwatersapparel.ca within 14 days of delivery or pickup and we send the right size. Return the first shirt unworn, unwashed and with its tag, and we cover the return label inside Canada.</p><p style="margin-top:10px">Every shirt is printed to order, so we cannot refund a change of mind, but a misprint or a defect is replaced at no cost, no questions asked.</p>`},
+  shipping:{t:'Shipping',b:`<p>Shipping is a flat $9.99 per order to Canada and the United States, tracked, and free on orders over $75 after discounts. Orders ship once the drop is printed, by December 1, and arrive in 3 to 7 business days in Canada and 3 to 5 in the US, where they are printed locally so there are no customs charges.</p><p style="margin-top:10px">Local pickup in Toronto is free; we email you from December 1 to arrange a time.</p>`},
+  privacy:{t:'Privacy',b:`<p>We collect your name, email and shipping address only to fulfil your order and send you the receipt and tracking. Payment is processed by Stripe and printing by our print partner; neither we nor they see more than they need, and we never see or store your card number.</p><p style="margin-top:10px">Our visitor analytics uses no cookies and does not identify you. We do not sell or share your information, and you can ask us to delete it at any time by email.</p>`},
+  terms:{t:'Terms',b:`<p>Prices are in Canadian dollars; HST is added at checkout for Canadian orders. Pre-orders close on the date shown and are then printed as a batch; printing and shipping dates are estimates.</p><p style="margin-top:10px">Designs and artwork are the property of Still Waters Apparel. Scripture references are quoted briefly; the King James Version is public domain. The give-back total is published each January.</p>`}
+};
+document.addEventListener('click',e=>{
+  const pol=e.target.closest('[data-policy]'); if(pol){const p=POLICIES[pol.dataset.policy];$('#policyTitle').textContent=p.t;$('#policyBody').innerHTML=p.b;$('#policy').showModal();return;}
+  const cl=e.target.closest('[data-close]'); if(cl){const d=cl.closest('dialog');if(d)d.close();return;}
+});
+document.querySelectorAll('dialog').forEach(d=>d.addEventListener('click',e=>{if(e.target===d)d.close();}));
+
+/* toast */
+let toastT;
+function toast(text,withCart){
+  const el=$('#toast');
+  el.innerHTML=`<span>${text}</span>${withCart?'<button type="button" id="toastCart">View cart</button>':''}`;
+  el.hidden=false; clearTimeout(toastT); toastT=setTimeout(()=>{el.hidden=true;},3200);
+  const b=$('#toastCart'); if(b)b.addEventListener('click',()=>{el.hidden=true;openCart();});
+}
+
+/* boot */
+load(); renderHero(); renderGrid(); renderCount();
+})();
+</script>
+
+</html>
