@@ -1,0 +1,29 @@
+key,value,note
+store_name,Still Waters,Shown in emails and in the site when the site loads it
+owner_emails,"owner1@example.com, owner2@example.com",Who gets the new-order email. Separate several with commas
+token,change-me-to-a-random-string,Must match the token in the site config. Blocks posts that do not come from the site
+order_prefix,SW,Order numbers look like SW-1042
+next_order,1042,The next order number. The script moves it up by one per order
+contact_email,info@example.com,Reply-to address on customer emails and shown in the site footer
+instagram,@yourhandle,Shown as text in the site footer
+etransfer_email,info@example.com,Where customers send e-Transfers
+gta_enabled,yes,Offer free GTA delivery (postal codes starting with M or L)
+gta_instructions,"We text you to arrange a delivery time. Have {total} in cash ready, or send an e-Transfer to {etransfer} with {number} in the message before we arrive.",Sent to the customer who picks GTA delivery. {total} {etransfer} {number} are filled in
+pickup_enabled,yes,Offer pickup
+pickup_note,Pickup at the church after the Sunday service or at the rink on Tuesday evenings. We text you to confirm.,Shown on the checkout form and in the email for pickup orders
+pickup_instructions,"Bring {total} in cash, or send an e-Transfer to {etransfer} with {number} in the message.",Sent to the customer who picks pickup. {total} {etransfer} {number} are filled in
+ship_enabled,no,Offer shipping within Ontario (e-Transfer first)
+ship_rate,12,Flat shipping charge in dollars
+ship_free_over,150,Shipping is free when the subtotal after discounts reaches this. 0 turns it off
+ship_instructions,"Send an e-Transfer of {total} to {etransfer} with {number} in the message. We ship within a few days of it arriving and email you when it is on its way.",Sent to the customer who picks shipping. {total} {etransfer} {number} are filled in
+tax_rate,0,Percent added to the total. Leave 0 while not registered for HST
+max_qty,10,Most of one size and colour in a single order
+announcement,Free delivery in the GTA. Pay cash or e-Transfer at the door.,One line under the header. Leave blank to hide
+hook_line,"Don't just read the Word, wear it",Shown once below the product grid
+delivery_line,Free delivery in the GTA. Pay cash or e-Transfer at the door.,Shown below the grid and on every product page
+story,,Your story in two or three sentences. Blank hides it
+giveback_line,,Your give-back line in your own words. Blank hides it
+review_form_url,,"Pre-filled Google Form link with {product} and {order} where the form expects them, for example https://docs.google.com/forms/d/e/FORM_ID/viewform?usp=pp_url&entry.111={product}&entry.222={order}. Blank hides the review links"
+music_url,,Link to a royalty-free track (mp3). Blank hides the play button
+music_label,Play the song,Text of the play button
+music_credit,,Credit line shown beside the play button if the licence asks for one

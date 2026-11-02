@@ -2,629 +2,804 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Still Waters Apparel</title>
-<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Still Waters</title>
+<meta name="description" content="Scripture t-shirts from Toronto. Free delivery in the GTA, pay cash or e-Transfer at the door.">
+<meta property="og:title" content="Still Waters">
+<meta property="og:description" content="Scripture t-shirts from Toronto. Free delivery in the GTA, pay cash or e-Transfer at the door.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sunmoonron.github.io/faith-tee-demo/">
+<meta property="og:image" content="https://sunmoonron.github.io/faith-tee-demo/img/og.jpg">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://sunmoonron.github.io/faith-tee-demo/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600&display=swap">
 <style>
-/* Layout: full-width bands (drop bar, header, hero, story, footer) whose inner .wrap carries the gutter; a 1120px column; the product grid auto-fills; the cart is a right-side drawer; demo notes float bottom-left. Palette: pale sage sheet, deep green ink, olive accent, brass eyebrows. */
-:root{
-  --bg:#F3F5F0; --surface:#FFFFFF; --surface-2:#E8ECE3; --ink:#1E2A22; --ink-2:#5B6A5F; --line:#D2D9CE;
-  --accent:#3E6B4C; --accent-ink:#F6F7F2; --brass:#A4822A; --good:#2E7D4F; --warn:#A86300;
-  --shadow:0 14px 36px rgba(30,42,34,.14);
-  --display:"Fraunces",Georgia,"Times New Roman",serif;
-  --body:"Figtree","Helvetica Neue",Arial,sans-serif;
-  --r:12px;
-}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1512;--surface:#171F1A;--surface-2:#1F2A23;--ink:#ECF0E8;--ink-2:#A7B3A9;--line:#2C3A30;--accent:#8CC29B;--accent-ink:#0F1512;--brass:#D9B458;--good:#6FCF97;--warn:#F2B653;--shadow:0 14px 36px rgba(0,0,0,.5);color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#0F1512;--surface:#171F1A;--surface-2:#1F2A23;--ink:#ECF0E8;--ink-2:#A7B3A9;--line:#2C3A30;--accent:#8CC29B;--accent-ink:#0F1512;--brass:#D9B458;--good:#6FCF97;--warn:#F2B653;--shadow:0 14px 36px rgba(0,0,0,.5);color-scheme:dark}
-
 *,*::before,*::after{box-sizing:border-box}
-[hidden]{display:none!important}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
-h1,h2,h3,h4{font-family:var(--display);font-weight:600;line-height:1.05;margin:0;text-wrap:balance;letter-spacing:-.01em}
-p{margin:0}
-a{color:inherit}
+html{background:#fff}
+body{margin:0;background:#fff;color:#111;font-family:"Schibsted Grotesk",Helvetica,Arial,sans-serif;font-size:16px;line-height:24px;-webkit-text-size-adjust:100%}
+h1,h2{font-size:24px;line-height:32px;font-weight:500;margin:0 0 16px}
+h3{font-size:16px;line-height:24px;font-weight:500;margin:0}
+p,ul,ol,table{margin:0 0 16px}
+ul,ol{padding-left:24px}
+a{color:#111;text-decoration:underline;text-underline-offset:2px}
+nav a,.wordmark,.cartlink,.tile a{text-decoration:none}
+nav a:hover,.wordmark:hover,.cartlink:hover,.btn:hover,.textbtn:hover{text-decoration:underline}
+.tile a:hover h3{text-decoration:underline}
 button{font:inherit;color:inherit}
-img,svg{max-width:100%}
-:focus-visible{outline:3px solid var(--brass);outline-offset:2px}
-.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.eyebrow{font:600 12.5px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--brass)}
-.muted{color:var(--ink-2)}
-.num{font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%}
+.wrap{max-width:1200px;margin:0 auto;padding:0 16px}
+@media (min-width:768px){.wrap{padding:0 24px}}
+.hidden{display:none!important}
 
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;border-radius:999px;border:1.5px solid transparent;font-weight:600;font-size:15px;cursor:pointer;text-decoration:none;min-height:44px;transition:transform .12s ease,background .12s ease}
-.btn:active{transform:translateY(1px)}
-.btn-primary{background:var(--accent);color:var(--accent-ink)}
-.btn-ink{background:var(--ink);color:var(--bg)}
-.btn-ghost{background:transparent;border-color:var(--line);color:var(--ink)}
-.btn-ghost:hover{background:var(--surface-2)}
-.btn[disabled]{opacity:.5;cursor:not-allowed}
-.btn-sm{padding:8px 14px;min-height:36px;font-size:14px}
+header{background:#fff;border-bottom:1px solid #ddd}
+header .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:8px 24px;padding-top:16px;padding-bottom:16px}
+.wordmark{font-weight:600;margin-right:auto}
+nav{display:flex;gap:16px}
+@media (max-width:599px){nav{order:3;width:100%}}
+.announce{border-bottom:1px solid #ddd}
+.announce p{margin:0;padding:8px 0}
 
-.bar{background:var(--ink);color:var(--bg);font-size:14px;font-weight:500}
-.bar .wrap{display:flex;gap:14px;justify-content:center;align-items:center;min-height:38px;text-align:center;flex-wrap:wrap;padding-block:6px}
-.bar .dot{opacity:.5}
+main.wrap{padding-top:24px;padding-bottom:48px}
+@media (min-width:768px){main.wrap{padding-top:32px;padding-bottom:64px}}
+hr{border:0;border-top:1px solid #ddd;margin:32px 0}
+@media (min-width:768px){hr{margin:48px 0}}
 
-.hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:saturate(1.3) blur(10px);border-bottom:1px solid var(--line)}
-.hdr .wrap{display:flex;align-items:center;gap:20px;min-height:68px}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
-.brand .mark{width:40px;height:40px;flex:none}
-.brand b{font-family:var(--display);font-size:23px;font-weight:600;line-height:1;display:block;white-space:nowrap;letter-spacing:-.01em}
-.brand small{display:block;font:600 10.5px/1 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);margin-top:4px}
-.nav{display:flex;gap:4px;margin-left:auto}
-.nav a{text-decoration:none;font-weight:500;font-size:15px;padding:8px 12px;border-radius:999px;color:var(--ink-2)}
-.nav a:hover{background:var(--surface-2);color:var(--ink)}
-.cartbtn{margin-left:auto;flex:none}
-.nav + .cartbtn{margin-left:0}
-.cartbtn .count{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 6px;border-radius:999px;background:var(--accent);color:var(--accent-ink);font-size:12px;font-weight:700}
-@media (max-width:760px){.nav{display:none}.brand b{font-size:20px}}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media (min-width:768px){.grid{grid-template-columns:repeat(4,1fr);gap:24px}}
+.tile a{display:block}
+.photo{position:relative;aspect-ratio:4/5;background:#eee;overflow:hidden}
+.photo span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:16px;text-align:center}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tile h3{margin-top:8px}
+.tile p{margin:0}
+.about p{max-width:640px}
+.about .hook{font-weight:500}
 
-.hero{padding-block:52px 24px}
-.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
-.hero h1{font-size:clamp(46px,7vw,82px);font-weight:600;margin:16px 0 18px;font-variation-settings:"opsz" 144}
-.hero h1 em{font-style:italic;font-weight:500;color:var(--accent)}
-.hero .lede{font-size:19px;color:var(--ink-2);max-width:32em}
-.hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-.hero .meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:30px;font-size:14px;color:var(--ink-2)}
-.hero .meta b{display:block;color:var(--ink);font-family:var(--display);font-size:26px;font-weight:600;line-height:1;margin-bottom:3px}
-.art{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:28px 28px 18px;overflow:hidden;box-shadow:var(--shadow);min-width:0}
-.art::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(60% 50% at 50% 42%,color-mix(in srgb,var(--brass) 14%,transparent),transparent 70%)}
-.art::after{content:"";position:absolute;left:-10%;right:-10%;bottom:14%;height:2px;background:var(--line);transform:rotate(-2deg);pointer-events:none}
-.art .shirt{position:relative;display:block;width:min(100%,360px);height:auto;margin:0 auto;filter:drop-shadow(0 18px 24px rgba(30,42,34,.18));z-index:1}
-.swatches{display:flex;gap:10px;align-items:center;justify-content:center;margin-top:12px;position:relative;z-index:1}
-.sw{width:30px;height:30px;border-radius:50%;border:2px solid var(--surface);box-shadow:0 0 0 1.5px var(--line);cursor:pointer;padding:0;flex:none}
-.sw[aria-pressed="true"]{box-shadow:0 0 0 2.5px var(--ink)}
-.art .cap{position:relative;text-align:center;font-size:13px;color:var(--ink-2);margin-top:10px;z-index:1}
-@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero{padding-block:32px 16px}}
+footer{border-top:1px solid #ddd;padding:24px 0 32px}
+footer p{margin:0 0 8px}
+footer a{margin-right:16px}
 
-.trust{padding-block:16px 8px}
-.trust .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
-.trust .item{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);min-width:0}
-.trust svg{width:26px;height:26px;flex:none;color:var(--accent)}
-.trust b{display:block;font-weight:600}
-.trust span{font-size:14px;color:var(--ink-2)}
+.btn{display:inline-block;background:#111;color:#fff;border:1px solid #111;padding:11px 24px;line-height:24px;font-weight:500;cursor:pointer;text-decoration:none;font-family:inherit;border-radius:0;-webkit-appearance:none;appearance:none}
+.btn[disabled]{cursor:default}
+.textbtn{background:none;border:0;padding:0;text-decoration:underline;text-underline-offset:2px;cursor:pointer;color:#111}
 
-.tenth{padding-block:24px 0}
-.tenth .wrap>div{display:flex;gap:16px;align-items:center;flex-wrap:wrap;justify-content:space-between;padding:16px 20px;border-radius:var(--r);background:color-mix(in srgb,var(--brass) 10%,var(--surface));border:1px solid color-mix(in srgb,var(--brass) 35%,var(--line))}
-.tenth p{max-width:60em}
-.tenth .eyebrow{flex:none}
+.product{display:grid;gap:24px}
+@media (min-width:768px){.product{grid-template-columns:1fr 1fr;gap:48px}}
+.photos{display:grid;gap:16px;align-content:start}
+.product h1{margin-bottom:8px}
+.swatches,.sizes{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+.swatch{display:inline-flex;align-items:center;gap:8px;padding:3px 12px 3px 3px;border:1px solid #fff;background:#fff;cursor:pointer}
+.swatch i{width:24px;height:24px;border:1px solid #ddd;display:block}
+.swatch[aria-pressed="true"]{border-color:#111}
+.sizes button{min-width:48px;height:40px;padding:0 12px;border:1px solid #111;background:#fff;cursor:pointer;border-radius:0}
+.sizes button[aria-pressed="true"]{background:#111;color:#fff}
+.sizes button[disabled]{color:#767676;border-color:#ddd;text-decoration:line-through;cursor:default}
+.rangename{margin:0 0 8px}
+.row{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin:0 0 16px}
+.row label{display:inline;margin:0}
+.reviews ul{list-style:none;padding:0}
+.reviews li{margin:0 0 16px}
+.stars{white-space:nowrap}
 
-section.block{padding-block:56px 24px}
-.sechead{display:flex;align-items:end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:24px}
-.sechead h2{font-size:clamp(34px,4.5vw,46px);margin-top:8px}
-.sechead p{color:var(--ink-2);max-width:38em}
-
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:20px}
-.card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;min-width:0;transition:transform .15s ease,box-shadow .15s ease}
-.card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
-.card .hit{position:absolute;inset:0;background:none;border:0;cursor:pointer;border-radius:16px;z-index:1}
-.card .thumb{background:var(--surface-2);padding:22px 30px 10px;position:relative}
-.card .thumb .shirt{display:block;width:100%;height:auto}
-.card .tag{position:absolute;top:12px;left:12px;font:600 11px/1 var(--body);letter-spacing:.1em;text-transform:uppercase;padding:6px 9px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--ink-2)}
-.card .tag.hot{background:var(--accent);color:var(--accent-ink);border-color:transparent}
-.card .body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:8px}
-.card .row{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
-.card h3{font-family:var(--body);font-size:16px;font-weight:600;line-height:1.3;letter-spacing:0}
-.card .verse{font-family:var(--display);font-style:italic;font-size:14px;color:var(--ink-2)}
-.card .price{font-family:var(--display);font-size:22px;font-weight:600;white-space:nowrap}
-.card .dots{display:flex;gap:6px}
-.card .dots i{width:14px;height:14px;border-radius:50%;display:inline-block;box-shadow:inset 0 0 0 1px rgba(0,0,0,.18)}
-.card .small{font-size:14px;color:var(--ink-2)}
-.card.is-soon .thumb .shirt{opacity:.5}
-.card.is-soon:hover{transform:none;box-shadow:none}
-
-.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-@media (max-width:760px){.two{grid-template-columns:1fr}}
-.panel{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;min-width:0}
-.panel h3{font-size:30px;margin:8px 0 6px}
-.panel .price{font-family:var(--display);font-size:22px;color:var(--accent);font-weight:600}
-.panel ol,.panel ul{margin:12px 0 0;padding-left:20px;color:var(--ink-2)}
-.panel li+li{margin-top:6px}
-.panel.featured{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 18%,transparent)}
-.sizenote{font-size:14px;color:var(--ink-2);margin-top:12px}
-
-.story{margin-top:48px;background:var(--ink);color:var(--bg)}
-.story .wrap{padding-block:48px;display:grid;grid-template-columns:1fr 1.4fr;gap:32px;align-items:center}
-.story h2{font-size:clamp(34px,4.5vw,50px);margin-top:10px}
-.story h2 em{font-style:italic;font-weight:500;color:var(--brass)}
-.story p{font-size:18px;opacity:.9;max-width:36em}
-.story .eyebrow{color:var(--brass)}
-@media (max-width:760px){.story .wrap{grid-template-columns:1fr}}
-
-.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:var(--surface)}
-table{border-collapse:collapse;width:100%;min-width:520px;font-size:15px}
-th,td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
-th{font-weight:600;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
-tbody tr:last-child td{border-bottom:0}
-td.num,th.num{text-align:right}
-tr.sep td{background:var(--surface-2);font-weight:600;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);padding-block:8px}
-
-.faq{display:grid;gap:10px;max-width:760px}
-details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:0 18px}
-summary{cursor:pointer;font-weight:600;padding:16px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";font-family:var(--display);font-size:24px;line-height:1;color:var(--ink-2);flex:none}
-details[open] summary::after{content:"–"}
-details p{padding:0 0 16px;color:var(--ink-2)}
-
-footer{margin-top:56px;border-top:1px solid var(--line);background:var(--surface)}
-footer .wrap{padding-block:40px 28px;display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:28px}
-footer h4{font-size:20px;margin:0 0 10px}
-footer p,footer li{font-size:15px;color:var(--ink-2)}
-footer ul{list-style:none;margin:0;padding:0}
-footer li+li{margin-top:6px}
-footer button.link{background:none;border:0;padding:0;text-decoration:underline;cursor:pointer;font:inherit;color:var(--ink-2)}
-footer .bottom{grid-column:1/-1;border-top:1px solid var(--line);padding-top:18px;font-size:13px;color:var(--ink-2);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
-@media (max-width:760px){footer .wrap{grid-template-columns:1fr}}
-
-dialog{border:0;padding:0;background:var(--surface);color:var(--ink);border-radius:20px;box-shadow:var(--shadow);width:min(720px,calc(100vw - 32px));max-height:calc(100vh - 32px)}
-dialog::backdrop{background:rgba(12,18,14,.6)}
-.dhead{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 22px;border-bottom:1px solid var(--line)}
-.dhead h2{font-size:26px}
-.x{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--surface);cursor:pointer;display:grid;place-items:center;font-size:22px;line-height:1;flex:none}
-.dbody{padding:22px;overflow:auto;max-height:calc(100vh - 32px - 77px)}
-.dbody h4{font-size:19px;margin:18px 0 6px}
-.dbody ol,.dbody ul{margin:0;padding-left:20px;color:var(--ink-2)}
-.dbody li+li{margin-top:4px}
-dialog.drawer{position:fixed;inset:0 0 0 auto;margin:0;height:100%;max-height:100%;width:min(460px,100vw);border-radius:0;flex-direction:column;padding-right:env(safe-area-inset-right,0px);padding-top:env(safe-area-inset-top,0px)}
-dialog.drawer[open]{display:flex}
-dialog.drawer .dbody{flex:1;max-height:none}
-dialog.drawer .dfoot{padding:16px 22px calc(16px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);background:var(--surface)}
-dialog.drawer .dfoot:empty{display:none}
-
-.sheet{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-@media (max-width:640px){.sheet{grid-template-columns:1fr}}
-.sheet .thumb{background:var(--surface-2);border-radius:16px;padding:24px;align-self:start}
-.sheet .thumb .shirt{display:block;width:100%;height:auto}
-.sheet h2{font-size:36px;margin-top:6px}
-.sheet .verse{font-family:var(--display);font-style:italic;font-size:17px;color:var(--ink-2);margin-top:4px}
-.sheet .price{font-family:var(--display);font-size:28px;font-weight:600;margin-top:6px}
-.opt{margin-top:18px}
-.opt .lab{display:flex;justify-content:space-between;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);font-weight:600;margin-bottom:8px}
-.chips{display:flex;gap:8px;flex-wrap:wrap}
-.chip{padding:9px 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);cursor:pointer;font-weight:500;min-width:46px}
-.chip[aria-pressed="true"]{border-color:var(--ink);background:var(--ink);color:var(--bg)}
-.qty{display:inline-flex;align-items:center;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;flex:none}
-.qty button{width:40px;height:40px;border:0;background:transparent;cursor:pointer;font-size:18px}
-.qty output{min-width:30px;text-align:center;font-weight:600}
-.note{display:flex;gap:10px;align-items:flex-start;background:var(--surface-2);border-radius:12px;padding:12px 14px;font-size:14px;color:var(--ink-2);margin-top:18px}
-.note svg{width:20px;height:20px;flex:none;color:var(--accent);margin-top:1px}
-.addrow{display:flex;gap:12px;align-items:center;margin-top:20px;flex-wrap:wrap}
-.msg{font-size:13px;margin-top:8px;min-height:18px}
-.msg.ok{color:var(--good)}.msg.bad{color:var(--warn)}
-
-.items{display:flex;flex-direction:column;gap:14px}
-.item{display:grid;grid-template-columns:72px 1fr auto;gap:12px;align-items:start}
-.item .thumb{background:var(--surface-2);border-radius:10px;padding:6px}
-.item .thumb .shirt{display:block;width:100%;height:auto}
-.item b{display:block;font-weight:600}
-.item .sub{display:block;font-size:13px;color:var(--ink-2)}
-.item .rm{background:none;border:0;color:var(--ink-2);text-decoration:underline;cursor:pointer;font-size:13px;padding:0;margin-top:6px}
-.item .lineprice{font-weight:600;text-align:right}
-.item .qty{margin-top:8px}
-.item .qty button{width:32px;height:32px;font-size:16px}
-.empty{text-align:center;padding:36px 10px;color:var(--ink-2)}
-.empty .shirt{width:120px;height:auto;margin:0 auto 10px;display:block;opacity:.6}
-.promo{display:flex;gap:8px;margin-top:22px}
-.promo input{flex:1;min-width:0;padding:10px 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;text-transform:uppercase}
-.deliv{display:grid;gap:8px;margin-top:18px}
-.deliv label{display:flex;gap:12px;align-items:center;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;cursor:pointer}
-.deliv label:has(input:checked){border-color:var(--ink)}
-.deliv input{accent-color:var(--accent);flex:none}
-.deliv b{display:block;font-weight:600}
-.deliv span{font-size:13px;color:var(--ink-2)}
-.deliv .p{margin-left:auto;font-weight:600;white-space:nowrap;text-align:right}
-.deliv .p small{display:block;font-weight:500;font-size:11.5px;color:var(--ink-2)}
-.totals{margin-top:18px;display:grid;gap:6px;font-size:15px}
-.totals div{display:flex;justify-content:space-between;gap:12px}
-.totals .tot{font-family:var(--display);font-size:26px;font-weight:600;border-top:1px solid var(--line);padding-top:10px;margin-top:4px}
-.fine{font-size:12.5px;color:var(--ink-2);margin-top:10px;text-align:center}
-
-.co{display:grid;gap:16px}
-.co .stripe{border:1.5px dashed var(--line);border-radius:14px;padding:16px;background:var(--surface-2)}
-.co .stripe b{display:block;margin-bottom:6px}
-.co .lines{font-size:14px;color:var(--ink-2)}
-.done{text-align:center;padding:10px 0}
-.done .check{width:64px;height:64px;border-radius:50%;background:var(--good);color:#fff;display:grid;place-items:center;margin:0 auto 14px;font-size:30px}
-.done h3{font-size:32px}
-.done .ordno{font-family:var(--display);font-size:42px;font-weight:600;letter-spacing:.01em;margin:10px 0 4px}
-.done ol{text-align:left;color:var(--ink-2);margin:16px auto 0;max-width:340px;padding-left:20px}
-
-.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:14px 0 16px}
-.tile{background:var(--surface-2);border-radius:12px;padding:12px 14px;min-width:0}
-.tile small{display:block;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
-.tile b{font-family:var(--display);font-size:26px;font-weight:600}
-.pill{display:inline-block;padding:4px 9px;border-radius:999px;font-size:12px;font-weight:600;white-space:nowrap}
-.pill.paid{background:color-mix(in srgb,var(--warn) 18%,transparent);color:var(--warn)}
-.pill.sent{background:color-mix(in srgb,var(--accent) 18%,transparent);color:var(--accent)}
-.pill.ship{background:color-mix(in srgb,var(--brass) 20%,transparent);color:var(--brass)}
-.pill.done{background:color-mix(in srgb,var(--good) 18%,transparent);color:var(--good)}
-
-.demo{position:fixed;left:calc(16px + env(safe-area-inset-left,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;background:var(--ink);color:var(--bg);border:0;border-radius:999px;padding:10px 16px;font-weight:600;font-size:14px;box-shadow:var(--shadow);cursor:pointer;display:inline-flex;gap:8px;align-items:center}
-.demo i{width:8px;height:8px;border-radius:50%;background:var(--brass);display:inline-block}
-.toast{position:fixed;left:50%;top:calc(86px + env(safe-area-inset-top,0px));transform:translateX(-50%);z-index:40;background:var(--ink);color:var(--bg);padding:12px 16px;border-radius:12px;box-shadow:var(--shadow);display:flex;gap:14px;align-items:center;max-width:calc(100vw - 32px);font-size:14px}
-.toast button{background:none;border:0;color:var(--brass);font-weight:700;cursor:pointer;text-decoration:underline;white-space:nowrap}
-@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+label{display:block;margin:0 0 4px;font-weight:500}
+input,select,textarea{font:inherit;color:#111;background:#fff;border:1px solid #111;padding:8px;height:40px;width:100%;max-width:400px;border-radius:0}
+input,textarea{-webkit-appearance:none;appearance:none}
+textarea{height:auto;min-height:80px;display:block}
+select{width:auto;min-width:64px;padding-right:8px}
+input[type=radio],input[type=checkbox]{width:16px;height:16px;margin:4px 0 0;padding:0;-webkit-appearance:auto;appearance:auto;flex:none}
+.field{margin:0 0 16px}
+.err{color:#c00;margin:4px 0 0}
+input[aria-invalid="true"],textarea[aria-invalid="true"]{border-color:#c00}
+fieldset{border:0;padding:0;margin:0 0 16px;min-width:0}
+legend{font-weight:500;padding:0;margin:0 0 8px}
+.choice{display:flex;gap:8px;align-items:flex-start;margin:0 0 8px;font-weight:400;max-width:560px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.totals{width:100%;max-width:400px;border-collapse:collapse}
+.totals td{padding:4px 0;vertical-align:top}
+.totals td+td{text-align:right;white-space:nowrap}
+.totals tr.total td{border-top:1px solid #ddd;padding-top:8px;font-weight:500}
+.line{padding:16px 0;border-top:1px solid #ddd}
+.lines{border-bottom:1px solid #ddd;margin:0 0 16px}
+.line p{margin:0}
+.line .row{margin:8px 0 0}
+.faq h2{margin-top:32px}
+.faq h2:first-child{margin-top:0}
+.policies p,.faq p{max-width:640px}
 </style>
 
-<div class="bar"><div class="wrap"><span>Christmas drop is open</span><span class="dot">•</span><span>Pre-orders close November 15</span><span class="dot">•</span><span>Ships by December 1 · free shipping over $75</span></div></div>
-
-<header class="hdr"><div class="wrap">
-  <a class="brand" href="#top" aria-label="Still Waters Apparel, home">
-    <svg class="mark" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" style="fill:var(--accent)"/><path d="M9 17q5.5-5 11 0t11 0M9 25q5.5-5 11 0t11 0" fill="none" style="stroke:var(--accent-ink)" stroke-width="2.6" stroke-linecap="round"/></svg>
-    <span><b>Still Waters</b><small>Apparel</small></span>
-  </a>
-  <nav class="nav" aria-label="Site">
-    <a href="#shop">Shop</a><a href="#shipping">Shipping &amp; pickup</a><a href="#sizes">Size guide</a><a href="#faq">FAQ</a>
-  </nav>
-  <button class="btn btn-ghost cartbtn" id="openCart" type="button">Cart <span class="count num" id="cartCount">0</span></button>
+<header><div class="wrap">
+  <a class="wordmark" href="#shop" id="wordmark">Still Waters</a>
+  <nav><a href="#shop">Shop</a><a href="#about">About</a><a href="#faq">FAQ</a></nav>
+  <a class="cartlink" href="#cart" id="cartLink">Cart (0)</a>
 </div></header>
+<div class="announce hidden" id="announce"><div class="wrap"><p id="announceText"></p></div></div>
 
-<main id="top">
-<section class="hero"><div class="wrap">
-  <div>
-    <p class="eyebrow">Christmas drop · pre-orders open</p>
-    <h1>Wear what <em>you believe.</em></h1>
-    <p class="lede">Scripture-inspired tees designed in Toronto and printed to order, so nothing sits in a box. Order by November 15 and it ships by December 1, in time for Christmas.</p>
-    <div class="ctas"><a class="btn btn-primary" href="#shop">Shop the drop</a><a class="btn btn-ghost" href="#shipping">Shipping &amp; pickup</a></div>
-    <div class="meta"><div><b>Nov 15</b>pre-orders close</div><div><b>Dec 1</b>orders ship</div><div><b>$75</b>free shipping over</div></div>
-  </div>
-  <div class="art">
-    <div id="heroShirt"></div>
-    <div class="swatches" role="group" aria-label="Preview colour" id="heroSwatches"></div>
-    <p class="cap" id="heroCap">Be Still Tee · Sand · $35</p>
-  </div>
-</div></section>
-
-<section class="trust"><div class="wrap">
-  <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16v12H4z"/><path d="M4 11h16M9 7V5h6v2"/></svg><div><b>Printed to order in Ontario</b><span>Soft ring-spun cotton, printed once per drop in Mississauga.</span></div></div>
-  <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg><div><b>Free shipping over $75</b><span>$9.99 flat otherwise, Canada and the US, tracked.</span></div></div>
-  <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg><div><b>Easy size exchanges</b><span>Wrong size? Email us within 14 days and we swap it.</span></div></div>
-  <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><div><b>Secure checkout</b><span>Payments handled by Stripe. Apple Pay and Google Pay accepted.</span></div></div>
-</div></section>
-
-<section class="tenth"><div class="wrap"><div><p class="eyebrow">Our tenth</p><p>A tenth of every order goes to the youth program at our church. We post the year's total each January.</p></div></div></section>
-
-<section class="block" id="shop"><div class="wrap">
-  <div class="sechead"><div><p class="eyebrow">The Christmas drop</p><h2>Six designs, one message</h2></div><p>Every shirt is printed to order. We collect orders until November 15, print once, and ship by December 1. Nothing sits in a box and nothing is wasted.</p></div>
-  <div class="grid" id="grid"></div>
-</div></section>
-
-<section class="block" id="shipping"><div class="wrap">
-  <div class="sechead"><div><p class="eyebrow">Getting your shirt</p><h2>Shipped to you, or picked up in Toronto</h2></div></div>
-  <div class="two">
-    <div class="panel featured"><p class="eyebrow" style="color:var(--accent)">Canada and the US</p><h3>Shipping</h3><p class="price num">$9.99 flat · free over $75</p><ol><li>Order by November 15. We send the whole drop to the printer the next morning.</li><li>Shirts ship by December 1 with tracking by email. Canada takes 3 to 7 business days.</li><li>US orders print in the US, so they arrive in 3 to 5 business days with no customs charges.</li></ol></div>
-    <div class="panel"><p class="eyebrow">Toronto</p><h3>Local pickup</h3><p class="price">Free</p><ul><li>Choose local pickup at checkout.</li><li>From December 1 we email you to arrange a time, usually at the rink on skate nights or after church on Sunday.</li><li>Bring your name or order number.</li></ul></div>
-  </div>
-</div></section>
-
-<section class="story"><div class="wrap">
-  <div><p class="eyebrow">Our story</p><h2>It started at a <em>skating rink.</em></h2></div>
-  <p>Still Waters began with three shirts printed for friends at our Tuesday skate, and a question we kept hearing: where can I get one? Every design starts with a verse that steadied us, set in a hand we would actually wear. We keep the drops small, print to order, and give a tenth away.</p>
-</div></section>
-
-<section class="block" id="sizes"><div class="wrap">
-  <div class="sechead"><div><p class="eyebrow">Fit</p><h2>Size guide</h2></div><p>Unisex fit. Lay a tee you like flat, measure across the chest, and compare. Between sizes? Go up. The shirts are pre-shrunk but still cotton.</p></div>
-  <div class="tablewrap"><table>
-    <thead><tr><th>Size</th><th class="num">Body width, inches</th><th class="num">Body width, cm</th><th class="num">Length, inches</th><th class="num">Length, cm</th></tr></thead>
-    <tbody>
-      <tr class="sep"><td colspan="5">Kids and youth</td></tr>
-      <tr><td>YS</td><td class="num">16</td><td class="num">41</td><td class="num">20.5</td><td class="num">52</td></tr>
-      <tr><td>YM</td><td class="num">17</td><td class="num">43</td><td class="num">22</td><td class="num">56</td></tr>
-      <tr><td>YL</td><td class="num">18</td><td class="num">46</td><td class="num">23.5</td><td class="num">60</td></tr>
-      <tr><td>YXL</td><td class="num">19</td><td class="num">48</td><td class="num">25</td><td class="num">64</td></tr>
-      <tr class="sep"><td colspan="5">Adult</td></tr>
-      <tr><td>S</td><td class="num">18</td><td class="num">46</td><td class="num">28</td><td class="num">71</td></tr>
-      <tr><td>M</td><td class="num">20</td><td class="num">51</td><td class="num">29</td><td class="num">74</td></tr>
-      <tr><td>L</td><td class="num">22</td><td class="num">56</td><td class="num">30</td><td class="num">76</td></tr>
-      <tr><td>XL</td><td class="num">24</td><td class="num">61</td><td class="num">31</td><td class="num">79</td></tr>
-      <tr><td>2XL</td><td class="num">26</td><td class="num">66</td><td class="num">32</td><td class="num">81</td></tr>
-      <tr><td>3XL</td><td class="num">28</td><td class="num">71</td><td class="num">33</td><td class="num">84</td></tr>
-    </tbody>
-  </table></div>
-  <p class="sizenote">Body width is measured flat, one inch below the armhole. Length runs from the high point of the shoulder to the hem.</p>
-</div></section>
-
-<section class="block" id="faq"><div class="wrap">
-  <div class="sechead"><div><p class="eyebrow">Questions</p><h2>Good to know</h2></div></div>
-  <div class="faq">
-    <details><summary>When do pre-orders close?</summary><p>November 15 at midnight. We print once for the whole drop, so we cannot add orders after that. The next drop opens before Easter.</p></details>
-    <details><summary>When will my order ship?</summary><p>By December 1, with tracking by email. Canada takes 3 to 7 business days. US orders print in the US and usually arrive in 3 to 5 business days.</p></details>
-    <details><summary>Do you ship to the US?</summary><p>Yes, at the same flat rate, and with no customs charges, because US orders are printed and shipped inside the US.</p></details>
-    <details><summary>What if the size is wrong?</summary><p>Email us within 14 days and we send the right size. Return the first one unworn and we cover the label.</p></details>
-    <details><summary>How do I pay, and is it safe?</summary><p>Cards, Apple Pay and Google Pay through Stripe's secure checkout page. We never see or store your card number.</p></details>
-    <details><summary>Which Bible translation do you use?</summary><p>Short phrases and references, mostly in the wording of the King James Version, which is public domain. We keep quotes short on purpose.</p></details>
-    <details><summary>Can my church or youth group order together?</summary><p>Yes. Email hello@stillwatersapparel.ca with sizes and quantities for group pricing on 12 or more shirts, and we can set up a private order page.</p></details>
-    <details><summary>Is tax included?</summary><p>Prices are in Canadian dollars. HST is added at checkout for Canadian orders. US orders pay no Canadian tax.</p></details>
-  </div>
-</div></section>
-</main>
+<main class="wrap" id="view"><p>Loading the shop.</p></main>
 
 <footer><div class="wrap">
-  <div><h4>Still Waters Apparel</h4><p>Toronto, Ontario</p><p>hello@stillwatersapparel.ca</p><p style="margin-top:10px">Instagram: @stillwaters.apparel</p></div>
-  <div><h4>Shop</h4><ul><li><a href="#shop">The drop</a></li><li><a href="#shipping">Shipping &amp; pickup</a></li><li><a href="#sizes">Size guide</a></li><li><a href="#faq">FAQ</a></li></ul></div>
-  <div><h4>Policies</h4><ul><li><button class="link" type="button" data-policy="returns">Returns &amp; exchanges</button></li><li><button class="link" type="button" data-policy="shipping">Shipping</button></li><li><button class="link" type="button" data-policy="privacy">Privacy</button></li><li><button class="link" type="button" data-policy="terms">Terms</button></li></ul></div>
-  <div class="bottom"><span>Prices in CAD. Secure checkout by Stripe.</span><span>© 2026 Still Waters Apparel</span></div>
+  <p id="footEmail"></p>
+  <p id="footInstagram"></p>
+  <p><a href="#policies">Returns and exchanges</a><a href="#policies">Delivery and payment</a><a href="#policies">Privacy</a></p>
+  <p id="musicLine" class="hidden"><button type="button" class="textbtn" id="music">Play the song</button> <span id="musicCredit"></span></p>
+  <p id="footCopy"></p>
 </div></footer>
 
-<dialog id="sheet" aria-labelledby="sheetTitle"><div class="dhead"><h2 id="sheetTitle">Product</h2><button class="x" type="button" data-close aria-label="Close">×</button></div><div class="dbody" id="sheetBody"></div></dialog>
-
-<dialog id="cart" class="drawer" aria-labelledby="cartTitle"><div class="dhead"><h2 id="cartTitle">Your cart</h2><button class="x" type="button" data-close aria-label="Close cart">×</button></div><div class="dbody" id="cartBody"></div><div class="dfoot" id="cartFoot"></div></dialog>
-
-<dialog id="notes" aria-labelledby="notesTitle"><div class="dhead"><h2 id="notesTitle">Demo notes</h2><button class="x" type="button" data-close aria-label="Close">×</button></div>
-<div class="dbody">
-  <p class="eyebrow">For our meeting</p>
-  <h3 style="font-size:30px;margin:8px 0 12px">What this demo is</h3>
-  <p class="muted">A working preview of the Starter package: a fast store with pre-order drops, print-to-order fulfillment, shipping and local pickup, a promo code and Stripe's secure checkout. Nothing here is charged; the payment step is simulated.</p>
-  <h4>Try it</h4>
-  <ol><li>Open a shirt, pick a colour and a size, add it to the cart.</li><li>In the cart, enter the code <b>FAITH10</b>.</li><li>Switch between shipping and local pickup, then Checkout and Place demo order.</li></ol>
-  <h4>Placeholders to replace</h4>
-  <ul><li>Brand name, logo, colours and photos. The shirts are illustrations; real print-shop mockups or photos go here.</li><li>The designs and verses are examples. Short phrases and references are fine; longer quotes from modern translations need the publisher's permission.</li><li>Prices, dates, the give-back line, the story, and the policy drafts in the footer.</li></ul>
-  <h4>What is real in the live build</h4>
-  <ul><li>Stripe's hosted checkout with Apple Pay and Google Pay, and receipts by email.</li><li>Order emails to the owner, who places each order with the print shop in about two minutes, or automatically in the Shop package.</li><li>Free hosting on the brand's own domain, and visitor analytics without a cookie banner.</li></ul>
-  <div class="addrow"><button class="btn btn-ink" type="button" id="openOwner">Preview the owner view (Shop package)</button><button class="btn btn-ghost" type="button" id="resetDemo">Reset demo</button></div>
-</div></dialog>
-
-<dialog id="owner" aria-labelledby="ownerTitle"><div class="dhead"><h2 id="ownerTitle">Owner view · example</h2><button class="x" type="button" data-close aria-label="Close">×</button></div>
-<div class="dbody">
-  <p class="muted">What the owner sees in the Shop package, with example numbers. Paid orders go to the print shop on their own and tracking appears here. In the Starter package you get the order email and place it with the print shop yourself, about two minutes each.</p>
-  <div class="tiles"><div class="tile"><small>Orders this drop</small><b class="num">38</b></div><div class="tile"><small>Revenue</small><b class="num">$1,480</b></div><div class="tile"><small>Waiting on you</small><b class="num" id="waitCount">2</b></div><div class="tile"><small>Top design</small><b>Be Still</b></div></div>
-  <div class="tablewrap"><table id="orders"><thead><tr><th>Order</th><th>Customer</th><th>Items</th><th>Delivery</th><th>Status</th><th></th></tr></thead><tbody></tbody></table></div>
-</div></dialog>
-
-<dialog id="policy" aria-labelledby="policyTitle"><div class="dhead"><h2 id="policyTitle">Policy</h2><button class="x" type="button" data-close aria-label="Close">×</button></div><div class="dbody" id="policyBody"></div></dialog>
-
-<button class="demo" type="button" id="openNotes"><i></i>Demo notes</button>
-<div class="toast" id="toast" hidden role="status"></div>
-
 <script>
-(function(){
-const $=(s,r=document)=>r.querySelector(s);
-const money=n=>'$'+n.toFixed(2);
-const ADULT=['S','M','L','XL','2XL','3XL'], YOUTH=['YS','YM','YL','YXL'];
-const LIGHT='#F4F2EA', DARK='#1E2A22';
-const COLORS={
-  sand:{name:'Sand',hex:'#D9CBAA',ink:DARK,dark:false},
-  forest:{name:'Forest',hex:'#23513E',ink:LIGHT,dark:true},
-  black:{name:'Black',hex:'#17191E',ink:LIGHT,dark:true},
-  white:{name:'White',hex:'#F3F2EE',ink:DARK,dark:false},
-  navy:{name:'Navy',hex:'#1B2A49',ink:LIGHT,dark:true},
-  heather:{name:'Heather Grey',hex:'#9AA1A9',ink:DARK,dark:false},
-  olive:{name:'Olive',hex:'#6B7A4B',ink:LIGHT,dark:true},
-  rose:{name:'Dusty Rose',hex:'#D8A7A7',ink:DARK,dark:false},
-  cream:{name:'Cream',hex:'#F1E9D8',ink:DARK,dark:false},
-  royal:{name:'Royal',hex:'#2A5BD7',ink:'#FFFFFF',dark:true},
-  pink:{name:'Pink',hex:'#F0A3BF',ink:DARK,dark:false},
-  oat:{name:'Oat',hex:'#E3D7BF',ink:DARK,dark:false}
-};
-const PRODUCTS=[
-  {id:'bestill',name:'Be Still Tee',verse:'Psalm 46:10',price:35,type:'tee',design:'bestill',colors:['sand','forest','black'],sizes:ADULT,tag:'Best seller',desc:'Psalm 46:10 in a quiet hand on the chest. Soft ring-spun cotton, unisex fit, the shirt you reach for on a slow Sunday.'},
-  {id:'fearnot',name:'Fear Not Tee',verse:'Isaiah 41:10',price:35,type:'tee',design:'fearnot',colors:['white','navy'],sizes:ADULT,desc:'Isaiah 41:10, set bold. The verse people get tattooed, on a shirt you can wear to the rink.'},
-  {id:'walk',name:'Walk by Faith Tee',verse:'2 Corinthians 5:7',price:35,type:'tee',design:'walk',colors:['heather','olive'],sizes:ADULT,desc:'2 Corinthians 5:7, stacked tall down the chest. Not by sight.'},
-  {id:'grace',name:'Grace Upon Grace Tee',verse:'John 1:16',price:36,type:'tee',design:'grace',colors:['rose','cream'],sizes:ADULT,tag:'Most gifted',desc:'John 1:16 in soft italics on a dusty rose or cream tee. The one people buy two of.'},
-  {id:'follow',name:'Follow Me Tee',verse:'Matthew 4:19',price:34,type:'tee',design:'fish',colors:['black','sand'],sizes:ADULT,desc:'The oldest Christian symbol, drawn in one line, with Matthew 4:19 underneath.'},
-  {id:'light',name:'Kids Little Light Tee',verse:'Matthew 5:16',price:26,type:'tee',design:'light',colors:['royal','pink'],sizes:YOUTH,tag:'Kids',desc:'Matthew 5:16 for the small ones who shine. Youth sizes S to XL in the same soft cotton as the adult tees.'},
-  {id:'abide',name:'Abide Hoodie',verse:'John 15:4',price:62,type:'hoodie',design:'abide',colors:['forest'],sizes:ADULT,soon:true,desc:'Coming in the winter drop.'},
-  {id:'toque',name:'Still Waters Toque',verse:'',price:24,type:'toque',design:'band',colors:['oat'],sizes:['One size'],soon:true,desc:'Coming in the winter drop.'}
-];
-const FR='Fraunces, Georgia, serif', FG='Figtree, Arial, sans-serif';
-const DESIGNS={
-  bestill:(ink)=>`<text x="45" y="36" text-anchor="middle" font-family="${FR}" font-style="italic" font-weight="500" font-size="27" fill="${ink}">be still</text><text x="45" y="54" text-anchor="middle" font-family="${FG}" font-weight="700" font-size="7.5" letter-spacing="2.5" fill="${ink}">PSALM 46:10</text>`,
-  fearnot:(ink)=>`<text x="45" y="30" text-anchor="middle" font-family="${FG}" font-weight="700" font-size="28" letter-spacing="1" fill="${ink}">FEAR</text><text x="45" y="57" text-anchor="middle" font-family="${FG}" font-weight="700" font-size="28" letter-spacing="1" fill="${ink}">NOT</text><text x="45" y="68" text-anchor="middle" font-family="${FG}" font-weight="700" font-size="6.5" letter-spacing="2" fill="${ink}">ISAIAH 41:10</text>`,
-  walk:(ink)=>`<text x="45" y="22" text-anchor="middle" font-family="${FG}" font-weight="700" font-size="21" letter-spacing="1" fill="${ink}">WALK</text><text x="45" y="41" text-anchor="middle" font-family="${FG}" font-weight="700" font-size="21" letter-spacing="1" fill="${ink}">BY</text><text x="45" y="60" text-anchor="middle" font-family="${FG}" font-weight="700" font-size="21" letter-spacing="1" fill="${ink}">FAITH</text><text x="45" y="69" text-anchor="middle" font-family="${FR}" font-style="italic" font-size="8" fill="${ink}">not by sight</text>`,
-  grace:(ink)=>`<text x="45" y="25" text-anchor="middle" font-family="${FR}" font-style="italic" font-weight="500" font-size="24" fill="${ink}">grace</text><text x="45" y="41" text-anchor="middle" font-family="${FR}" font-style="italic" font-weight="400" font-size="13" fill="${ink}">upon</text><text x="45" y="63" text-anchor="middle" font-family="${FR}" font-style="italic" font-weight="500" font-size="24" fill="${ink}">grace</text>`,
-  fish:(ink)=>`<path d="M8 34Q36 8 66 34Q36 60 8 34Z" fill="none" stroke="${ink}" stroke-width="3" stroke-linejoin="round"/><path d="M66 34L82 22M66 34L82 46" fill="none" stroke="${ink}" stroke-width="3" stroke-linecap="round"/><circle cx="24" cy="31" r="2" fill="${ink}"/><text x="45" y="66" text-anchor="middle" font-family="${FG}" font-weight="700" font-size="8" letter-spacing="2.5" fill="${ink}">FOLLOW ME</text>`,
-  light:(ink)=>`<text x="40" y="26" text-anchor="middle" font-family="${FR}" font-style="italic" font-weight="500" font-size="17" fill="${ink}">little</text><text x="45" y="55" text-anchor="middle" font-family="${FG}" font-weight="700" font-size="27" letter-spacing="1" fill="${ink}">LIGHT</text><path d="M72 8l2.2 5.3 5.3 2.2-5.3 2.2L72 23l-2.2-5.3-5.3-2.2 5.3-2.2z" fill="${ink}"/>`,
-  abide:(ink)=>`<text x="45" y="34" text-anchor="middle" font-family="${FR}" font-style="italic" font-weight="500" font-size="26" fill="${ink}">abide</text><text x="45" y="52" text-anchor="middle" font-family="${FG}" font-weight="700" font-size="7.5" letter-spacing="2.5" fill="${ink}">JOHN 15:4</text>`,
-  band:(ink)=>`<text x="40" y="19" text-anchor="middle" font-family="${FG}" font-weight="700" font-size="10.5" letter-spacing="2.5" fill="${ink}">STILL WATERS</text>`,
-  none:()=>''
-};
-const S='rgba(0,0,0,.22)';
-const BODY={
-  tee:h=>`<path d="M78 22C86 40 114 40 122 22L160 36L186 80L146 96L142 86V200H58V86L54 96L14 80L40 36Z" fill="${h}" stroke="${S}" stroke-width="1.5" stroke-linejoin="round"/><path d="M78 22C86 40 114 40 122 22" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="5" stroke-linecap="round"/><path d="M58 86L54 96M142 86L146 96" stroke="${S}" stroke-width="1.5"/>`,
-  ls:h=>`<path d="M78 22C86 40 114 40 122 22L160 36L192 150L158 158L142 104V200H58V104L42 158L8 150L40 36Z" fill="${h}" stroke="${S}" stroke-width="1.5" stroke-linejoin="round"/><path d="M78 22C86 40 114 40 122 22" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="5" stroke-linecap="round"/><path d="M10 143L44 151M156 151L190 143" stroke="${S}" stroke-width="1.5"/>`,
-  hoodie:h=>`<path d="M64 46C64 12 136 12 136 46C122 38 78 38 64 46Z" fill="${h}" stroke="${S}" stroke-width="1.5"/><path d="M72 42C80 58 120 58 128 42L160 46L186 90L146 106L142 96V206H58V96L54 106L14 90L40 46Z" fill="${h}" stroke="${S}" stroke-width="1.5" stroke-linejoin="round"/><path d="M72 42C80 58 120 58 128 42" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="4"/><path d="M92 58V92M108 58V92" stroke="rgba(255,255,255,.55)" stroke-width="2" stroke-linecap="round"/><path d="M66 154H134V200H66Z" fill="rgba(0,0,0,.14)"/>`,
-  toque:h=>`<circle cx="100" cy="50" r="17" fill="${h}" stroke="${S}" stroke-width="1.5"/><circle cx="100" cy="50" r="17" fill="rgba(255,255,255,.22)"/><path d="M44 152C44 68 156 68 156 152Z" fill="${h}" stroke="${S}" stroke-width="1.5"/><rect x="38" y="140" width="124" height="42" rx="10" fill="${h}" stroke="${S}" stroke-width="1.5"/><path d="M52 146V176M68 146V176M132 146V176M148 146V176" stroke="rgba(0,0,0,.14)" stroke-width="3"/>`
-};
-const DBOX={tee:{x:55,y:72,w:90,h:70,vb:'0 0 90 70'},ls:{x:55,y:72,w:90,h:70,vb:'0 0 90 70'},hoodie:{x:60,y:98,w:80,h:50,vb:'0 0 90 70'},toque:{x:60,y:148,w:80,h:28,vb:'0 0 80 28'}};
-function shirtSVG(p,colorKey){
-  const c=COLORS[colorKey]||COLORS.sand, d=DBOX[p.type];
-  const design=p.design==='none'?'':`<svg x="${d.x}" y="${d.y}" width="${d.w}" height="${d.h}" viewBox="${d.vb}" overflow="visible">${DESIGNS[p.design](c.ink,c.hex,c.dark)}</svg>`;
-  return `<svg class="shirt" viewBox="0 0 200 220" role="img" aria-label="${p.name} in ${c.name}">${BODY[p.type](c.hex)}${design}</svg>`;
-}
-const byId=id=>PRODUCTS.find(p=>p.id===id);
+(function () {
+'use strict';
 
-/* state */
-const SHIP=9.99, FREE_OVER=75, TAX=0.13, PROMO='FAITH10';
-let state={cart:[],promo:null,delivery:'ship',step:'cart',order:null};
-function load(){try{const s=JSON.parse(localStorage.getItem('sw-cart'));if(s&&Array.isArray(s.cart)){state.cart=s.cart.filter(i=>byId(i.id));state.promo=s.promo||null;state.delivery=s.delivery==='pickup'?'pickup':'ship';}}catch(e){}}
-function save(){try{localStorage.setItem('sw-cart',JSON.stringify({cart:state.cart,promo:state.promo,delivery:state.delivery}))}catch(e){}}
-function totals(){
-  const sub=state.cart.reduce((a,i)=>a+byId(i.id).price*i.qty,0);
-  const disc=state.promo===PROMO?Math.round(sub*10)/100:0;
-  const after=sub-disc;
-  const freeShip=after>=FREE_OVER;
-  const ship=(state.delivery==='ship'&&state.cart.length&&!freeShip)?SHIP:0;
-  const tax=Math.round((after+ship)*TAX*100)/100;
-  return {sub,disc,ship,freeShip,tax,total:Math.round((after+ship+tax)*100)/100,count:state.cart.reduce((a,i)=>a+i.qty,0)};
+/* Site config. The handover swaps scriptUrl and token (and the CSV links if used). */
+var CONFIG = {
+  storeName: 'Still Waters',
+  siteUrl: 'https://sunmoonron.github.io/faith-tee-demo/',
+  scriptUrl: '',        /* Apps Script web app URL ending in /exec. Empty: sample shop, nothing is recorded */
+  token: '',            /* same value as the token row in the Settings tab */
+  productsCsvUrl: '',   /* optional: the Products tab published to the web as CSV, used if scriptUrl is empty or fails */
+  reviewsCsvUrl: '',    /* optional: the Reviews tab published to the web as CSV */
+  imageBase: 'img/',    /* image file names in the sheet resolve against docs/img/ */
+  contactEmail: '',     /* fallbacks for the footer when the sheet's Settings are not loaded */
+  instagram: '',
+  musicUrl: '',
+  musicLabel: 'Play the song',
+  musicCredit: ''
+};
+
+var DEFAULTS = {
+  hook_line: "Don't just read the Word, wear it",
+  delivery_line: 'Free delivery in the GTA. Pay cash or e-Transfer at the door.',
+  gta_enabled: 'yes', pickup_enabled: 'yes', ship_enabled: 'no', ship_rate: 12, ship_free_over: 0, tax_rate: 0, max_qty: 10,
+  gta_instructions: 'We text you to arrange a delivery time. Have {total} in cash ready, or send an e-Transfer to {etransfer} with {number} in the message before we arrive.',
+  pickup_instructions: 'Bring {total} in cash, or send an e-Transfer to {etransfer} with {number} in the message.',
+  ship_instructions: 'Send an e-Transfer of {total} to {etransfer} with {number} in the message. We ship within a few days of it arriving and email you when it is on its way.'
+};
+
+/* Shown only when no sheet is configured. Every line here is a stand-in for the owners' own content. */
+var SAMPLE = {
+  announcement: 'Sample shop. The products, prices and reviews are examples.',
+  settings: {
+    store_name: 'Still Waters', contact_email: 'info@example.com', instagram: '@yourhandle', etransfer_email: 'info@example.com',
+    ship_enabled: 'yes', ship_rate: 12, ship_free_over: 150,
+    pickup_note: 'Pickup at the church after the Sunday service or at the rink on Tuesday evenings. We text you to confirm.',
+    story: 'Still Waters started at a Toronto skating rink, where two friends printed a few shirts for the people they skate with. We print in Toronto, hold our own stock and deliver it ourselves.',
+    giveback_line: 'Part of every order goes to our church.'
+  },
+  promos: { FAITH10: { code: 'FAITH10', type: 'percent', value: 10 } },
+  products: [
+    { id: 'bestill', name: 'Be still', price: 35, youth_price: 28, verse: 'Psalm 46:10', description: 'Psalm 46:10 printed on the chest. Ring-spun cotton, regular fit, screen printed in Toronto. Machine wash cold, inside out. Hang to dry.', colours: 'Black #111111, White #f2f2f2', sizes_mens: 'S, M, L, XL', sizes_womens: 'S, M, L', sizes_youth: 'YS, YM, YL', sold_out_sizes: '', images: '', active: 'yes', 'new': 'yes' },
+    { id: 'fearnot', name: 'Fear not', price: 35, youth_price: 28, verse: 'Isaiah 41:10', description: 'Isaiah 41:10 in block letters. Ring-spun cotton, regular fit, screen printed in Toronto. Machine wash cold, inside out. Hang to dry.', colours: 'Black #111111, White #f2f2f2', sizes_mens: 'S, M, L, XL', sizes_womens: 'S, M, L', sizes_youth: 'YS, YM, YL', sold_out_sizes: "Men's XL", images: '', active: 'yes' },
+    { id: 'walkbyfaith', name: 'Walk by faith', price: 35, youth_price: 28, verse: '2 Corinthians 5:7', description: '2 Corinthians 5:7 stacked down the chest. Ring-spun cotton, regular fit, screen printed in Toronto. Machine wash cold, inside out. Hang to dry.', colours: 'Black #111111, White #f2f2f2', sizes_mens: 'S, M, L, XL', sizes_womens: 'S, M, L', sizes_youth: 'YS, YM, YL', sold_out_sizes: '', images: '', active: 'yes' },
+    { id: 'grace', name: 'Grace upon grace', price: 35, youth_price: 28, verse: 'John 1:16', description: 'John 1:16 in small type over the heart. Ring-spun cotton, regular fit, screen printed in Toronto. Machine wash cold, inside out. Hang to dry.', colours: 'Black #111111, White #f2f2f2', sizes_mens: 'S, M, L, XL', sizes_womens: 'S, M, L', sizes_youth: 'YS, YM, YL', sold_out_sizes: 'all', images: '', active: 'yes' }
+  ],
+  reviews: [
+    { product: 'bestill', order: 'SW-1001', name: 'Priya', stars: 5, text: 'Fits true to size and the print has not cracked after a dozen washes.' },
+    { product: 'fearnot', order: 'SW-1002', name: 'Marcus', stars: 4, text: 'Runs a little large. I ordered a medium and it fits like a large.' }
+  ]
+};
+
+var DATA = { products: [], reviews: [], settings: {}, demo: false, loaded: false, error: false };
+var cart = loadCart();
+var sel = { id: null, colour: '', range: '', size: '', qty: 1 };
+var draft = { name: '', phone: '', email: '', delivery: '', address: '', postal: '', promo: '', consent: false };
+var orderRef = '';
+var lastOrder = null;
+var view = document.getElementById('view');
+
+/* ---------- data ---------- */
+
+function loadData() {
+  if (!CONFIG.scriptUrl && !CONFIG.productsCsvUrl) {
+    DATA.demo = true;
+    DATA.products = SAMPLE.products.map(normalizeProduct);
+    DATA.reviews = SAMPLE.reviews.slice();
+    DATA.settings = SAMPLE.settings;
+    DATA.loaded = true;
+    return Promise.resolve();
+  }
+  var viaScript = CONFIG.scriptUrl
+    ? fetch(CONFIG.scriptUrl + '?action=catalog', { cache: 'no-store', redirect: 'follow' })
+      .then(function (r) { return r.json(); })
+      .then(function (j) {
+        if (!j || !j.ok || !j.products) throw new Error('bad catalog');
+        DATA.products = j.products.map(normalizeProduct).filter(function (p) { return p.active && p.name; });
+        DATA.reviews = (j.reviews || []).filter(function (r) { return r.text; });
+        DATA.settings = j.settings || {};
+        DATA.loaded = true;
+      })
+    : Promise.reject(new Error('no script url'));
+  return viaScript.catch(function () {
+    if (!CONFIG.productsCsvUrl) throw new Error('no csv');
+    return fetch(CONFIG.productsCsvUrl, { cache: 'no-store' }).then(function (r) { return r.text(); }).then(function (t) {
+      DATA.products = csvRows(t).map(normalizeProduct).filter(function (p) { return p.active && p.name; });
+      DATA.loaded = true;
+      if (!CONFIG.reviewsCsvUrl) return;
+      return fetch(CONFIG.reviewsCsvUrl, { cache: 'no-store' }).then(function (r) { return r.text(); }).then(function (t2) {
+        DATA.reviews = csvRows(t2).filter(function (r) { return yes(r.approved) && (r.text || r.review); }).map(function (r) {
+          return { product: r.product, order: r.order || r.order_number || '', name: r.name, stars: num(r.stars), text: r.text || r.review };
+        });
+      }).catch(function () { });
+    });
+  }).catch(function () { DATA.error = true; DATA.loaded = true; });
 }
 
-/* hero */
-let heroColor='sand';
-function renderHero(){
-  const p=byId('bestill');
-  $('#heroShirt').innerHTML=shirtSVG(p,heroColor);
-  $('#heroSwatches').innerHTML=p.colors.map(k=>`<button type="button" class="sw" style="background:${COLORS[k].hex}" aria-label="${COLORS[k].name}" aria-pressed="${k===heroColor}" data-hero="${k}"></button>`).join('');
-  $('#heroCap').textContent=`${p.name} · ${COLORS[heroColor].name} · ${money(p.price)}`;
+function csvRows(text) {
+  var rows = [], row = [], field = '', q = false;
+  for (var i = 0; i < text.length; i++) {
+    var ch = text[i];
+    if (q) {
+      if (ch === '"') { if (text[i + 1] === '"') { field += '"'; i++; } else q = false; }
+      else field += ch;
+    } else if (ch === '"') q = true;
+    else if (ch === ',') { row.push(field); field = ''; }
+    else if (ch === '\n' || ch === '\r') { if (ch === '\r' && text[i + 1] === '\n') i++; row.push(field); rows.push(row); row = []; field = ''; }
+    else field += ch;
+  }
+  if (field !== '' || row.length) { row.push(field); rows.push(row); }
+  rows = rows.filter(function (r) { return r.some(function (c) { return c !== ''; }); });
+  if (!rows.length) return [];
+  var headers = rows[0].map(function (h) { return h.trim().toLowerCase().replace(/\s+/g, '_'); });
+  return rows.slice(1).map(function (r) { var o = {}; headers.forEach(function (h, c) { if (h) o[h] = r[c] === undefined ? '' : r[c]; }); return o; });
 }
-$('#heroSwatches').addEventListener('click',e=>{const b=e.target.closest('[data-hero]');if(!b)return;heroColor=b.dataset.hero;renderHero();});
 
-/* grid */
-function renderGrid(){
-  $('#grid').innerHTML=PRODUCTS.map(p=>{
-    const dots=p.colors.map(k=>`<i style="background:${COLORS[k].hex}" title="${COLORS[k].name}"></i>`).join('');
-    const tag=p.soon?'<span class="tag">Winter drop</span>':(p.tag?`<span class="tag${p.tag==='Best seller'?' hot':''}">${p.tag}</span>`:'');
-    const range=p.soon?'<span class="small">Coming soon</span>':`<span class="small">${p.sizes[0]}–${p.sizes[p.sizes.length-1]}</span>`;
-    return `<article class="card${p.soon?' is-soon':''}">${p.soon?'':`<button class="hit" type="button" data-open="${p.id}" aria-label="View ${p.name}, ${money(p.price)}"></button>`}
-      <div class="thumb">${tag}${shirtSVG(p,p.colors[0])}</div>
-      <div class="body"><div class="row"><h3>${p.name}</h3><span class="price num">${money(p.price)}</span></div>
-      <div class="row">${p.verse?`<span class="verse">${p.verse}</span>`:'<span class="verse">&nbsp;</span>'}${range}</div>
-      <div class="row"><span class="dots" aria-label="${p.colors.length} colour${p.colors.length>1?'s':''}">${dots}</span></div></div></article>`;
+function normalizeProduct(r) {
+  var g = function (k) { return r[k] === undefined || r[k] === null ? '' : String(r[k]).trim(); };
+  var colours = list(g('colours') || g('colors')).map(function (e) {
+    var m = e.match(/^(.*?)\s*(#[0-9a-fA-F]{3,8})?$/);
+    var name = (m ? m[1] : e).trim();
+    return { name: name, hex: m && m[2] ? m[2] : guessHex(name) };
+  }).filter(function (c) { return c.name; });
+  var names = colours.map(function (c) { return c.name; });
+  var p = {
+    id: g('id') || slug(g('name')), name: g('name'), price: num(g('price')), youthPrice: num(g('youth_price')), verse: g('verse'),
+    description: g('description'), colours: colours,
+    sizes: { mens: list(g('sizes_mens')), womens: list(g('sizes_womens')), youth: list(g('sizes_youth')) },
+    isNew: yes(g('new')), active: g('active') === '' || yes(g('active'))
+  };
+  p.soldOut = parseSoldOut(g('sold_out_sizes'), names);
+  p.images = parseImages(g('images'), names);
+  p.allSoldOut = isAllSoldOut(p);
+  return p;
+}
+
+function parseSoldOut(text, names) {
+  var lower = names.map(function (n) { return n.toLowerCase(); });
+  return list(text).map(function (t) { return t.toLowerCase().replace(/['’.]/g, '').replace(/\s+/g, ' ').trim(); }).filter(Boolean).map(function (t) {
+    if (t === 'all' || t === 'everything') return { all: true };
+    var colour = '';
+    for (var i = 0; i < lower.length; i++) {
+      if (t.indexOf(lower[i] + ' ') === 0) { colour = names[i]; t = t.slice(lower[i].length + 1); break; }
+    }
+    var words = t.split(' ');
+    var range = rangeKey(words[0]);
+    return { colour: colour, range: range, size: range ? words.slice(1).join(' ') : t };
+  });
+}
+
+function isSoldOut(p, colour, range, size) {
+  var s = String(size).toLowerCase();
+  for (var i = 0; i < p.soldOut.length; i++) {
+    var t = p.soldOut[i];
+    if (t.all) return true;
+    if (t.colour && t.colour.toLowerCase() !== String(colour).toLowerCase()) continue;
+    if (t.range && t.range !== range) continue;
+    if (!t.size || t.size === s) return true;
+  }
+  return false;
+}
+
+function isAllSoldOut(p) {
+  var colours = p.colours.length ? p.colours.map(function (c) { return c.name; }) : [''];
+  var any = false;
+  for (var r in p.sizes) {
+    for (var i = 0; i < p.sizes[r].length; i++) {
+      for (var c = 0; c < colours.length; c++) {
+        any = true;
+        if (!isSoldOut(p, colours[c], r, p.sizes[r][i])) return false;
+      }
+    }
+  }
+  return any ? true : true;
+}
+
+function parseImages(text, names) {
+  var lower = names.map(function (n) { return n.toLowerCase(); });
+  return list(text).map(function (e) {
+    var m = e.match(/^([^:=]+)\s*[:=]\s*(.+)$/);
+    if (m && lower.indexOf(m[1].trim().toLowerCase()) >= 0) return { colour: names[lower.indexOf(m[1].trim().toLowerCase())], url: imageUrl(m[2].trim()) };
+    return { colour: '', url: imageUrl(e) };
+  }).filter(function (i) { return i.url; });
+}
+
+function imageUrl(file) {
+  if (!file) return '';
+  if (/^(https?:)?\/\//.test(file) || file.indexOf('/') === 0) return file;
+  return CONFIG.imageBase + file;
+}
+
+function imagesFor(p, colour) {
+  var mine = p.images.filter(function (i) { return !i.colour || i.colour === colour; });
+  return mine.length ? mine : p.images;
+}
+
+function firstImage(p) {
+  var imgs = imagesFor(p, p.colours.length ? p.colours[0].name : '');
+  return imgs.length ? imgs[0].url : '';
+}
+
+function guessHex(name) {
+  var n = name.toLowerCase();
+  var table = [['black', '#111111'], ['white', '#f2f2f2'], ['navy', '#1b2a49'], ['charcoal', '#333333'], ['heather', '#9aa1a9'], ['grey', '#8a8f94'], ['gray', '#8a8f94'],
+    ['sand', '#d9cbaa'], ['cream', '#f1e9d8'], ['natural', '#ece6d6'], ['oat', '#e3d7bf'], ['red', '#b3261e'], ['maroon', '#6b1e2e'], ['burgundy', '#6b1e2e'],
+    ['royal', '#2a5bd7'], ['blue', '#2a5bd7'], ['forest', '#23513e'], ['olive', '#6b7a4b'], ['green', '#2e7d4f'], ['pink', '#e8a3bb'], ['brown', '#5b3a29'], ['tan', '#c9a36b']];
+  for (var i = 0; i < table.length; i++) if (n.indexOf(table[i][0]) >= 0) return table[i][1];
+  return '#dddddd';
+}
+
+function rangeKey(word) {
+  var w = String(word || '').toLowerCase().replace(/['’.]/g, '');
+  if (/^(mens|men|man|male|adult)$/.test(w)) return 'mens';
+  if (/^(womens|women|woman|ladies|female)$/.test(w)) return 'womens';
+  if (/^(youth|youths|kids|kid|child|children|boys|girls)$/.test(w)) return 'youth';
+  return '';
+}
+
+function rangeLabel(r) { return r === 'mens' ? "Men's" : r === 'womens' ? "Women's" : 'Youth'; }
+
+function findProduct(id) {
+  for (var i = 0; i < DATA.products.length; i++) if (DATA.products[i].id === id) return DATA.products[i];
+  return null;
+}
+
+function settings() { return DATA.settings || {}; }
+function setting(k) { var v = settings()[k]; if (v === undefined || v === null || v === '') v = DEFAULTS[k]; return v === undefined ? '' : v; }
+function storeName() { return String(setting('store_name') || CONFIG.storeName); }
+function contactEmail() { return String(setting('contact_email') || CONFIG.contactEmail); }
+function maxQty() { return Math.max(1, Math.floor(num(setting('max_qty')) || 10)); }
+function on(k) { return yes(setting(k)); }
+
+/* ---------- cart ---------- */
+
+function loadCart() {
+  try {
+    var s = JSON.parse(localStorage.getItem('sw-cart'));
+    if (s && Array.isArray(s.items)) return { items: s.items, promo: s.promo || null };
+  } catch (e) { }
+  return { items: [], promo: null };
+}
+function saveCart() { try { localStorage.setItem('sw-cart', JSON.stringify(cart)); } catch (e) { } }
+function pruneCart() {
+  cart.items = cart.items.filter(function (l) { var p = findProduct(l.id); return p && p.sizes[l.range] && p.sizes[l.range].indexOf(l.size) >= 0; });
+  saveCart();
+}
+function cartCount() { return cart.items.reduce(function (a, l) { return a + l.qty; }, 0); }
+function renderCartCount() { document.getElementById('cartLink').textContent = 'Cart (' + cartCount() + ')'; }
+
+function linePrice(l) {
+  var p = findProduct(l.id);
+  if (!p) return 0;
+  return l.range === 'youth' && p.youthPrice > 0 ? p.youthPrice : p.price;
+}
+
+function totals(delivery) {
+  var subtotal = 0;
+  cart.items.forEach(function (l) { subtotal += linePrice(l) * l.qty; });
+  subtotal = round2(subtotal);
+  var discount = 0;
+  if (cart.promo) discount = cart.promo.type === 'amount' ? Math.min(num(cart.promo.value), subtotal) : round2(subtotal * num(cart.promo.value) / 100);
+  var after = round2(subtotal - discount);
+  var shipping = 0;
+  if (delivery === 'ship') {
+    var free = num(setting('ship_free_over'));
+    shipping = free > 0 && after >= free ? 0 : round2(num(setting('ship_rate')));
+  }
+  var tax = round2((after + shipping) * num(setting('tax_rate')) / 100);
+  return { subtotal: subtotal, discount: round2(discount), shipping: shipping, tax: tax, total: round2(after + shipping + tax) };
+}
+
+/* ---------- views ---------- */
+
+function route() {
+  var h = location.hash.replace(/^#\/?/, '');
+  var parts = h.split('/');
+  if (!DATA.loaded) { view.innerHTML = '<p>Loading the shop.</p>'; return; }
+  if (DATA.error) { view.innerHTML = '<p>The shop could not load. Try again in a minute' + (contactEmail() ? ', or email ' + esc(contactEmail()) : '') + '.</p>'; return; }
+  window.scrollTo(0, 0);
+  document.title = storeName();
+  if (parts[0] === 'p' && parts[1]) return renderProduct(decodeURIComponent(parts[1]));
+  if (parts[0] === 'cart') return renderCart();
+  if (parts[0] === 'checkout') return renderCheckout();
+  if (parts[0] === 'order') return renderConfirmation();
+  if (parts[0] === 'faq') return renderFaq();
+  if (parts[0] === 'policies') return renderPolicies();
+  renderHome();
+  if (parts[0] === 'about') { var el = document.getElementById('about'); if (el) el.scrollIntoView(); }
+}
+
+function renderHome() {
+  var tiles = DATA.products.map(tileHtml).join('');
+  var hook = setting('hook_line'), delivery = setting('delivery_line'), story = setting('story'), give = setting('giveback_line');
+  view.innerHTML = '<div class="grid">' + (tiles || '<p>No products yet.</p>') + '</div><hr><div class="about" id="about">' +
+    (hook ? '<p class="hook">' + esc(hook) + '</p>' : '') +
+    (delivery ? '<p>' + esc(delivery) + '</p>' : '') +
+    (story ? '<p>' + esc(story) + '</p>' : '') +
+    (give ? '<p>' + esc(give) + '</p>' : '') + '</div>';
+}
+
+function tileHtml(p) {
+  var img = firstImage(p);
+  var badge = p.allSoldOut ? '<p>Sold out</p>' : p.isNew ? '<p>New</p>' : '';
+  return '<article class="tile"><a href="#p/' + encodeURIComponent(p.id) + '"><div class="photo"><span>' + esc(p.name) + '</span>' +
+    (img ? '<img src="' + esc(img) + '" alt="" loading="lazy" onerror="this.remove()">' : '') + '</div><h3>' + esc(p.name) + '</h3><p>' + money(p.price) + '</p>' + badge + '</a></article>';
+}
+
+function renderProduct(id) {
+  var p = findProduct(id);
+  if (!p) { view.innerHTML = '<h1>Not found</h1><p>That product is not in the shop any more. <a href="#shop">Back to the shop</a></p>'; return; }
+  if (sel.id !== p.id) sel = { id: p.id, colour: p.colours.length ? p.colours[0].name : '', range: '', size: '', qty: 1 };
+  document.title = p.name + ', ' + storeName();
+  var imgs = imagesFor(p, sel.colour);
+  var photos = imgs.length
+    ? imgs.map(function (i) { return '<div class="photo"><span>' + esc(p.name) + '</span><img src="' + esc(i.url) + '" alt="' + esc(p.name + (sel.colour ? ', ' + sel.colour : '')) + '" onerror="this.remove()"></div>'; }).join('')
+    : '<div class="photo"><span>' + esc(p.name) + '</span></div>';
+  var hasYouth = p.sizes.youth.length > 0 && p.youthPrice > 0;
+  var price = money(p.price) + (hasYouth ? '. Youth ' + money(p.youthPrice) : '');
+  var colours = p.colours.length ? '<label>Colour</label><div class="swatches">' + p.colours.map(function (c) {
+    return '<button type="button" class="swatch" data-colour="' + esc(c.name) + '" aria-pressed="' + (c.name === sel.colour) + '"><i style="background:' + esc(c.hex) + '"></i>' + esc(c.name) + '</button>';
+  }).join('') + '</div>' : '';
+  var sizes = ['mens', 'womens', 'youth'].filter(function (r) { return p.sizes[r].length; }).map(function (r) {
+    var head = rangeLabel(r) + (r === 'youth' && hasYouth ? ' (' + money(p.youthPrice) + ')' : '');
+    return '<p class="rangename">' + esc(head) + '</p><div class="sizes">' + p.sizes[r].map(function (s) {
+      var out = isSoldOut(p, sel.colour, r, s);
+      return '<button type="button" data-range="' + r + '" data-size="' + esc(s) + '" aria-pressed="' + (sel.range === r && sel.size === s) + '"' + (out ? ' disabled aria-label="' + esc(s + ', sold out') + '"' : '') + '>' + esc(s) + '</button>';
+    }).join('') + '</div>';
   }).join('');
+  var qty = '<div class="row"><label for="qty">Quantity</label><select id="qty">' + range1(maxQty()).map(function (n) { return '<option' + (n === sel.qty ? ' selected' : '') + '>' + n + '</option>'; }).join('') + '</select></div>';
+  var buy = p.allSoldOut ? '<p>Sold out.</p>' : colours + '<label>Size</label>' + sizes + qty + '<p><button type="button" class="btn" id="add">Add to cart</button></p><p id="addMsg"></p>';
+  var reviews = DATA.reviews.filter(function (r) { return String(r.product).trim().toLowerCase() === p.id.toLowerCase() || String(r.product).trim().toLowerCase() === p.name.toLowerCase(); });
+  var reviewUrl = reviewLink(p.id, '');
+  var reviewHtml = '<div class="reviews"><h2>Reviews</h2>' + (reviews.length ? '<ul>' + reviews.map(function (r) {
+    var n = Math.max(0, Math.min(5, Math.round(num(r.stars))));
+    return '<li><span class="stars" aria-label="' + n + ' out of 5">' + '★'.repeat(n) + '☆'.repeat(5 - n) + '</span> ' + esc(r.name || 'A customer') + (r.order ? ', order ' + esc(r.order) : '') + '<br>' + esc(r.text) + '</li>';
+  }).join('') + '</ul>' : '<p>No reviews yet.</p>') + (reviewUrl ? '<p><a href="' + esc(reviewUrl) + '" target="_blank" rel="noopener">Leave a review</a></p>' : '') + '</div>';
+  view.innerHTML = '<div class="product"><div class="photos">' + photos + '</div><div>' +
+    '<h1>' + esc(p.name) + '</h1>' + (p.verse ? '<p>' + esc(p.verse) + '</p>' : '') + '<p>' + price + '</p>' + buy +
+    (p.description ? '<p>' + esc(p.description) + '</p>' : '') + (setting('delivery_line') ? '<p>' + esc(setting('delivery_line')) + '</p>' : '') +
+    reviewHtml + '</div></div>';
 }
-$('#grid').addEventListener('click',e=>{const b=e.target.closest('[data-open]');if(b)openSheet(b.dataset.open);});
 
-/* product sheet */
-let sel={id:null,color:null,size:null,qty:1};
-function openSheet(id){const p=byId(id);if(!p||p.soon)return;sel={id,color:p.colors[0],size:null,qty:1};renderSheet();$('#sheet').showModal();}
-function renderSheet(){
-  const p=byId(sel.id), c=COLORS[sel.color];
-  $('#sheetTitle').textContent=p.name;
-  $('#sheetBody').innerHTML=`<div class="sheet">
-    <div class="thumb">${shirtSVG(p,sel.color)}</div>
-    <div>
-      <p class="eyebrow">${p.tag||'Pre-order'}</p>
-      <h2>${p.name}</h2>
-      ${p.verse?`<p class="verse">${p.verse}</p>`:''}
-      <p class="price num">${money(p.price)}</p>
-      <p class="muted" style="margin-top:10px">${p.desc}</p>
-      <div class="opt"><div class="lab"><span>Colour</span><span>${c.name}</span></div><div class="chips">${p.colors.map(k=>`<button type="button" class="sw" style="background:${COLORS[k].hex}" aria-label="${COLORS[k].name}" aria-pressed="${k===sel.color}" data-color="${k}"></button>`).join('')}</div></div>
-      <div class="opt"><div class="lab"><span>Size</span><a href="#sizes" data-close-sheet style="color:var(--ink-2)">Size guide</a></div><div class="chips">${p.sizes.map(s=>`<button type="button" class="chip" aria-pressed="${s===sel.size}" data-size="${s}">${s}</button>`).join('')}</div></div>
-      <div class="addrow"><div class="qty" role="group" aria-label="Quantity"><button type="button" data-q="-1" aria-label="Decrease quantity">−</button><output class="num" id="qtyOut">${sel.qty}</output><button type="button" data-q="1" aria-label="Increase quantity">+</button></div><button class="btn btn-primary" id="addBtn" type="button">Add to cart · ${money(p.price*sel.qty)}</button></div>
-      <p class="msg bad" id="sizeMsg" aria-live="polite"></p>
-      <div class="note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Pre-order. Orders close November 15; the drop is printed to order and ships by December 1, or is ready for local pickup in Toronto then.</span></div>
-    </div></div>`;
+function renderCart() {
+  document.title = 'Cart, ' + storeName();
+  if (!cart.items.length) { view.innerHTML = '<h1>Cart</h1><p>Your cart is empty.</p><p><a href="#shop">Back to the shop</a></p>'; return; }
+  var blocked = false;
+  var lines = cart.items.map(function (l, n) {
+    var p = findProduct(l.id);
+    var out = isSoldOut(p, l.colour, l.range, l.size);
+    if (out) blocked = true;
+    return '<div class="line"><p><a href="#p/' + encodeURIComponent(p.id) + '">' + esc(p.name) + '</a>' + (l.colour ? ', ' + esc(l.colour) : '') + ', ' + rangeLabel(l.range) + ' ' + esc(l.size) + '</p>' +
+      '<div class="row"><label for="q' + n + '">Quantity</label><select id="q' + n + '" data-qty="' + n + '">' + range1(maxQty()).map(function (k) { return '<option' + (k === l.qty ? ' selected' : '') + '>' + k + '</option>'; }).join('') + '</select>' +
+      '<span>' + money(linePrice(l) * l.qty) + '</span><button type="button" class="textbtn" data-remove="' + n + '">Remove</button></div>' +
+      (out ? '<p class="err">This size has sold out. Remove it to continue.</p>' : '') + '</div>';
+  }).join('');
+  var t = totals('');
+  view.innerHTML = '<h1>Cart</h1><div class="lines">' + lines + '</div><table class="totals"><tr><td>Subtotal</td><td>' + money(t.subtotal) + '</td></tr></table>' +
+    (blocked ? '' : '<p><a class="btn" href="#checkout">Checkout</a></p>') + '<p><a href="#shop">Keep shopping</a></p>';
 }
-$('#sheetBody').addEventListener('click',e=>{
-  const col=e.target.closest('[data-color]'); if(col){sel.color=col.dataset.color;renderSheet();return;}
-  const sz=e.target.closest('[data-size]'); if(sz){sel.size=sz.dataset.size;$('#sheetBody').querySelectorAll('[data-size]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.size===sel.size)));$('#sizeMsg').textContent='';return;}
-  const q=e.target.closest('[data-q]'); if(q){sel.qty=Math.min(10,Math.max(1,sel.qty+Number(q.dataset.q)));$('#qtyOut').textContent=sel.qty;$('#addBtn').textContent='Add to cart · '+money(byId(sel.id).price*sel.qty);return;}
-  if(e.target.closest('#addBtn')){
-    if(!sel.size){$('#sizeMsg').textContent='Pick a size first.';return;}
-    addToCart(sel.id,sel.color,sel.size,sel.qty);
-    $('#sheet').close();
-    toast(`Added ${byId(sel.id).name}, ${COLORS[sel.color].name}, ${sel.size}`,true);
+
+function deliveryOptions() {
+  var opts = [];
+  var rate = num(setting('ship_rate')), free = num(setting('ship_free_over'));
+  if (on('gta_enabled')) opts.push({ value: 'gta', text: 'Free delivery in the GTA, to postal codes starting with M or L. Pay cash or e-Transfer at the door.' });
+  if (on('pickup_enabled')) opts.push({ value: 'pickup', text: 'Pickup. ' + (setting('pickup_note') || 'We text you to arrange it.') });
+  if (on('ship_enabled')) opts.push({ value: 'ship', text: 'Shipping within Ontario, ' + money(rate) + ' per order' + (free > 0 ? ', free over ' + money(free) : '') + '. Send the e-Transfer first and we ship when it arrives.' });
+  return opts;
+}
+
+function renderCheckout() {
+  document.title = 'Checkout, ' + storeName();
+  if (!cart.items.length) { location.hash = 'cart'; return; }
+  if (!DATA.demo && !CONFIG.scriptUrl) { view.innerHTML = '<h1>Checkout</h1><p>Online ordering is not switched on yet. Email ' + esc(contactEmail()) + ' with what you would like.</p>'; return; }
+  var opts = deliveryOptions();
+  if (!draft.delivery || !opts.some(function (o) { return o.value === draft.delivery; })) draft.delivery = opts.length ? opts[0].value : '';
+  if (!orderRef) orderRef = 'w' + Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+  var t = totals(draft.delivery);
+  var needsAddress = draft.delivery === 'gta' || draft.delivery === 'ship';
+  var lines = cart.items.map(function (l) { var p = findProduct(l.id); return '<tr><td>' + l.qty + ' x ' + esc(p.name) + (l.colour ? ', ' + esc(l.colour) : '') + ', ' + rangeLabel(l.range) + ' ' + esc(l.size) + '</td><td>' + money(linePrice(l) * l.qty) + '</td></tr>'; }).join('');
+  view.innerHTML = '<h1>Checkout</h1><form id="checkout" novalidate>' +
+    field('name', 'Name', 'text', 'name') + field('phone', 'Phone', 'tel', 'tel') + field('email', 'Email', 'email', 'email') +
+    '<fieldset><legend>Delivery</legend>' + opts.map(function (o) {
+      return '<label class="choice"><input type="radio" name="delivery" value="' + o.value + '"' + (draft.delivery === o.value ? ' checked' : '') + '><span>' + esc(o.text) + '</span></label>';
+    }).join('') + '<p class="err" id="err-delivery"></p></fieldset>' +
+    '<div id="addressFields"' + (needsAddress ? '' : ' class="hidden"') + '><div class="field"><label for="address">Address (street, unit, city)</label><textarea id="address" autocomplete="street-address">' + esc(draft.address) + '</textarea><p class="err" id="err-address"></p></div>' +
+    '<div class="field"><label for="postal">Postal code</label><input id="postal" autocomplete="postal-code" style="max-width:160px" value="' + esc(draft.postal) + '"><p class="err" id="err-postal"></p></div></div>' +
+    '<div class="field"><label for="promo">Promo code</label><div class="row"><input id="promo" style="max-width:200px" value="' + esc(cart.promo ? cart.promo.code : draft.promo) + '" autocomplete="off"><button type="button" class="textbtn" id="applyPromo">Apply</button></div><p id="promoMsg"' + (cart.promo ? '' : ' class="err"') + '>' + (cart.promo ? esc(cart.promo.code) + ' applied.' : '') + '</p></div>' +
+    '<label class="choice"><input type="checkbox" id="consent"' + (draft.consent ? ' checked' : '') + '><span>Email me when new designs come out.</span></label>' +
+    '<label class="hp" for="website">Leave this empty</label><input class="hp" type="text" id="website" tabindex="-1" autocomplete="off">' +
+    '<h2>Your order</h2><table class="totals">' + lines +
+    '<tr><td>Subtotal</td><td>' + money(t.subtotal) + '</td></tr>' +
+    (t.discount ? '<tr><td>Discount (' + esc(cart.promo.code) + ')</td><td>-' + money(t.discount) + '</td></tr>' : '') +
+    (draft.delivery === 'ship' ? '<tr><td>Shipping</td><td>' + (t.shipping ? money(t.shipping) : 'Free') + '</td></tr>' : '') +
+    (t.tax ? '<tr><td>Tax</td><td>' + money(t.tax) + '</td></tr>' : '') +
+    '<tr class="total"><td>Total</td><td>' + money(t.total) + '</td></tr></table>' +
+    '<p><button type="submit" class="btn" id="place">Place order</button></p><p class="err" id="err-form"></p></form>';
+}
+
+function field(id, label, type, auto) {
+  return '<div class="field"><label for="' + id + '">' + label + '</label><input id="' + id + '" type="' + type + '" autocomplete="' + auto + '" value="' + esc(draft[id]) + '"><p class="err" id="err-' + id + '"></p></div>';
+}
+
+function readDraft() {
+  var g = function (id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; };
+  var d = document.querySelector('input[name="delivery"]:checked');
+  draft = { name: g('name'), phone: g('phone'), email: g('email'), delivery: d ? d.value : '', address: g('address'), postal: g('postal'), promo: g('promo'), consent: !!(document.getElementById('consent') || {}).checked };
+  return draft;
+}
+
+function validateDraft(d) {
+  var errors = {};
+  if (d.name.length < 2) errors.name = 'Enter your name.';
+  if (d.phone.replace(/\D/g, '').length < 10) errors.phone = 'Enter a phone number with the area code.';
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)) errors.email = 'Enter a valid email address.';
+  var postal = d.postal.toUpperCase().replace(/[^A-Z0-9]/g, '');
+  if (!d.delivery) errors.delivery = 'Choose how you want to get your order.';
+  if (d.delivery === 'gta') {
+    if (!/^[ML]\d[A-Z]\d[A-Z]\d$/.test(postal)) errors.postal = 'We deliver to postal codes starting with M or L. Check the postal code, or choose pickup.';
+    if (d.address.length < 5) errors.address = 'Enter the delivery address.';
+  }
+  if (d.delivery === 'ship') {
+    if (!/^[A-Z]\d[A-Z]\d[A-Z]\d$/.test(postal)) errors.postal = 'Enter a valid postal code.';
+    else if (!/^[KLMNP]/.test(postal)) errors.postal = 'We only ship within Ontario.';
+    if (d.address.length < 5) errors.address = 'Enter the shipping address.';
+  }
+  return errors;
+}
+
+function showErrors(errors) {
+  ['name', 'phone', 'email', 'delivery', 'address', 'postal', 'form'].forEach(function (k) {
+    var el = document.getElementById('err-' + k);
+    if (el) el.textContent = errors[k] || '';
+    var input = document.getElementById(k);
+    if (input && input.tagName !== 'FORM') { if (errors[k]) input.setAttribute('aria-invalid', 'true'); else input.removeAttribute('aria-invalid'); }
+  });
+  var first = Object.keys(errors)[0];
+  if (first) { var f = document.getElementById(first); if (f && f.focus) f.focus(); }
+}
+
+function applyPromo() {
+  readDraft();
+  var code = draft.promo.toUpperCase();
+  var msg = document.getElementById('promoMsg');
+  if (!code) { cart.promo = null; saveCart(); renderCheckout(); return; }
+  var t = totals(draft.delivery);
+  var done = function (res) {
+    if (res && res.ok) { cart.promo = { code: res.code, type: res.type, value: res.value }; saveCart(); renderCheckout(); }
+    else { cart.promo = null; saveCart(); renderCheckout(); var m = document.getElementById('promoMsg'); m.className = 'err'; m.textContent = (res && res.error) || 'That code is not valid.'; }
+  };
+  if (DATA.demo) {
+    var p = SAMPLE.promos[code];
+    done(p ? { ok: true, code: p.code, type: p.type, value: p.value } : { ok: false, error: 'That code is not valid.' });
     return;
   }
-  if(e.target.closest('[data-close-sheet]')){$('#sheet').close();}
-});
-
-/* cart */
-function addToCart(id,color,size,qty){
-  const k=state.cart.find(i=>i.id===id&&i.color===color&&i.size===size);
-  if(k)k.qty+=qty; else state.cart.push({id,color,size,qty});
-  save(); renderCount();
-}
-function renderCount(){const t=totals();$('#cartCount').textContent=t.count;}
-function openCart(){if(state.step==='done')state.step='cart';renderCart();const d=$('#cart');if(!d.open)d.showModal();}
-function shipLabel(t){return state.delivery==='pickup'?'Local pickup, Toronto':'Shipping';}
-function shipValue(t){if(state.delivery==='pickup')return 'Free';return t.freeShip?'Free over $75':money(t.ship);}
-function renderCart(){
-  const t=totals(), body=$('#cartBody'), foot=$('#cartFoot');
-  $('#cartTitle').textContent=state.step==='checkout'?'Secure checkout':state.step==='done'?'Order confirmed':`Your cart${t.count?` (${t.count})`:''}`;
-  if(state.step==='done'){
-    const o=state.order;
-    body.innerHTML=`<div class="done"><div class="check" aria-hidden="true">✓</div><h3>Thank you. It is on its way soon.</h3><p class="muted">Order number</p><p class="ordno num">${o.no}</p><p class="muted">A receipt would land in your inbox from Stripe.</p>
-      <ol>${o.delivery==='pickup'?'<li>We send the drop to the printer after November 15.</li><li>From December 1 we email you to arrange a pickup time in Toronto.</li><li>Bring your name or order number.</li>':'<li>We send the drop to the printer after November 15.</li><li>Your order ships by December 1 with tracking by email.</li><li>Wrong size? Email us within 14 days and we swap it.</li>'}</ol></div>`;
-    foot.innerHTML=`<button class="btn btn-ink" type="button" data-close style="width:100%">Continue shopping</button>`;
-    return;
-  }
-  if(state.step==='checkout'){
-    body.innerHTML=`<div class="co">
-      <div class="lines">${state.cart.map(i=>`<div style="display:flex;justify-content:space-between;gap:12px"><span>${i.qty} × ${byId(i.id).name}, ${COLORS[i.color].name}, ${i.size}</span><span class="num">${money(byId(i.id).price*i.qty)}</span></div>`).join('')}</div>
-      <div class="totals">${t.disc?`<div><span>Discount (${PROMO})</span><span class="num">−${money(t.disc)}</span></div>`:''}<div><span>${shipLabel(t)}</span><span class="num">${shipValue(t)}</span></div><div><span>HST 13%</span><span class="num">${money(t.tax)}</span></div><div class="tot"><span>Total</span><span class="num">${money(t.total)}</span></div></div>
-      <div class="stripe"><b>This is where Stripe takes over.</b><p class="lines">In the live store, this button sends you to Stripe's secure checkout page: card, Apple Pay or Google Pay, with your email and address for shipping. The shop never sees your card number. For the demo, we skip the payment.</p></div>
-      <button class="btn btn-primary" type="button" id="placeOrder" style="width:100%">Place demo order · ${money(t.total)}</button>
-      <button class="btn btn-ghost" type="button" id="backToCart" style="width:100%">Back to cart</button>
-    </div>`;
-    foot.innerHTML='';
-    return;
-  }
-  if(!state.cart.length){
-    body.innerHTML=`<div class="empty">${shirtSVG(byId('bestill'),'sand')}<p>Nothing here yet.</p><p>The Be Still tee is a good place to start.</p><p style="margin-top:14px"><button class="btn btn-ghost btn-sm" type="button" data-close data-goto="#shop">Shop the drop</button></p></div>`;
-    foot.innerHTML='';
-    return;
-  }
-  const toFree=Math.max(0,FREE_OVER-(t.sub-t.disc));
-  body.innerHTML=`<div class="items">${state.cart.map((i,n)=>{const p=byId(i.id);return `<div class="item"><div class="thumb">${shirtSVG(p,i.color)}</div><div><b>${p.name}</b><span class="sub">${COLORS[i.color].name} · ${i.size}</span><div class="qty" role="group" aria-label="Quantity"><button type="button" data-cq="-1" data-n="${n}" aria-label="Decrease">−</button><output class="num">${i.qty}</output><button type="button" data-cq="1" data-n="${n}" aria-label="Increase">+</button></div></div><div><div class="lineprice num">${money(p.price*i.qty)}</div><button class="rm" type="button" data-rm="${n}">Remove</button></div></div>`;}).join('')}</div>
-    <form class="promo" id="promoForm"><label for="promoIn" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Promo code</label><input id="promoIn" placeholder="Promo code" autocomplete="off" value="${state.promo||''}"><button class="btn btn-ghost btn-sm" type="submit">Apply</button></form>
-    <p class="msg ${state.promo?'ok':''}" id="promoMsg" aria-live="polite">${state.promo?`${PROMO} applied: 10% off.`:''}</p>
-    <div class="deliv" role="radiogroup" aria-label="Delivery">
-      <label><input type="radio" name="deliv" value="ship" ${state.delivery==='ship'?'checked':''}><span><b>Ship to Canada or the US</b><span>Tracked, 3 to 7 business days</span></span><span class="p num">${t.freeShip?'Free':money(SHIP)}<small>${t.freeShip?'over $75':`free over $75`}</small></span></label>
-      <label><input type="radio" name="deliv" value="pickup" ${state.delivery==='pickup'?'checked':''}><span><b>Local pickup, Toronto</b><span>We email you to arrange a time</span></span><span class="p">Free</span></label>
-    </div>
-    ${state.delivery==='ship'&&!t.freeShip?`<p class="fine" style="text-align:left">Add ${money(toFree)} more for free shipping.</p>`:''}
-    <div class="totals"><div><span>Subtotal</span><span class="num">${money(t.sub)}</span></div>${t.disc?`<div><span>Discount (${PROMO})</span><span class="num">−${money(t.disc)}</span></div>`:''}<div><span>${shipLabel(t)}</span><span class="num">${shipValue(t)}</span></div><div><span>HST 13%</span><span class="num">${money(t.tax)}</span></div><div class="tot"><span>Total</span><span class="num">${money(t.total)}</span></div></div>`;
-  foot.innerHTML=`<button class="btn btn-primary" type="button" id="toCheckout" style="width:100%">Checkout · ${money(t.total)}</button><p class="fine">Secure checkout by Stripe. Apple Pay and Google Pay accepted.</p>`;
-}
-$('#cart').addEventListener('click',e=>{
-  const q=e.target.closest('[data-cq]'); if(q){const i=state.cart[Number(q.dataset.n)];if(!i)return;i.qty=Math.max(0,Math.min(10,i.qty+Number(q.dataset.cq)));if(i.qty===0)state.cart.splice(Number(q.dataset.n),1);save();renderCount();renderCart();return;}
-  const rm=e.target.closest('[data-rm]'); if(rm){state.cart.splice(Number(rm.dataset.rm),1);save();renderCount();renderCart();return;}
-  if(e.target.closest('#toCheckout')){state.step='checkout';renderCart();$('#cartBody').scrollTop=0;return;}
-  if(e.target.closest('#backToCart')){state.step='cart';renderCart();return;}
-  if(e.target.closest('#placeOrder')){
-    let n=2041; try{n=Number(localStorage.getItem('sw-orderno'))||2041;localStorage.setItem('sw-orderno',String(n+1));}catch(err){}
-    state.order={no:'SW-'+n,delivery:state.delivery};
-    state.cart=[];state.promo=null;save();renderCount();state.step='done';renderCart();return;
-  }
-  const go=e.target.closest('[data-goto]'); if(go){const t=go.dataset.goto;setTimeout(()=>{const el=document.querySelector(t);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});},50);}
-});
-$('#cart').addEventListener('change',e=>{if(e.target.name==='deliv'){state.delivery=e.target.value;save();renderCart();}});
-$('#cart').addEventListener('submit',e=>{
-  if(e.target.id!=='promoForm')return; e.preventDefault();
-  const v=$('#promoIn').value.trim().toUpperCase(), m=$('#promoMsg');
-  if(!v){state.promo=null;save();renderCart();return;}
-  if(v===PROMO){state.promo=PROMO;save();renderCart();}
-  else{m.className='msg bad';m.textContent=`"${v}" is not a valid code. Try ${PROMO}.`;}
-});
-$('#openCart').addEventListener('click',openCart);
-
-/* owner view */
-const ORDERS=[
-  {no:'SW-2040',who:'Priya S.',items:'Be Still Tee, Sand, M ×1',deliv:'Ship · Canada',status:'paid'},
-  {no:'SW-2039',who:'Marcus T.',items:'Fear Not Tee, Navy, L ×2',deliv:'Ship · Canada',status:'sent'},
-  {no:'SW-2038',who:'Grace Community youth group',items:'Kids Little Light Tee, Royal, YM ×6 · Grace Upon Grace Tee, Cream, S ×2',deliv:'Local pickup',status:'pickup'},
-  {no:'SW-2037',who:'Dana K.',items:'Walk by Faith Tee, Olive, XL ×1',deliv:'Ship · US',status:'shipped'},
-  {no:'SW-2036',who:'Ahmed R.',items:'Follow Me Tee, Black, 2XL ×1',deliv:'Ship · Canada',status:'delivered'}
-];
-function renderOrders(){
-  const pill=s=>({paid:'<span class="pill paid">Paid · not sent</span>',sent:'<span class="pill sent">At the printer</span>',pickup:'<span class="pill paid">Awaiting pickup</span>',shipped:'<span class="pill ship">Shipped</span>',delivered:'<span class="pill done">Delivered</span>',picked:'<span class="pill done">Picked up</span>'})[s];
-  const act=(o,n)=>o.status==='paid'?`<button class="btn btn-ghost btn-sm" type="button" data-act="sent" data-n="${n}">Send to printer</button>`:o.status==='pickup'?`<button class="btn btn-ghost btn-sm" type="button" data-act="picked" data-n="${n}">Mark picked up</button>`:'';
-  $('#orders tbody').innerHTML=ORDERS.map((o,n)=>`<tr><td class="num">${o.no}</td><td>${o.who}</td><td style="min-width:220px">${o.items}</td><td style="white-space:nowrap">${o.deliv}</td><td>${pill(o.status)}</td><td>${act(o,n)}</td></tr>`).join('');
-  $('#waitCount').textContent=ORDERS.filter(o=>o.status==='paid'||o.status==='pickup').length;
-}
-$('#orders').addEventListener('click',e=>{const b=e.target.closest('[data-act]');if(!b)return;ORDERS[Number(b.dataset.n)].status=b.dataset.act;renderOrders();});
-$('#openOwner').addEventListener('click',()=>{$('#notes').close();renderOrders();$('#owner').showModal();});
-$('#openNotes').addEventListener('click',()=>$('#notes').showModal());
-$('#resetDemo').addEventListener('click',()=>{state={cart:[],promo:null,delivery:'ship',step:'cart',order:null};try{localStorage.removeItem('sw-cart');localStorage.removeItem('sw-orderno');}catch(e){}renderCount();$('#notes').close();toast('Demo reset. Cart emptied.',false);});
-
-/* policies */
-const POLICIES={
-  returns:{t:'Returns & exchanges',b:`<p>Wrong size? Email hello@stillwatersapparel.ca within 14 days of delivery or pickup and we send the right size. Return the first shirt unworn, unwashed and with its tag, and we cover the return label inside Canada.</p><p style="margin-top:10px">Every shirt is printed to order, so we cannot refund a change of mind, but a misprint or a defect is replaced at no cost, no questions asked.</p>`},
-  shipping:{t:'Shipping',b:`<p>Shipping is a flat $9.99 per order to Canada and the United States, tracked, and free on orders over $75 after discounts. Orders ship once the drop is printed, by December 1, and arrive in 3 to 7 business days in Canada and 3 to 5 in the US, where they are printed locally so there are no customs charges.</p><p style="margin-top:10px">Local pickup in Toronto is free; we email you from December 1 to arrange a time.</p>`},
-  privacy:{t:'Privacy',b:`<p>We collect your name, email and shipping address only to fulfil your order and send you the receipt and tracking. Payment is processed by Stripe and printing by our print partner; neither we nor they see more than they need, and we never see or store your card number.</p><p style="margin-top:10px">Our visitor analytics uses no cookies and does not identify you. We do not sell or share your information, and you can ask us to delete it at any time by email.</p>`},
-  terms:{t:'Terms',b:`<p>Prices are in Canadian dollars; HST is added at checkout for Canadian orders. Pre-orders close on the date shown and are then printed as a batch; printing and shipping dates are estimates.</p><p style="margin-top:10px">Designs and artwork are the property of Still Waters Apparel. Scripture references are quoted briefly; the King James Version is public domain. The give-back total is published each January.</p>`}
-};
-document.addEventListener('click',e=>{
-  const pol=e.target.closest('[data-policy]'); if(pol){const p=POLICIES[pol.dataset.policy];$('#policyTitle').textContent=p.t;$('#policyBody').innerHTML=p.b;$('#policy').showModal();return;}
-  const cl=e.target.closest('[data-close]'); if(cl){const d=cl.closest('dialog');if(d)d.close();return;}
-});
-document.querySelectorAll('dialog').forEach(d=>d.addEventListener('click',e=>{if(e.target===d)d.close();}));
-
-/* toast */
-let toastT;
-function toast(text,withCart){
-  const el=$('#toast');
-  el.innerHTML=`<span>${text}</span>${withCart?'<button type="button" id="toastCart">View cart</button>':''}`;
-  el.hidden=false; clearTimeout(toastT); toastT=setTimeout(()=>{el.hidden=true;},3200);
-  const b=$('#toastCart'); if(b)b.addEventListener('click',()=>{el.hidden=true;openCart();});
+  msg.className = '';
+  msg.textContent = 'Checking the code.';
+  fetch(CONFIG.scriptUrl + '?action=promo&code=' + encodeURIComponent(code) + '&subtotal=' + encodeURIComponent(t.subtotal), { cache: 'no-store', redirect: 'follow' })
+    .then(function (r) { return r.json(); }).then(done).catch(function () { done({ ok: false, error: 'The code could not be checked. Try again in a moment.' }); });
 }
 
-/* boot */
-load(); renderHero(); renderGrid(); renderCount();
+function placeOrder() {
+  var d = readDraft();
+  var errors = validateDraft(d);
+  showErrors(errors);
+  if (Object.keys(errors).length) return;
+  var payload = {
+    token: CONFIG.token, ref: orderRef, name: d.name, phone: d.phone, email: d.email, delivery: d.delivery, postal: d.postal, address: d.address,
+    promo: cart.promo ? cart.promo.code : '', consent: d.consent, website: (document.getElementById('website') || {}).value || '',
+    items: cart.items.map(function (l) { return { id: l.id, colour: l.colour, range: l.range, size: l.size, qty: l.qty }; })
+  };
+  var btn = document.getElementById('place');
+  btn.disabled = true;
+  btn.textContent = 'Placing your order';
+  var finish = function (res) {
+    if (!res.ok) {
+      btn.disabled = false;
+      btn.textContent = 'Place order';
+      var e = {}; e[res.field && document.getElementById('err-' + res.field) ? res.field : 'form'] = res.error || 'The order could not be placed.';
+      showErrors(e);
+      return;
+    }
+    lastOrder = res;
+    lastOrder.email = d.email;
+    lastOrder.productId = cart.items[0].id;
+    cart = { items: [], promo: null };
+    saveCart();
+    renderCartCount();
+    orderRef = '';
+    draft = { name: '', phone: '', email: '', delivery: '', address: '', postal: '', promo: '', consent: false };
+    location.hash = 'order/' + encodeURIComponent(res.number || 'received');
+  };
+  if (DATA.demo) { finish(demoOrder(payload)); return; }
+  sendOrder(payload).then(finish);
+}
+
+function sendOrder(payload) {
+  var body = JSON.stringify(payload);
+  /* A plain-text body is a simple request, so the browser sends it without a preflight and can read the redirected JSON reply. */
+  return fetch(CONFIG.scriptUrl, { method: 'POST', body: body, redirect: 'follow' })
+    .then(function (r) { return r.json(); })
+    .then(function (j) { if (j && typeof j.ok === 'boolean') return j; throw new Error('bad reply'); })
+    .catch(function () {
+      /* Fallback: an opaque form post. The order still lands and the emails still go out, but the reply cannot be read. */
+      return fetch(CONFIG.scriptUrl, { method: 'POST', mode: 'no-cors', body: new URLSearchParams({ payload: body }) })
+        .then(function () { return { ok: true, number: '', opaque: true }; })
+        .catch(function () { return { ok: false, error: 'The order could not be sent. Check your connection and try again' + (contactEmail() ? ', or email ' + contactEmail() : '') + '.' }; });
+    });
+}
+
+function demoOrder(payload) {
+  var n = 1042;
+  try { n = Number(localStorage.getItem('sw-demo-orderno')) || 1042; localStorage.setItem('sw-demo-orderno', String(n + 1)); } catch (e) { }
+  var number = 'SW-' + n;
+  var t = totals(payload.delivery);
+  var address = payload.address + (payload.postal ? ', ' + payload.postal.toUpperCase() : '');
+  var vars = { '{total}': money(t.total), '{etransfer}': String(setting('etransfer_email') || contactEmail()), '{number}': number };
+  var fill = function (s) { return String(s).replace(/\{total\}|\{etransfer\}|\{number\}/g, function (m) { return vars[m]; }); };
+  var instructions = payload.delivery === 'gta' ? 'Free delivery to ' + address + '. ' + fill(setting('gta_instructions'))
+    : payload.delivery === 'pickup' ? (setting('pickup_note') ? setting('pickup_note') + ' ' : '') + fill(setting('pickup_instructions'))
+    : 'Shipping to ' + address + '. ' + fill(setting('ship_instructions'));
+  return { ok: true, number: number, delivery: payload.delivery, subtotal: t.subtotal, discount: t.discount, shipping: t.shipping, tax: t.tax, total: t.total, instructions: instructions, reviewUrl: reviewLink(payload.items[0].id, number), demo: true };
+}
+
+function renderConfirmation() {
+  var o = lastOrder;
+  document.title = 'Order received, ' + storeName();
+  if (!o) { view.innerHTML = '<h1>Order received</h1><p>Check your email for the order number and what to have ready.</p><p><a href="#shop">Back to the shop</a></p>'; return; }
+  var html = '<h1>Order ' + (o.number ? esc(o.number) + ' ' : '') + 'received</h1>';
+  if (o.opaque) html += '<p>We emailed the order number and what to have ready to ' + esc(o.email) + '.</p>';
+  else html += '<p>Total ' + money(o.total) + '.</p><p>' + esc(o.instructions) + '</p>' + (o.demo ? '<p>Sample shop: nothing was recorded and no email was sent.</p>' : '<p>We emailed a copy to ' + esc(o.email) + '.</p>');
+  if (o.reviewUrl) html += '<p>Once it is in your hands, <a href="' + esc(o.reviewUrl) + '" target="_blank" rel="noopener">leave a review</a>.</p>';
+  html += '<p><a href="#shop">Back to the shop</a></p>';
+  view.innerHTML = html;
+}
+
+function renderFaq() {
+  document.title = 'FAQ, ' + storeName();
+  var rate = num(setting('ship_rate')), free = num(setting('ship_free_over')), contact = contactEmail();
+  var qa = [
+    ['How do I pay?', 'Cash or e-Transfer when we hand you the shirt.' + (on('ship_enabled') ? ' For shipping within Ontario we ask for the e-Transfer first.' : '')],
+    ['Where do you deliver?', 'Free delivery to postal codes starting with M or L. We text you to arrange a time.'],
+    on('pickup_enabled') ? ['Can I pick up instead?', 'Yes. ' + (setting('pickup_note') || 'Choose pickup at checkout and we text you to arrange it.')] : null,
+    ['Do you ship?', on('ship_enabled') ? 'Within Ontario, ' + money(rate) + ' per order' + (free > 0 ? ', free over ' + money(free) : '') + '. Send the e-Transfer first and we ship when it arrives.' : 'Not yet. Delivery and pickup are in the GTA only.'],
+    ['What if the size is wrong?', 'Exchange or store credit within 30 days for unworn shirts with the tags on.' + (contact ? ' Email ' + contact + ' with your order number.' : '')],
+    ['Which Bible version is on the shirts?', 'King James Version.']
+  ].filter(Boolean);
+  view.innerHTML = '<div class="faq"><h1>FAQ</h1>' + qa.map(function (q) { return '<h2>' + esc(q[0]) + '</h2><p>' + esc(q[1]) + '</p>'; }).join('') + '</div>';
+}
+
+function renderPolicies() {
+  document.title = 'Policies, ' + storeName();
+  var contact = contactEmail(), rate = num(setting('ship_rate')), free = num(setting('ship_free_over'));
+  view.innerHTML = '<div class="policies"><h1>Policies</h1>' +
+    '<h2>Returns and exchanges</h2><p>Returns within 30 days of delivery or pickup for shirts in new, unworn, resalable condition with the tags on, for an exchange or store credit. No cash refunds except for a defect or an error on our side, in which case we replace the shirt or refund in full.' + (contact ? ' Email ' + esc(contact) + ' with your order number to start a return.' : '') + ' Return shipping is the customer\'s cost except for defects.</p>' +
+    '<h2>Delivery and payment</h2><p>Prices are in Canadian dollars. Delivery is free to postal codes starting with M or L; we text you to arrange a time and you pay cash or e-Transfer at the door.' + (on('pickup_enabled') && setting('pickup_note') ? ' ' + esc(setting('pickup_note')) : '') + (on('ship_enabled') ? ' Shipping within Ontario is ' + money(rate) + ' per order' + (free > 0 ? ', free over ' + money(free) : '') + ', paid by e-Transfer before we ship.' : '') + '</p>' +
+    '<h2>Privacy</h2><p>We keep your name, phone number, email and address to deliver your order and to send you the order emails. If you tick the box at checkout we email you when new designs come out; reply to any email to stop. We do not share or sell your details.</p></div>';
+}
+
+/* ---------- events ---------- */
+
+view.addEventListener('click', function (e) {
+  var t = e.target.closest('button, a');
+  if (!t) return;
+  if (t.dataset.colour !== undefined) { sel.colour = t.dataset.colour; sel.size = ''; sel.range = ''; renderProduct(sel.id); return; }
+  if (t.dataset.size !== undefined) { if (t.disabled) return; sel.range = t.dataset.range; sel.size = t.dataset.size; renderProduct(sel.id); return; }
+  if (t.id === 'add') { addToCart(); return; }
+  if (t.dataset.remove !== undefined) { cart.items.splice(Number(t.dataset.remove), 1); saveCart(); renderCartCount(); renderCart(); return; }
+  if (t.id === 'applyPromo') { applyPromo(); return; }
+});
+
+view.addEventListener('change', function (e) {
+  var t = e.target;
+  if (t.id === 'qty') { sel.qty = Number(t.value) || 1; return; }
+  if (t.dataset.qty !== undefined) { var l = cart.items[Number(t.dataset.qty)]; if (l) { l.qty = Number(t.value) || 1; saveCart(); renderCartCount(); renderCart(); } return; }
+  if (t.name === 'delivery') { readDraft(); renderCheckout(); return; }
+});
+
+view.addEventListener('submit', function (e) {
+  if (e.target.id === 'checkout') { e.preventDefault(); placeOrder(); }
+});
+
+function addToCart() {
+  var p = findProduct(sel.id);
+  var msg = document.getElementById('addMsg');
+  if (!p) return;
+  if (!sel.range || !sel.size) { msg.className = 'err'; msg.textContent = 'Choose a size.'; return; }
+  var qtySel = document.getElementById('qty');
+  sel.qty = qtySel ? Number(qtySel.value) || 1 : 1;
+  var line = null;
+  cart.items.forEach(function (l) { if (l.id === p.id && l.colour === sel.colour && l.range === sel.range && l.size === sel.size) line = l; });
+  if (line) line.qty = Math.min(maxQty(), line.qty + sel.qty);
+  else cart.items.push({ id: p.id, colour: sel.colour, range: sel.range, size: sel.size, qty: sel.qty });
+  saveCart();
+  renderCartCount();
+  msg.className = '';
+  msg.innerHTML = 'Added to the cart. <a href="#cart">View cart</a>';
+}
+
+/* ---------- chrome, music, structured data ---------- */
+
+function applyChrome() {
+  var name = storeName();
+  document.getElementById('wordmark').textContent = name;
+  document.title = name;
+  var ann = DATA.demo ? SAMPLE.announcement : String(setting('announcement') || '');
+  document.getElementById('announceText').textContent = ann;
+  document.getElementById('announce').classList.toggle('hidden', !ann);
+  var email = contactEmail(), ig = String(setting('instagram') || CONFIG.instagram);
+  document.getElementById('footEmail').textContent = email;
+  document.getElementById('footEmail').classList.toggle('hidden', !email);
+  document.getElementById('footInstagram').textContent = ig ? 'Instagram: ' + ig : '';
+  document.getElementById('footInstagram').classList.toggle('hidden', !ig);
+  document.getElementById('footCopy').textContent = '© ' + new Date().getFullYear() + ' ' + name;
+  var music = String(setting('music_url') || CONFIG.musicUrl);
+  if (music) {
+    document.getElementById('musicLine').classList.remove('hidden');
+    document.getElementById('music').textContent = String(setting('music_label') || CONFIG.musicLabel || 'Play the song');
+    document.getElementById('musicCredit').textContent = String(setting('music_credit') || CONFIG.musicCredit || '');
+    setupMusic(music);
+  }
+}
+
+function setupMusic(url) {
+  var btn = document.getElementById('music');
+  var label = btn.textContent;
+  var audio = null;
+  btn.addEventListener('click', function () {
+    if (audio && !audio.paused) { audio.pause(); audio.currentTime = 0; btn.textContent = label; return; }
+    if (!audio) { audio = new Audio(url); audio.loop = false; audio.addEventListener('ended', function () { btn.textContent = label; }); }
+    audio.play().then(function () { btn.textContent = 'Stop'; }).catch(function () { btn.textContent = label; });
+  });
+}
+
+function injectJsonLd() {
+  if (DATA.demo || !DATA.products.length) return;
+  var ld = {
+    '@context': 'https://schema.org', '@type': 'ItemList', name: storeName(),
+    itemListElement: DATA.products.map(function (p, i) {
+      var item = { '@type': 'Product', name: p.name, url: CONFIG.siteUrl + '#p/' + encodeURIComponent(p.id), brand: { '@type': 'Brand', name: storeName() },
+        offers: { '@type': 'Offer', priceCurrency: 'CAD', price: p.price, availability: p.allSoldOut ? 'https://schema.org/SoldOut' : 'https://schema.org/InStock', url: CONFIG.siteUrl + '#p/' + encodeURIComponent(p.id) } };
+      if (p.description) item.description = p.description;
+      var img = firstImage(p);
+      if (img) item.image = /^https?:/.test(img) ? img : CONFIG.siteUrl + img.replace(/^\//, '');
+      return { '@type': 'ListItem', position: i + 1, item: item };
+    })
+  };
+  var s = document.createElement('script');
+  s.type = 'application/ld+json';
+  s.textContent = JSON.stringify(ld);
+  document.head.appendChild(s);
+}
+
+function reviewLink(productId, number) {
+  var t = String(setting('review_form_url') || '');
+  if (!t) return '';
+  return t.replace(/\{product\}/g, encodeURIComponent(productId)).replace(/\{order\}/g, encodeURIComponent(number || ''));
+}
+
+/* ---------- utilities ---------- */
+
+function esc(s) { return String(s === undefined || s === null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+function num(v) { var n = parseFloat(String(v === undefined || v === null ? '' : v).replace(/[^0-9.\-]/g, '')); return isFinite(n) ? n : 0; }
+function yes(v) { return /^(yes|y|true|1|x|on)$/i.test(String(v === undefined || v === null ? '' : v).trim()); }
+function list(v) { return String(v === undefined || v === null ? '' : v).split(/[,;\n]+/).map(function (s) { return s.trim(); }).filter(Boolean); }
+function slug(s) { return String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
+function round2(n) { return Math.round((n + Number.EPSILON) * 100) / 100; }
+function money(n) { return '$' + round2(num(n)).toFixed(2).replace(/\.00$/, ''); }
+function range1(n) { var out = []; for (var i = 1; i <= n; i++) out.push(i); return out; }
+
+/* ---------- start ---------- */
+
+renderCartCount();
+window.addEventListener('hashchange', route);
+loadData().then(function () { pruneCart(); applyChrome(); route(); injectJsonLd(); });
 })();
 </script>
 
