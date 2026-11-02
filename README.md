@@ -1,6 +1,6 @@
-# Still Waters store
+# Qivgu store
 
-A cash-on-delivery online store for a scripture t-shirt brand in Toronto. A static site on Cloudflare Pages (the demo is on GitHub Pages) reads one Google Sheet through a small Apps Script, takes orders into that sheet and emails both owners and the customer. No payment processor, no monthly fees: customers pay cash or e-Transfer when the shirt is handed over, or e-Transfer first for shipping within Ontario.
+A cash-on-delivery online store for Qivgu, a scripture t-shirt brand in Toronto, to live at qivgu.com. A static site on Cloudflare Pages (the demo is on GitHub Pages) reads one Google Sheet through a small Apps Script, takes orders into that sheet and emails both owners and the customer. No payment processor, no monthly fees: customers pay cash or e-Transfer when the shirt is handed over, or e-Transfer first for shipping within Ontario.
 
 Demo, with sample products and nothing recorded: https://sunmoonron.github.io/faith-tee-demo/
 
@@ -28,9 +28,9 @@ Edit `index.html`, run `./build.sh`, and open `docs/` on any static server, for 
 python3 -m http.server 8795 --directory docs
 ```
 
-With `scriptUrl` empty the site runs in sample mode: four example products, two example reviews, the FAITH10 code, and a fake order number at checkout. Nothing is recorded or emailed. Set `scriptUrl` and `token` to switch it to the real sheet; `productsCsvUrl` and `reviewsCsvUrl` are an optional fallback. `siteUrl`, the Open Graph tags, `docs/sitemap.xml` and `docs/robots.txt` carry the public address; change all four when the domain changes.
+With `scriptUrl` empty the site runs in sample mode: four example products, two example reviews, the FAITH10 code, and a fake order number at checkout. Nothing is recorded or emailed. Set `scriptUrl` and `token` to switch it to the real sheet; `productsCsvUrl` and `reviewsCsvUrl` are an optional fallback. `siteUrl`, the Open Graph tags, the canonical link, `docs/sitemap.xml` and `docs/robots.txt` all say https://qivgu.com/; change them together if the domain ever changes. The GitHub Pages demo shares them, which is fine: it is a preview, not the store.
 
-Photos go in `docs/img/` with the file names used in the sheet's `images` column. `docs/img/og.jpg` is the image social networks show when the link is shared; add one at 1200 by 630.
+Photos go in `docs/img/` with the file names used in the sheet's `images` column. The crest logo is there as `qivgu-logo.png`, and `favicon.png`, `apple-touch-icon.png` and `og.jpg` (the 1200 by 630 image social networks show when the link is shared) are made from it. The header keeps a text wordmark on purpose: the crest is blue and gold, and the design rules keep colour out of the page chrome. Ask the owners for the original vector or a larger export; the file in hand is 442 pixels wide.
 
 The design rules the site follows are in the proposal doc under "Design rules for the real site". Before committing a design change, grep the CSS for `gradient`, `backdrop-filter`, `box-shadow`, `letter-spacing`, `animation` and `transition`, and for any `border-radius` above 2px; none should be there.
 
@@ -40,10 +40,10 @@ Done inside the client's Cloudflare account, where Ronish is a member.
 
 1. Workers & Pages, Create, Pages, "Connect to Git", pick this repository (or "Upload assets" and drag the `docs` folder in for a one-off deploy).
 2. Build settings: framework None, build command empty, build output directory `docs`. Save and deploy. The site is live at a `pages.dev` address within a minute.
-3. Custom domains, Set up a custom domain, enter the store's domain. Cloudflare adds the DNS record itself because the domain is in the same account. Add the `www` version too.
+3. Custom domains, Set up a custom domain, enter `qivgu.com`. Cloudflare adds the DNS record itself because the domain is in the same account. Add `www.qivgu.com` too.
 4. Every push to `main` redeploys. For an upload deploy, drag the folder in again.
 
-Update `siteUrl`, the two `og:` tags and the canonical link in `index.html`, and the addresses in `docs/sitemap.xml` and `docs/robots.txt`, then rebuild and push.
+The addresses in `index.html`, `docs/sitemap.xml` and `docs/robots.txt` already say qivgu.com.
 
 ## Email Routing for info@ and careers@
 
@@ -51,10 +51,10 @@ Also in the client's Cloudflare account.
 
 1. Email, Email Routing, Get started. Cloudflare adds the MX and SPF records it needs; accept them.
 2. Destination addresses: add the owners' Gmail addresses. Each gets a verification email to click.
-3. Custom addresses: create `info@` and forward it to the store Gmail, and `careers@` forwarded wherever they want applications to land. Both can forward to the same inbox.
-4. To reply as `info@` from Gmail: Gmail Settings, Accounts, "Send mail as", Add another email address, enter `info@` the domain, untick "Treat as an alias" if they want replies to stay separate, and on the next screen use `smtp.gmail.com`, port 587, the store Gmail address and an app password (Google Account, Security, 2-Step Verification, App passwords). Gmail sends a confirmation code to `info@`, which Email Routing forwards back to the same inbox.
+3. Custom addresses: create `info@qivgu.com` and forward it to the store Gmail, and `careers@qivgu.com` forwarded wherever they want applications to land. Both can forward to the same inbox.
+4. To reply as `info@qivgu.com` from Gmail: Gmail Settings, Accounts, "Send mail as", Add another email address, enter `info@qivgu.com`, untick "Treat as an alias" if they want replies to stay separate, and on the next screen use `smtp.gmail.com`, port 587, the store Gmail address and an app password (Google Account, Security, 2-Step Verification, App passwords). Gmail sends a confirmation code to `info@qivgu.com`, which Email Routing forwards back to the same inbox.
 
-Put `info@` the domain into the Settings tab as `contact_email` and, if that is where e-Transfers go, `etransfer_email`.
+Put `info@qivgu.com` into the Settings tab as `contact_email` and, if that is where e-Transfers go, `etransfer_email`.
 
 ## Handover to the store account
 

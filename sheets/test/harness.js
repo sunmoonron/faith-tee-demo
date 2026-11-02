@@ -69,7 +69,8 @@ class Book {
   getSheetByName(n) { return this.sheets.find(s => s.name === n) || null; }
   getSheets() { return this.sheets; }
   getUrl() { return 'https://docs.google.com/spreadsheets/d/TEST/edit'; }
-  getSpreadsheetTimeZone() { return 'America/Toronto'; }
+  getSpreadsheetTimeZone() { return 'America/Los_Angeles'; }
+  setSpreadsheetTimeZone(tz) { this.tz = tz; }
   insertSheet(n) { const s = new Sheet(n, []); this.sheets.push(s); return s; }
   deleteSheet(s) { this.sheets = this.sheets.filter(x => x !== s); }
 }
@@ -102,6 +103,7 @@ function makeSandbox(book, sent, cache) {
       }
     },
     PropertiesService: { getScriptProperties: () => ({ getProperty: () => null }) },
+    Session: { getScriptTimeZone: () => 'America/Toronto' },
     Logger: { log: (...a) => console.log('  [Logger]', ...a) },
     console
   };
@@ -162,22 +164,22 @@ function run() {
   console.log('GTA delivery with a promo');
   const r1 = post(Object.assign({}, base, { ref: 'ref-1', delivery: 'gta', postal: 'm5v 2t6', address: '12 Example St, Toronto', promo: 'faith10' }));
   check('accepted', r1.ok === true, r1);
-  check('order number SW-1042', r1.number === 'SW-1042', r1.number);
+  check('order number QV-1042', r1.number === 'QV-1042', r1.number);
   check('subtotal 98 (2 x 35 + youth 28)', r1.subtotal === 98, r1.subtotal);
   check('discount 9.80', r1.discount === 9.8, r1.discount);
   check('total 88.20', r1.total === 88.2, r1.total);
-  check('instructions mention cash and the e-Transfer address', /cash/.test(r1.instructions) && /info@example.com/.test(r1.instructions) && /SW-1042/.test(r1.instructions), r1.instructions);
+  check('instructions mention cash and the e-Transfer address', /cash/.test(r1.instructions) && /info@example.com/.test(r1.instructions) && /QV-1042/.test(r1.instructions), r1.instructions);
   check('one row appended with status New and paid No', orders().length === 1 && orders()[0][11] === 'New' && orders()[0][12] === 'No', orders()[0]);
   check('row delivery label and postal', orders()[0][5] === 'GTA delivery' && /M5V 2T6/.test(orders()[0][6]), orders()[0].slice(5, 7));
   check('row items text', /2 x Be still, Black, Men's M, \$70.00/.test(orders()[0][7]) && /1 x Fear not, White, Youth YM, \$28.00/.test(orders()[0][7]), orders()[0][7]);
   check('two emails sent', sent.length === 2, sent.map(m => m.to));
-  check('owners email goes to both owners', sent[0].to === 'owner1@example.com,owner2@example.com' && /New order SW-1042/.test(sent[0].subject), sent[0].subject);
-  check('customer email has the number, total and instructions', sent[1].to === 'customer@example.com' && /SW-1042/.test(sent[1].subject) && /\$88\.20/.test(sent[1].body) && /e-Transfer/.test(sent[1].body), sent[1].body);
+  check('owners email goes to both owners', sent[0].to === 'owner1@example.com,owner2@example.com' && /New order QV-1042/.test(sent[0].subject), sent[0].subject);
+  check('customer email has the number, total and instructions', sent[1].to === 'customer@example.com' && /QV-1042/.test(sent[1].subject) && /\$88\.20/.test(sent[1].body) && /e-Transfer/.test(sent[1].body), sent[1].body);
   check('next_order moved to 1043', settingsSheet.rows.find(r => r[0] === 'next_order')[1] === 1043);
 
   console.log('Duplicate submit with the same ref');
   const r1b = post(Object.assign({}, base, { ref: 'ref-1', delivery: 'gta', postal: 'M5V2T6', address: '12 Example St, Toronto', promo: 'FAITH10' }));
-  check('same number returned', r1b.number === 'SW-1042', r1b);
+  check('same number returned', r1b.number === 'QV-1042', r1b);
   check('no second row, no more emails', orders().length === 1 && sent.length === 2);
 
   console.log('GTA delivery with a postal code outside the GTA');
@@ -187,7 +189,7 @@ function run() {
 
   console.log('Pickup');
   const r3 = post(Object.assign({}, base, { ref: 'ref-3', delivery: 'pickup' }));
-  check('accepted as SW-1043', r3.ok === true && r3.number === 'SW-1043', r3);
+  check('accepted as QV-1043', r3.ok === true && r3.number === 'QV-1043', r3);
   check('pickup instructions carry the pickup note', /church/.test(r3.instructions) && /\$98\.00/.test(r3.instructions), r3.instructions);
   check('row has an empty address', orders()[1][6] === '', orders()[1][6]);
 
@@ -196,7 +198,7 @@ function run() {
   check('rejected while ship_enabled is no', r4.ok === false && r4.field === 'delivery', r4);
   setSetting('ship_enabled', 'yes');
   const r5 = post(Object.assign({}, base, { ref: 'ref-5', delivery: 'ship', postal: 'N2L 3G1', address: '200 University Ave W, Waterloo' }));
-  check('accepted as SW-1044 with 12 shipping', r5.ok === true && r5.number === 'SW-1044' && r5.shipping === 12 && r5.total === 110, r5);
+  check('accepted as QV-1044 with 12 shipping', r5.ok === true && r5.number === 'QV-1044' && r5.shipping === 12 && r5.total === 110, r5);
   check('ship instructions ask for the e-Transfer first', /e-Transfer of \$110\.00/.test(r5.instructions), r5.instructions);
   const r6 = post(Object.assign({}, base, { ref: 'ref-6', delivery: 'ship', postal: 'V6B 1A1', address: '100 Example Ave, Vancouver' }));
   check('non-Ontario postal code rejected', r6.ok === false && /Ontario/.test(r6.error), r6);
@@ -227,7 +229,7 @@ function run() {
 
   console.log('Form-encoded post (the no-cors fallback)');
   const r16 = postForm({ payload: JSON.stringify(Object.assign({}, base, { ref: 'ref-16', delivery: 'pickup' })) });
-  check('payload field accepted', r16.ok === true && /^SW-\d+$/.test(r16.number), r16);
+  check('payload field accepted', r16.ok === true && /^QV-\d+$/.test(r16.number), r16);
   const r17 = postForm({ token: TOKEN, ref: 'ref-17', name: 'Plain Fields', phone: '6475550100', email: 'plain@example.com', delivery: 'pickup', items: JSON.stringify(base.items) });
   check('plain fields accepted', r17.ok === true, r17);
 
@@ -237,6 +239,7 @@ function run() {
   const made = gs2.setupTabs();
   check('creates the five tabs', made.length === 5 && empty.getSheetByName('Settings').rows.length === 29, made);
   check('removes the empty default sheet', !empty.getSheetByName('Sheet1'));
+  check('sets the sheet time zone to the script time zone', empty.tz === 'America/Toronto', empty.tz);
   const cat2 = JSON.parse(gs2.doGet({ parameter: {} }).text);
   check('catalog works on the fresh book', cat2.ok && cat2.products.length === 4, cat2.products && cat2.products.length);
 

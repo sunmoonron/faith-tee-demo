@@ -21,8 +21,8 @@ var PUBLIC_SETTINGS = ['store_name', 'contact_email', 'instagram', 'etransfer_em
   'giveback_line', 'review_form_url', 'music_url', 'music_label', 'music_credit'];
 
 var DEFAULTS = {
-  store_name: 'Still Waters',
-  order_prefix: 'SW',
+  store_name: 'Qivgu',
+  order_prefix: 'QV',
   next_order: 1001,
   gta_enabled: 'yes',
   pickup_enabled: 'yes',
@@ -362,7 +362,9 @@ function tab(name) {
 }
 
 function timeZone() {
-  return book().getSpreadsheetTimeZone() || 'America/Toronto';
+  var tz = '';
+  try { tz = Session.getScriptTimeZone(); } catch (e) { }
+  return tz || 'America/Toronto';
 }
 
 function readRows(name) {
@@ -570,15 +572,15 @@ var TEMPLATE = {
   ],
   Reviews: [
     ['product', 'order', 'name', 'stars', 'text', 'approved'],
-    ['bestill', 'SW-1001', 'Priya', 5, 'Fits true to size and the print has not cracked after a dozen washes.', 'yes'],
-    ['fearnot', 'SW-1002', 'Marcus', 4, 'Runs a little large. I ordered a medium and it fits like a large.', 'yes']
+    ['bestill', 'QV-1001', 'Priya', 5, 'Fits true to size and the print has not cracked after a dozen washes.', 'yes'],
+    ['fearnot', 'QV-1002', 'Marcus', 4, 'Runs a little large. I ordered a medium and it fits like a large.', 'yes']
   ],
   Settings: [
     ['key', 'value', 'note'],
-    ['store_name', 'Still Waters', 'Shown in emails and in the site when the site loads it'],
+    ['store_name', 'Qivgu', 'Shown in emails and in the site when the site loads it'],
     ['owner_emails', 'owner1@example.com, owner2@example.com', 'Who gets the new-order email. Separate several with commas'],
     ['token', 'change-me-to-a-random-string', 'Must match the token in the site config. Blocks posts that do not come from the site'],
-    ['order_prefix', 'SW', 'Order numbers look like SW-1042'],
+    ['order_prefix', 'QV', 'Order numbers look like QV-1042'],
     ['next_order', 1042, 'The next order number. The script moves it up by one per order'],
     ['contact_email', 'info@example.com', 'Reply-to address on customer emails and shown in the site footer'],
     ['instagram', '@yourhandle', 'Shown as text in the site footer'],
@@ -626,6 +628,7 @@ function setupTabs() {
     orders.getRange(2, 12, 2000, 1).setDataValidation(status);
     orders.getRange(2, 13, 2000, 1).setDataValidation(paid);
   }
+  try { ss.setSpreadsheetTimeZone(timeZone()); } catch (e) { }
   var first = ss.getSheets()[0];
   if (first && names.indexOf(first.getName()) < 0 && ss.getSheets().length > names.length && first.getLastRow() === 0) ss.deleteSheet(first);
   Logger.log(made.length ? 'Created: ' + made.join(', ') : 'All tabs already exist');

@@ -22,7 +22,7 @@ cd sheets
 Create a new Google Sheet with a bound script (writes `.clasp.json`, which is git-ignored, and a `parentId` for the sheet):
 
 ```bash
-npx -y @google/clasp@3.4.1 create --type sheets --title "Still Waters store" --rootDir .
+npx -y @google/clasp@3.4.1 create --type sheets --title "Qivgu store" --rootDir .
 ```
 
 Push `Code.gs` and `appsscript.json` (the `.claspignore` keeps the templates and tests out):

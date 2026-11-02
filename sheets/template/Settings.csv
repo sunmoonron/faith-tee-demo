@@ -1,8 +1,8 @@
 key,value,note
-store_name,Still Waters,Shown in emails and in the site when the site loads it
+store_name,Qivgu,Shown in emails and in the site when the site loads it
 owner_emails,"owner1@example.com, owner2@example.com",Who gets the new-order email. Separate several with commas
 token,change-me-to-a-random-string,Must match the token in the site config. Blocks posts that do not come from the site
-order_prefix,SW,Order numbers look like SW-1042
+order_prefix,QV,Order numbers look like QV-1042
 next_order,1042,The next order number. The script moves it up by one per order
 contact_email,info@example.com,Reply-to address on customer emails and shown in the site footer
 instagram,@yourhandle,Shown as text in the site footer

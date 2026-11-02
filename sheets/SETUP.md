@@ -6,7 +6,7 @@ Do all of this signed in to the Google account that should own the store (for th
 
 ## 1. Create the sheet
 
-Go to sheets.new and name the sheet, for example "Still Waters store". Leave it with its one empty tab; the script creates the real tabs in step 3.
+Go to sheets.new and name the sheet, for example "Qivgu store". Leave it with its one empty tab; the script creates the real tabs in step 3.
 
 If you would rather build the tabs by hand, import each file in `template/` as its own tab (File, Import, Upload, then "Insert new sheet(s)") and name the tabs exactly Products, Orders, Promos, Reviews and Settings. Then skip the `setupTabs` part of step 3.
 
@@ -18,7 +18,7 @@ Optional: open Project Settings (the gear) and tick "Show appsscript.json manife
 
 ## 3. Create the tabs and approve the permissions
 
-In the editor, pick `setupTabs` in the function dropdown next to "Debug" and press Run. Google asks you to review permissions: choose your account, click Advanced, then "Go to (project name) (unsafe)", then Allow. It says unsafe only because it is your own unpublished script. The script creates the five tabs with their headers and the example rows from `template/`, and removes the empty default tab.
+In the editor, pick `setupTabs` in the function dropdown next to "Debug" and press Run. Google asks you to review permissions: choose your account, click Advanced, then "Go to (project name) (unsafe)", then Allow. It says unsafe only because it is your own unpublished script. The script creates the five tabs with their headers and the example rows from `template/`, removes the empty default tab, and sets the sheet's time zone to Toronto so order times read correctly (File, Settings, Time zone, if it ever needs changing).
 
 Back in the sheet, fill in the Settings tab:
 

@@ -3,15 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Still Waters</title>
-<meta name="description" content="Scripture t-shirts from Toronto. Free delivery in the GTA, pay cash or e-Transfer at the door.">
-<meta property="og:title" content="Still Waters">
-<meta property="og:description" content="Scripture t-shirts from Toronto. Free delivery in the GTA, pay cash or e-Transfer at the door.">
+<title>Qivgu</title>
+<meta name="description" content="Qivgu: scripture t-shirts from Toronto. Free delivery in the GTA, pay cash or e-Transfer at the door.">
+<meta property="og:title" content="Qivgu">
+<meta property="og:description" content="Qivgu: scripture t-shirts from Toronto. Free delivery in the GTA, pay cash or e-Transfer at the door.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://sunmoonron.github.io/faith-tee-demo/">
-<meta property="og:image" content="https://sunmoonron.github.io/faith-tee-demo/img/og.jpg">
+<meta property="og:url" content="https://qivgu.com/">
+<meta property="og:image" content="https://qivgu.com/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="theme-color" content="#ffffff">
-<link rel="canonical" href="https://sunmoonron.github.io/faith-tee-demo/">
+<link rel="canonical" href="https://qivgu.com/">
+<link rel="icon" href="img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600&display=swap">
@@ -110,7 +114,7 @@ legend{font-weight:500;padding:0;margin:0 0 8px}
 </style>
 
 <header><div class="wrap">
-  <a class="wordmark" href="#shop" id="wordmark">Still Waters</a>
+  <a class="wordmark" href="#shop" id="wordmark">Qivgu</a>
   <nav><a href="#shop">Shop</a><a href="#about">About</a><a href="#faq">FAQ</a></nav>
   <a class="cartlink" href="#cart" id="cartLink">Cart (0)</a>
 </div></header>
@@ -132,8 +136,8 @@ legend{font-weight:500;padding:0;margin:0 0 8px}
 
 /* Site config. The handover swaps scriptUrl and token (and the CSV links if used). */
 var CONFIG = {
-  storeName: 'Still Waters',
-  siteUrl: 'https://sunmoonron.github.io/faith-tee-demo/',
+  storeName: 'Qivgu',
+  siteUrl: 'https://qivgu.com/',
   scriptUrl: '',        /* Apps Script web app URL ending in /exec. Empty: sample shop, nothing is recorded */
   token: '',            /* same value as the token row in the Settings tab */
   productsCsvUrl: '',   /* optional: the Products tab published to the web as CSV, used if scriptUrl is empty or fails */
@@ -155,26 +159,27 @@ var DEFAULTS = {
   ship_instructions: 'Send an e-Transfer of {total} to {etransfer} with {number} in the message. We ship within a few days of it arriving and email you when it is on its way.'
 };
 
-/* Shown only when no sheet is configured. Every line here is a stand-in for the owners' own content. */
+/* Shown only when no sheet is configured. Every line here is a stand-in for the owners' own content.
+   The image names match the template rows: put photos with these names in docs/img/ and the sample shop shows them. */
 var SAMPLE = {
   announcement: 'Sample shop. The products, prices and reviews are examples.',
   settings: {
-    store_name: 'Still Waters', contact_email: 'info@example.com', instagram: '@yourhandle', etransfer_email: 'info@example.com',
+    store_name: 'Qivgu', contact_email: 'info@example.com', instagram: '@yourhandle', etransfer_email: 'info@example.com',
     ship_enabled: 'yes', ship_rate: 12, ship_free_over: 150,
     pickup_note: 'Pickup at the church after the Sunday service or at the rink on Tuesday evenings. We text you to confirm.',
-    story: 'Still Waters started at a Toronto skating rink, where two friends printed a few shirts for the people they skate with. We print in Toronto, hold our own stock and deliver it ourselves.',
+    story: 'Qivgu started at a Toronto skating rink, where two friends printed a few shirts for the people they skate with. We print in Toronto, hold our own stock and deliver it ourselves.',
     giveback_line: 'Part of every order goes to our church.'
   },
   promos: { FAITH10: { code: 'FAITH10', type: 'percent', value: 10 } },
   products: [
-    { id: 'bestill', name: 'Be still', price: 35, youth_price: 28, verse: 'Psalm 46:10', description: 'Psalm 46:10 printed on the chest. Ring-spun cotton, regular fit, screen printed in Toronto. Machine wash cold, inside out. Hang to dry.', colours: 'Black #111111, White #f2f2f2', sizes_mens: 'S, M, L, XL', sizes_womens: 'S, M, L', sizes_youth: 'YS, YM, YL', sold_out_sizes: '', images: '', active: 'yes', 'new': 'yes' },
-    { id: 'fearnot', name: 'Fear not', price: 35, youth_price: 28, verse: 'Isaiah 41:10', description: 'Isaiah 41:10 in block letters. Ring-spun cotton, regular fit, screen printed in Toronto. Machine wash cold, inside out. Hang to dry.', colours: 'Black #111111, White #f2f2f2', sizes_mens: 'S, M, L, XL', sizes_womens: 'S, M, L', sizes_youth: 'YS, YM, YL', sold_out_sizes: "Men's XL", images: '', active: 'yes' },
-    { id: 'walkbyfaith', name: 'Walk by faith', price: 35, youth_price: 28, verse: '2 Corinthians 5:7', description: '2 Corinthians 5:7 stacked down the chest. Ring-spun cotton, regular fit, screen printed in Toronto. Machine wash cold, inside out. Hang to dry.', colours: 'Black #111111, White #f2f2f2', sizes_mens: 'S, M, L, XL', sizes_womens: 'S, M, L', sizes_youth: 'YS, YM, YL', sold_out_sizes: '', images: '', active: 'yes' },
-    { id: 'grace', name: 'Grace upon grace', price: 35, youth_price: 28, verse: 'John 1:16', description: 'John 1:16 in small type over the heart. Ring-spun cotton, regular fit, screen printed in Toronto. Machine wash cold, inside out. Hang to dry.', colours: 'Black #111111, White #f2f2f2', sizes_mens: 'S, M, L, XL', sizes_womens: 'S, M, L', sizes_youth: 'YS, YM, YL', sold_out_sizes: 'all', images: '', active: 'yes' }
+    { id: 'bestill', name: 'Be still', price: 35, youth_price: 28, verse: 'Psalm 46:10', description: 'Psalm 46:10 printed on the chest. Ring-spun cotton, regular fit, screen printed in Toronto. Machine wash cold, inside out. Hang to dry.', colours: 'Black #111111, White #f2f2f2', sizes_mens: 'S, M, L, XL', sizes_womens: 'S, M, L', sizes_youth: 'YS, YM, YL', sold_out_sizes: '', images: 'Black: bestill-black.jpg; White: bestill-white.jpg', active: 'yes', 'new': 'yes' },
+    { id: 'fearnot', name: 'Fear not', price: 35, youth_price: 28, verse: 'Isaiah 41:10', description: 'Isaiah 41:10 in block letters. Ring-spun cotton, regular fit, screen printed in Toronto. Machine wash cold, inside out. Hang to dry.', colours: 'Black #111111, White #f2f2f2', sizes_mens: 'S, M, L, XL', sizes_womens: 'S, M, L', sizes_youth: 'YS, YM, YL', sold_out_sizes: "Men's XL", images: 'Black: fearnot-black.jpg; White: fearnot-white.jpg', active: 'yes' },
+    { id: 'walkbyfaith', name: 'Walk by faith', price: 35, youth_price: 28, verse: '2 Corinthians 5:7', description: '2 Corinthians 5:7 stacked down the chest. Ring-spun cotton, regular fit, screen printed in Toronto. Machine wash cold, inside out. Hang to dry.', colours: 'Black #111111, White #f2f2f2', sizes_mens: 'S, M, L, XL', sizes_womens: 'S, M, L', sizes_youth: 'YS, YM, YL', sold_out_sizes: '', images: 'Black: walkbyfaith-black.jpg; White: walkbyfaith-white.jpg', active: 'yes' },
+    { id: 'grace', name: 'Grace upon grace', price: 35, youth_price: 28, verse: 'John 1:16', description: 'John 1:16 in small type over the heart. Ring-spun cotton, regular fit, screen printed in Toronto. Machine wash cold, inside out. Hang to dry.', colours: 'Black #111111, White #f2f2f2', sizes_mens: 'S, M, L, XL', sizes_womens: 'S, M, L', sizes_youth: 'YS, YM, YL', sold_out_sizes: 'all', images: 'Black: grace-black.jpg; White: grace-white.jpg', active: 'yes' }
   ],
   reviews: [
-    { product: 'bestill', order: 'SW-1001', name: 'Priya', stars: 5, text: 'Fits true to size and the print has not cracked after a dozen washes.' },
-    { product: 'fearnot', order: 'SW-1002', name: 'Marcus', stars: 4, text: 'Runs a little large. I ordered a medium and it fits like a large.' }
+    { product: 'bestill', order: 'QV-1001', name: 'Priya', stars: 5, text: 'Fits true to size and the print has not cracked after a dozen washes.' },
+    { product: 'fearnot', order: 'QV-1002', name: 'Marcus', stars: 4, text: 'Runs a little large. I ordered a medium and it fits like a large.' }
   ]
 };
 
@@ -362,12 +367,12 @@ function on(k) { return yes(setting(k)); }
 
 function loadCart() {
   try {
-    var s = JSON.parse(localStorage.getItem('sw-cart'));
+    var s = JSON.parse(localStorage.getItem('qivgu-cart'));
     if (s && Array.isArray(s.items)) return { items: s.items, promo: s.promo || null };
   } catch (e) { }
   return { items: [], promo: null };
 }
-function saveCart() { try { localStorage.setItem('sw-cart', JSON.stringify(cart)); } catch (e) { } }
+function saveCart() { try { localStorage.setItem('qivgu-cart', JSON.stringify(cart)); } catch (e) { } }
 function pruneCart() {
   cart.items = cart.items.filter(function (l) { var p = findProduct(l.id); return p && p.sizes[l.range] && p.sizes[l.range].indexOf(l.size) >= 0; });
   saveCart();
@@ -637,8 +642,8 @@ function sendOrder(payload) {
 
 function demoOrder(payload) {
   var n = 1042;
-  try { n = Number(localStorage.getItem('sw-demo-orderno')) || 1042; localStorage.setItem('sw-demo-orderno', String(n + 1)); } catch (e) { }
-  var number = 'SW-' + n;
+  try { n = Number(localStorage.getItem('qivgu-demo-orderno')) || 1042; localStorage.setItem('qivgu-demo-orderno', String(n + 1)); } catch (e) { }
+  var number = 'QV-' + n;
   var t = totals(payload.delivery);
   var address = payload.address + (payload.postal ? ', ' + payload.postal.toUpperCase() : '');
   var vars = { '{total}': money(t.total), '{etransfer}': String(setting('etransfer_email') || contactEmail()), '{number}': number };
