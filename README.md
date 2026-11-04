@@ -4,6 +4,8 @@ A cash-on-delivery online store for Qivgu, a scripture t-shirt brand in Toronto,
 
 Demo, with sample products and nothing recorded: https://sunmoonron.github.io/faith-tee-demo/
 
+The retired first demo (Still Waters, hero and cards design) is kept in `legacy/still-waters/` and served at https://sunmoonron.github.io/faith-tee-demo/old/ in case any of its CSS is wanted again. Nothing in the live store loads it.
+
 ## Files
 
 | Path | What it is |
