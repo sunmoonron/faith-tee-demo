@@ -27,3 +27,11 @@ review_form_url,,"Pre-filled Google Form link with {product} and {order} where t
 music_url,,Link to a royalty-free track (mp3). Blank hides the play button
 music_label,Play the song,Text of the play button
 music_credit,,Credit line shown beside the play button if the licence asks for one
+default_stock,25,How many of each size the Stock tab starts with when seedStock adds a new product
+tryon_note,,"Where people can see and feel the shirts in person: the place, the address and the hours. Shown in the FAQ and on product pages. Blank hides it"
+church_intro,We print your church's own design on our shirts. Send the artwork and the sizes you need and we reply with a quote.,First paragraph on the Churches page. Blank hides it
+church_terms,,"Minimum quantity, turnaround and how payment works for church orders, in one or two sentences. Shown under the intro. Blank hides it"
+church_sizes_mens,"S, M, L, XL, 2XL",Men's sizes offered on the church request form
+church_sizes_womens,"S, M, L, XL",Women's sizes offered on the church request form
+church_sizes_youth,"YS, YM, YL",Youth sizes offered on the church request form
+next_church_request,1001,The next church request number. The script moves it up by one per request

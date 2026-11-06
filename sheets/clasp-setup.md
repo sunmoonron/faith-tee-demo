@@ -69,6 +69,8 @@ npx -y @google/clasp@3.4.1 redeploy DEPLOYMENT_ID --description "update"
 
 Redeploying keeps the same URL. A fresh `deploy` would create a second deployment with a new URL.
 
+When an update changes the permissions in `appsscript.json`, there is one step between the push and the redeploy that needs the account owner: open the script (`npx -y @google/clasp@3.4.1 open-script`), run `setupTabs` once and approve the new permission. The deployment that is live keeps running the old version until the redeploy, so nothing breaks while you wait; a redeploy before the approval would make the web app refuse every request.
+
 ## Handing over to the store account
 
 `clasp` is tied to whoever logged in. For the real store, David copies the sheet into the store account (File, Make a copy, which copies the bound script and the tabs too), opens Extensions, Apps Script there, approves the permissions, and deploys a new web app as in `SETUP.md` step 4; `setupTabs` is not needed because the tabs come with the copy. Or he runs `clasp login` with the store account and repeats the commands above from `create` onward. Either way the site config gets the new URL and token.
