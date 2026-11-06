@@ -127,6 +127,14 @@ function run() {
     const r = settingsSheet.rows.findIndex(row => row[0] === key);
     if (r < 0) settingsSheet.rows.push([key, value, '']); else settingsSheet.rows[r][1] = value;
   };
+  const productsSheet = book.getSheetByName('Products');
+  const setProduct = (id, column, value) => {
+    const c = productsSheet.rows[0].indexOf(column);
+    const r = productsSheet.rows.findIndex(row => row[0] === id);
+    if (c < 0 || r < 0) throw new Error('no such product cell: ' + id + ' ' + column);
+    while (productsSheet.rows[r].length <= c) productsSheet.rows[r].push('');
+    productsSheet.rows[r][c] = value;
+  };
   const post = payload => JSON.parse(gs.doPost({ postData: { contents: JSON.stringify(payload), type: 'text/plain' } }).text);
   const postForm = fields => JSON.parse(gs.doPost({ postData: { contents: 'ignored=1', type: 'application/x-www-form-urlencoded' }, parameter: fields }).text);
   const get = params => JSON.parse(gs.doGet({ parameter: params }).text);
@@ -158,7 +166,7 @@ function run() {
 
   const base = {
     token: TOKEN, name: 'Test Person', phone: '416 555 0199', email: 'customer@example.com', consent: true, website: '',
-    items: [{ id: 'bestill', colour: 'Black', range: 'mens', size: 'M', qty: 2 }, { id: 'fearnot', colour: 'white', range: 'Youth', size: 'ym', qty: 1 }]
+    items: [{ id: 'poweredbygod', colour: 'White', range: 'mens', size: 'M', qty: 2 }, { id: 'bestai', colour: 'white', range: 'Youth', size: 'ym', qty: 1 }]
   };
 
   console.log('GTA delivery with a promo');
@@ -171,7 +179,7 @@ function run() {
   check('instructions mention cash and the e-Transfer address', /cash/.test(r1.instructions) && /info@example.com/.test(r1.instructions) && /QV-1042/.test(r1.instructions), r1.instructions);
   check('one row appended with status New and paid No', orders().length === 1 && orders()[0][11] === 'New' && orders()[0][12] === 'No', orders()[0]);
   check('row delivery label and postal', orders()[0][5] === 'GTA delivery' && /M5V 2T6/.test(orders()[0][6]), orders()[0].slice(5, 7));
-  check('row items text', /2 x Be still, Black, Men's M, \$70.00/.test(orders()[0][7]) && /1 x Fear not, White, Youth YM, \$28.00/.test(orders()[0][7]), orders()[0][7]);
+  check('row items text', /2 x Powered by God, White, Men's M, \$70.00/.test(orders()[0][7]) && /1 x The best AI, White, Youth YM, \$28.00/.test(orders()[0][7]), orders()[0][7]);
   check('two emails sent', sent.length === 2, sent.map(m => m.to));
   check('owners email goes to both owners', sent[0].to === 'owner1@example.com,owner2@example.com' && /New order QV-1042/.test(sent[0].subject), sent[0].subject);
   check('customer email has the number, total and instructions', sent[1].to === 'customer@example.com' && /QV-1042/.test(sent[1].subject) && /\$88\.20/.test(sent[1].body) && /e-Transfer/.test(sent[1].body), sent[1].body);
@@ -202,16 +210,18 @@ function run() {
   check('ship instructions ask for the e-Transfer first', /e-Transfer of \$110\.00/.test(r5.instructions), r5.instructions);
   const r6 = post(Object.assign({}, base, { ref: 'ref-6', delivery: 'ship', postal: 'V6B 1A1', address: '100 Example Ave, Vancouver' }));
   check('non-Ontario postal code rejected', r6.ok === false && /Ontario/.test(r6.error), r6);
-  const big = { items: [{ id: 'bestill', colour: 'Black', range: 'mens', size: 'M', qty: 5 }] };
+  const big = { items: [{ id: 'poweredbygod', colour: 'White', range: 'mens', size: 'M', qty: 5 }] };
   const r7 = post(Object.assign({}, base, big, { ref: 'ref-7', delivery: 'ship', postal: 'L5B 2C9', address: '1 City Centre Dr, Mississauga' }));
   check('free shipping at 175 subtotal', r7.ok === true && r7.shipping === 0 && r7.total === 175, r7);
 
   console.log('Sold out sizes');
-  const r8 = post(Object.assign({}, base, { ref: 'ref-8', delivery: 'pickup', items: [{ id: 'fearnot', colour: 'Black', range: 'mens', size: 'XL', qty: 1 }] }));
-  check("Fear not Men's XL rejected", r8.ok === false && /sold out/.test(r8.error), r8);
-  const r9 = post(Object.assign({}, base, { ref: 'ref-9', delivery: 'pickup', items: [{ id: 'grace', colour: 'Black', range: 'womens', size: 'S', qty: 1 }] }));
-  check('Grace upon grace (all) rejected', r9.ok === false && /sold out/.test(r9.error), r9);
-  const r10 = post(Object.assign({}, base, { ref: 'ref-10', delivery: 'pickup', items: [{ id: 'fearnot', colour: 'Black', range: 'womens', size: 'XL', qty: 1 }] }));
+  setProduct('bestai', 'sold_out_sizes', "Men's XL");
+  setProduct('garden', 'sold_out_sizes', 'all');
+  const r8 = post(Object.assign({}, base, { ref: 'ref-8', delivery: 'pickup', items: [{ id: 'bestai', colour: 'White', range: 'mens', size: 'XL', qty: 1 }] }));
+  check("The best AI Men's XL rejected", r8.ok === false && /sold out/.test(r8.error), r8);
+  const r9 = post(Object.assign({}, base, { ref: 'ref-9', delivery: 'pickup', items: [{ id: 'garden', colour: 'White', range: 'womens', size: 'S', qty: 1 }] }));
+  check('Garden (all) rejected', r9.ok === false && /sold out/.test(r9.error), r9);
+  const r10 = post(Object.assign({}, base, { ref: 'ref-10', delivery: 'pickup', items: [{ id: 'bestai', colour: 'White', range: 'womens', size: 'XL', qty: 1 }] }));
   check("Women's XL does not exist", r10.ok === false && /size/.test(r10.error), r10);
 
   console.log('Honeypot, token, empty cart, bad promo');

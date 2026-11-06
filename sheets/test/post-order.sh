@@ -18,7 +18,7 @@ post() {
   echo
 }
 
-items='[{"id":"bestill","colour":"Black","range":"mens","size":"M","qty":2},{"id":"fearnot","colour":"White","range":"youth","size":"YM","qty":1}]'
+items='[{"id":"poweredbygod","colour":"White","range":"mens","size":"M","qty":2},{"id":"bestai","colour":"White","range":"youth","size":"YM","qty":1}]'
 common="\"token\":\"$TOKEN\",\"name\":\"Test Person\",\"phone\":\"416 555 0199\",\"email\":\"$EMAIL\",\"consent\":true,\"website\":\"\",\"items\":$items"
 ref() { printf 'test-%s-%s' "$1" "$(date +%s)"; }
 

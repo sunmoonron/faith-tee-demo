@@ -16,8 +16,8 @@ The sheet has five tabs. Do not rename the tabs or the header rows in row 1; the
 
 Add a row at the bottom of Products and fill in the columns:
 
-- `id`: a short word with no spaces or capitals, for example `bestill`. Never change it once the product is live; the cart and the reviews use it.
-- `name`: as it should appear, for example `Be still`.
+- `id`: a short word with no spaces or capitals, for example `poweredbygod`. Never change it once the product is live; the cart and the reviews use it.
+- `name`: as it should appear, for example `Powered by God`.
 - `price`: the adult price, numbers only, for example `35`.
 - `youth_price`: the youth price, or leave blank to charge the adult price.
 - `verse`: the reference, for example `Psalm 46:10`.
@@ -25,7 +25,7 @@ Add a row at the bottom of Products and fill in the columns:
 - `colours`: the colours separated by commas. Add the colour code after the name if you have it, so the swatch on the site is right: `Black #111111, White #f2f2f2`. Without a code the site picks a close colour by name.
 - `sizes_mens`, `sizes_womens`, `sizes_youth`: the sizes you stock, separated by commas, for example `S, M, L, XL`. Leave a range blank if you do not stock it.
 - `sold_out_sizes`: see below. Leave blank when everything is in stock.
-- `images`: the photo file names, which colour each one shows, separated by semicolons: `Black: bestill-black.jpg; White: bestill-white.jpg`. A file name with no colour shows for every colour. Send the photos to Ronish named exactly like this; he puts them on the site. A product with no photo shows a grey tile with its name.
+- `images`: the photo file names separated by semicolons, front first and back second: `poweredbygod-front.jpg; poweredbygod-back.jpg`. The first photo is the one on the shop tile; the product page shows them all. To show different photos for each colour, put the colour and a colon before the file name: `Black: name-black-front.jpg; White: name-white-front.jpg`. Send the photos to Ronish named exactly like this; he puts them on the site. A product with no photo shows a grey tile with its name.
 - `active`: `yes` to show it, `no` to hide it.
 - `new`: `yes` while it is new. The tile says "New". Clear it after a few weeks.
 - `type`: `tee`, `hoodie`, and so on. For your own records.
@@ -114,7 +114,7 @@ Do not change `token` without telling Ronish; the site carries a copy and orders
 
 ## Photos
 
-Phone photos are fine. Shoot the shirt on a person or flat, in daylight, portrait orientation; the site crops every photo to the same 4 by 5 shape. Name each file like the `images` column says, for example `bestill-black.jpg`, and send them to Ronish. Adding a photo is part of the monthly plan.
+Phone photos are fine. Shoot the shirt on a person or flat, in daylight, portrait orientation; the site crops every photo to the same 4 by 5 shape. Name each file like the `images` column says, for example `poweredbygod-front.jpg`, and send them to Ronish. Adding a photo is part of the monthly plan.
 
 ## If something looks wrong
 

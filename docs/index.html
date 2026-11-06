@@ -72,6 +72,9 @@ footer a{margin-right:16px}
 .product{display:grid;gap:24px}
 @media (min-width:768px){.product{grid-template-columns:1fr 1fr;gap:48px}}
 .photos{display:grid;gap:16px;align-content:start}
+.photos .photo:has(img){aspect-ratio:auto}
+.photos .photo:has(img) img{position:static;height:auto}
+.photos .photo:has(img) span{display:none}
 .product h1{margin-bottom:8px}
 .swatches,.sizes{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
 .swatch{display:inline-flex;align-items:center;gap:8px;padding:3px 12px 3px 3px;border:1px solid #fff;background:#fff;cursor:pointer}
@@ -160,7 +163,7 @@ var DEFAULTS = {
 };
 
 /* Shown only when no sheet is configured. Every line here is a stand-in for the owners' own content.
-   The image names match the template rows: put photos with these names in docs/img/ and the sample shop shows them. */
+   The products are the four real designs under working names; the photos are in docs/img/, front first, back second. */
 var SAMPLE = {
   announcement: 'Sample shop. The products, prices and reviews are examples.',
   settings: {
@@ -172,14 +175,14 @@ var SAMPLE = {
   },
   promos: { FAITH10: { code: 'FAITH10', type: 'percent', value: 10 } },
   products: [
-    { id: 'bestill', name: 'Be still', price: 35, youth_price: 28, verse: 'Psalm 46:10', description: 'Psalm 46:10 printed on the chest. Ring-spun cotton, regular fit, screen printed in Toronto. Machine wash cold, inside out. Hang to dry.', colours: 'Black #111111, White #f2f2f2', sizes_mens: 'S, M, L, XL', sizes_womens: 'S, M, L', sizes_youth: 'YS, YM, YL', sold_out_sizes: '', images: 'Black: bestill-black.jpg; White: bestill-white.jpg', active: 'yes', 'new': 'yes' },
-    { id: 'fearnot', name: 'Fear not', price: 35, youth_price: 28, verse: 'Isaiah 41:10', description: 'Isaiah 41:10 in block letters. Ring-spun cotton, regular fit, screen printed in Toronto. Machine wash cold, inside out. Hang to dry.', colours: 'Black #111111, White #f2f2f2', sizes_mens: 'S, M, L, XL', sizes_womens: 'S, M, L', sizes_youth: 'YS, YM, YL', sold_out_sizes: "Men's XL", images: 'Black: fearnot-black.jpg; White: fearnot-white.jpg', active: 'yes' },
-    { id: 'walkbyfaith', name: 'Walk by faith', price: 35, youth_price: 28, verse: '2 Corinthians 5:7', description: '2 Corinthians 5:7 stacked down the chest. Ring-spun cotton, regular fit, screen printed in Toronto. Machine wash cold, inside out. Hang to dry.', colours: 'Black #111111, White #f2f2f2', sizes_mens: 'S, M, L, XL', sizes_womens: 'S, M, L', sizes_youth: 'YS, YM, YL', sold_out_sizes: '', images: 'Black: walkbyfaith-black.jpg; White: walkbyfaith-white.jpg', active: 'yes' },
-    { id: 'grace', name: 'Grace upon grace', price: 35, youth_price: 28, verse: 'John 1:16', description: 'John 1:16 in small type over the heart. Ring-spun cotton, regular fit, screen printed in Toronto. Machine wash cold, inside out. Hang to dry.', colours: 'Black #111111, White #f2f2f2', sizes_mens: 'S, M, L, XL', sizes_womens: 'S, M, L', sizes_youth: 'YS, YM, YL', sold_out_sizes: 'all', images: 'Black: grace-black.jpg; White: grace-white.jpg', active: 'yes' }
+    { id: 'poweredbygod', name: 'Powered by God', price: 35, youth_price: 28, verse: '', description: 'Front: "AI, Authentic Intelligence, Powered by God" around a smiling face and a cross. Back: "Living the Word" in bold comic lettering. Ring-spun cotton, regular fit, screen printed in Toronto. Machine wash cold, inside out. Hang to dry.', colours: 'White #f2f2f2', sizes_mens: 'S, M, L, XL', sizes_womens: 'S, M, L', sizes_youth: 'YS, YM, YL', sold_out_sizes: '', images: 'poweredbygod-front.jpg; poweredbygod-back.jpg', active: 'yes' },
+    { id: 'bestai', name: 'The best AI', price: 35, youth_price: 28, verse: '2 Corinthians 5:7', description: 'Front: "The best AI (Authentic Intelligence) is in my faith". Back: "Walk by faith, not by sight" over a mountain path, with 2 Corinthians 5:7. Ring-spun cotton, regular fit, screen printed in Toronto. Machine wash cold, inside out. Hang to dry.', colours: 'White #f2f2f2', sizes_mens: 'S, M, L, XL', sizes_womens: 'S, M, L', sizes_youth: 'YS, YM, YL', sold_out_sizes: '', images: 'bestai-front.jpg; bestai-back.jpg', active: 'yes' },
+    { id: 'bible', name: 'B.I.B.L.E.', price: 35, youth_price: 28, verse: '', description: 'Front: the acrostic "Basic Instructions Before Leaving Earth". Back: an open Bible under a rising sun, above the Earth. Ring-spun cotton, regular fit, screen printed in Toronto. Machine wash cold, inside out. Hang to dry.', colours: 'White #f2f2f2', sizes_mens: 'S, M, L, XL', sizes_womens: 'S, M, L', sizes_youth: 'YS, YM, YL', sold_out_sizes: '', images: 'bible-front.jpg; bible-back.jpg', active: 'yes' },
+    { id: 'garden', name: 'Garden of the Silicon Valley', price: 35, youth_price: 28, verse: '', description: 'Front: two robots at the tree with the serpent, and the words "In the Garden of the Silicon Valley, mankind said, Do not eat from the fruit of the tree. Satan said, Eat and you will be more powerful than mankind." The back is plain. Ring-spun cotton, regular fit, screen printed in Toronto. Machine wash cold, inside out. Hang to dry.', colours: 'White #f2f2f2', sizes_mens: 'S, M, L, XL', sizes_womens: 'S, M, L', sizes_youth: 'YS, YM, YL', sold_out_sizes: '', images: 'garden-front.jpg', active: 'yes' }
   ],
   reviews: [
-    { product: 'bestill', order: 'QV-1001', name: 'Priya', stars: 5, text: 'Fits true to size and the print has not cracked after a dozen washes.' },
-    { product: 'fearnot', order: 'QV-1002', name: 'Marcus', stars: 4, text: 'Runs a little large. I ordered a medium and it fits like a large.' }
+    { product: 'poweredbygod', order: 'QV-1001', name: 'Priya', stars: 5, text: 'Fits true to size and the print has not cracked after a dozen washes.' },
+    { product: 'bestai', order: 'QV-1002', name: 'Marcus', stars: 4, text: 'Runs a little large. I ordered a medium and it fits like a large.' }
   ]
 };
 
@@ -445,7 +448,7 @@ function renderProduct(id) {
   document.title = p.name + ', ' + storeName();
   var imgs = imagesFor(p, sel.colour);
   var photos = imgs.length
-    ? imgs.map(function (i) { return '<div class="photo"><span>' + esc(p.name) + '</span><img src="' + esc(i.url) + '" alt="' + esc(p.name + (sel.colour ? ', ' + sel.colour : '')) + '" onerror="this.remove()"></div>'; }).join('')
+    ? imgs.map(function (i, n) { return '<div class="photo"><span>' + esc(p.name) + '</span><img src="' + esc(i.url) + '" alt="' + esc(p.name + (n === 0 ? ', front' : n === 1 ? ', back' : '')) + '" onerror="this.remove()"></div>'; }).join('')
     : '<div class="photo"><span>' + esc(p.name) + '</span></div>';
   var hasYouth = p.sizes.youth.length > 0 && p.youthPrice > 0;
   var price = money(p.price) + (hasYouth ? '. Youth ' + money(p.youthPrice) : '');
