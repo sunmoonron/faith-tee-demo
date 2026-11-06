@@ -2,7 +2,7 @@
 
 The store runs off one Google Sheet. You change a cell, the site changes on the next page load. Nothing else to log in to. This guide covers the things you will do every week. Keep the sheet shared with both owners and with Ronish, and never share it publicly: it holds your customers' phone numbers and addresses.
 
-The sheet has five tabs. Do not rename the tabs or the header rows in row 1; the site reads them by name.
+The sheet has eight tabs. Do not rename the tabs or the header rows in row 1; the site reads them by name. The sheet also has a Store menu, next to Help, with two helpers you will meet below.
 
 | Tab | What it is |
 |---|---|
@@ -10,6 +10,9 @@ The sheet has five tabs. Do not rename the tabs or the header rows in row 1; the
 | Orders | Every order the site has taken. Your sales record. |
 | Promos | Discount codes. |
 | Reviews | Customer reviews from the review form. You approve them here. |
+| Stock | How many of each size you have left. Optional. |
+| Media | Flyers and videos for the Media page. |
+| Church requests | What churches have asked you to print. |
 | Settings | Your emails, the e-Transfer address, pickup details, and the text on the site. |
 
 ## Add a product
@@ -48,6 +51,23 @@ In `sold_out_sizes`, list what has run out, separated by commas:
 
 Clear the cell when the stock is back. Spelling matters: use the colour names and size names exactly as they appear in the other columns.
 
+## Keep stock counts
+
+The Stock tab lets the site count for you, so a size sells out by itself when the last one goes. It is optional: a size with no row in the Stock tab is never counted and never runs out.
+
+1. In Settings, set `default_stock` to the number of each size you usually start with, for example `25`.
+2. Choose Store, "Add stock rows for new products". The Stock tab fills with one row for every colour and size of every active product, each starting at that number.
+3. Correct the `count` column to what you really have.
+
+From then on every order takes its shirts off the count. When a count reaches 0 the size shows as sold out on the site, and when every size of a design is at 0 its tile says "Sold out". If someone asks for more than you have left, the site tells them how many are left and takes nothing.
+
+- New stock arrived: type the new number into `count`.
+- New product: add it to Products, then choose Store, "Add stock rows for new products" again. It only adds the rows that are missing and does not touch the others.
+- Stop counting a size: clear its `count` cell or delete its row.
+- A cancelled order does not put the shirts back. If you cancel an order after it was placed, add the shirts back to `count` yourself.
+
+`sold_out_sizes` in the Products tab still works and is added on top: a size is sold out if either place says so.
+
 ## Add a promo code
 
 Add a row to Promos:
@@ -69,7 +89,7 @@ When someone orders, both of you get an email with everything in it, the custome
 2. Hand over the shirt. If they pay cash, set `paid` to Yes. If they said they would e-Transfer, check your bank for the order number in the message before you set `paid` to Yes.
 3. Set `status` to Delivered.
 4. For a shipping order, wait for the e-Transfer first, then ship, then set `status` to Delivered and `paid` to Yes.
-5. If a customer disappears or cancels, set `status` to Cancelled. Leave `paid` as it is.
+5. If a customer disappears or cancels, set `status` to Cancelled. Leave `paid` as it is. If you keep stock counts, add the shirts back in the Stock tab; cancelling does not do that for you.
 
 Never delete an order row, not even a cancelled or test one. The Orders tab is your sales record for tax, and cash sales count toward the HST threshold like any other sale. If you need to tidy up, add a note in a column to the right.
 
@@ -84,6 +104,35 @@ Reviews come in through the review form on the product page and land in the Revi
 3. Set `approved` to `yes`. The review appears on that product's page with its stars.
 
 Set it back to blank to take a review down.
+
+## Post a flyer or a video
+
+The Media page on the site lists whatever is in the Media tab, newest first. Add a row:
+
+- `title`: what people see and click, for example `Christmas flyer`.
+- `type`: `pdf` or `video`.
+- `file`: for a flyer, the PDF's file name, for example `christmas-flyer.pdf`. Send the PDF itself to Ronish with that exact name; he puts it on the site. For a video, paste the YouTube or Instagram link.
+- `date`: the date of the flyer or video, typed like `2026-11-20`. The newest date is listed first.
+- `note`: one optional sentence shown under the title.
+
+A flyer opens in a new tab. A YouTube video plays on the page; an Instagram video is a link to Instagram. Delete the row to take something down. With no rows the page says "Nothing has been posted yet."
+
+## Handle a church request
+
+The Churches page lets a church send you its own artwork and the sizes it needs. When one comes in, both of you get an email with everything in it, the church gets a confirmation saying you will reply with a quote, and a row appears in Church requests with `status` New. The `artwork` column is a link to the file, which the script saves in a folder called "Church artwork" in the store's Google Drive.
+
+1. Open the artwork and work out the price.
+2. Reply to the email (it goes to the church's contact person) with the quote. Set `status` to Quoted.
+3. When they say yes and have paid what your terms ask for, set `status` to Approved.
+4. When the shirts are at the printer, set `status` to Printing.
+5. When they have their shirts, set `status` to Delivered.
+6. If it does not go ahead, set `status` to Cancelled.
+
+The six statuses, in order: New, Quoted, Approved, Printing, Delivered, Cancelled. Never delete a row; like the Orders tab, this is a record of your sales.
+
+The text at the top of the Churches page comes from two Settings rows: `church_intro`, and `church_terms` for your minimum quantity, turnaround and how payment works. The sizes offered on the form are in `church_sizes_mens`, `church_sizes_womens` and `church_sizes_youth`. The form accepts PNG, JPG, PDF, SVG, AI and EPS files up to 10 MB, and the church has to tick a box saying it owns the artwork or has permission to print it.
+
+Church orders are quoted by you, so they do not touch the Stock tab or the Orders tab.
 
 ## Export the email list
 
@@ -103,6 +152,9 @@ The Settings tab holds the text the site shows. Edit the `value` column; the `no
 - `announcement`: the one line under the header. Leave blank to hide it.
 - `hook_line`, `delivery_line`, `story`, `giveback_line`: the lines below the product grid.
 - `pickup_note`: where and when pickup happens. Shown at checkout and in the pickup email.
+- `tryon_note`: where people can see and feel the shirts in person, with the address and hours. Shown in the FAQ and on every product page. Leave blank to hide it.
+- `church_intro` and `church_terms`: the two paragraphs at the top of the Churches page.
+- `default_stock`: the count new rows in the Stock tab start with.
 - `gta_enabled`, `pickup_enabled`, `ship_enabled`: `yes` or `no` for each way of getting an order.
 - `ship_rate` and `ship_free_over`: the shipping charge and the order size that makes it free.
 - `gta_instructions`, `pickup_instructions`, `ship_instructions`: the "what to have ready" text in the customer's email. `{total}`, `{etransfer}` and `{number}` are filled in for you.
@@ -121,3 +173,6 @@ Phone photos are fine. Shoot the shirt on a person or flat, in daylight, portrai
 - The site shows "The shop could not load": the script is not answering. Open the sheet and check that the tabs are still named as above and nothing was deleted. Then tell Ronish.
 - An order email did not arrive: check the spam folder, then the Orders tab. If the row is there, the order was taken.
 - A customer says the site rejected their postal code: GTA delivery is for postal codes starting with M or L. They can choose pickup, or shipping if you have it on.
+- The site says a size is sold out and you have it on the shelf: look at its `count` in the Stock tab and at `sold_out_sizes` in the Products tab. Either one can mark it sold out.
+- A church says its file would not upload: the limit is 10 MB and the file has to be a PNG, JPG, PDF, SVG, AI or EPS. Ask them to email it to you instead.
+- The site looks dark: it follows the phone or computer's own dark setting. "Light" at the bottom of every page switches it back, and "Dark" switches it on.

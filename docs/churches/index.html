@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>window.QV_STANDALONE=true</script>
+<title>Shirts for your church, Qivgu</title>
+<meta name="description" content="Qivgu prints your church's own design on shirts. Send the artwork and the sizes you need and get a quote.">
+<meta property="og:title" content="Shirts for your church, Qivgu">
+<meta property="og:description" content="Qivgu prints your church's own design on shirts. Send the artwork and the sizes you need and get a quote.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://qivgu.com/churches/">
+<meta property="og:image" content="https://qivgu.com/img/og.jpg">
+<link rel="canonical" href="https://qivgu.com/churches/">
+<base href="../">
+<!--shared:head-->
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600&display=swap">
+<style>
+/* One light and one dark set of six colours. Dark follows the system unless the footer toggle has been used. */
+:root{color-scheme:light;--bg:#fff;--ink:#111;--rule:#ddd;--tile:#eee;--mute:#767676;--err:#c00}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#111;--ink:#f2f2f2;--rule:#333;--tile:#222;--mute:#999;--err:#ff6b6b}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#111;--ink:#f2f2f2;--rule:#333;--tile:#222;--mute:#999;--err:#ff6b6b}
+
+*,*::before,*::after{box-sizing:border-box}
+html{background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Schibsted Grotesk",Helvetica,Arial,sans-serif;font-size:16px;line-height:24px;-webkit-text-size-adjust:100%}
+h1,h2{font-size:24px;line-height:32px;font-weight:500;margin:0 0 16px}
+h3{font-size:16px;line-height:24px;font-weight:500;margin:0}
+p,ul,ol,table{margin:0 0 16px}
+ul,ol{padding-left:24px}
+a{color:var(--ink);text-decoration:underline;text-underline-offset:2px}
+nav a,.wordmark,.cartlink,.tile a{text-decoration:none}
+nav a:hover,.wordmark:hover,.cartlink:hover,.btn:hover,.textbtn:hover{text-decoration:underline}
+.tile a:hover h3{text-decoration:underline}
+button{font:inherit;color:inherit}
+img{display:block;max-width:100%}
+.wrap{max-width:1200px;margin:0 auto;padding:0 16px}
+@media (min-width:768px){.wrap{padding:0 24px}}
+.hidden{display:none!important}
+
+header{background:var(--bg);border-bottom:1px solid var(--rule)}
+header .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:8px 24px;padding-top:16px;padding-bottom:16px}
+.wordmark{font-weight:600;margin-right:auto}
+nav{display:flex;gap:16px}
+@media (max-width:599px){nav{order:3;width:100%}}
+.announce{border-bottom:1px solid var(--rule)}
+.announce p{margin:0;padding:8px 0}
+
+main.wrap{padding-top:24px;padding-bottom:48px}
+@media (min-width:768px){main.wrap{padding-top:32px;padding-bottom:64px}}
+hr{border:0;border-top:1px solid var(--rule);margin:32px 0}
+@media (min-width:768px){hr{margin:48px 0}}
+.text p,.about p{max-width:640px}
+
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media (min-width:768px){.grid{grid-template-columns:repeat(4,1fr);gap:24px}}
+.tile a{display:block}
+.photo{position:relative;aspect-ratio:4/5;background:var(--tile);overflow:hidden}
+.photo span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:16px;text-align:center}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tile h3{margin-top:8px}
+.tile p{margin:0}
+.about .hook{font-weight:500}
+
+footer{border-top:1px solid var(--rule);padding:24px 0 32px}
+footer p{margin:0 0 8px}
+footer a{margin-right:16px}
+
+.btn{display:inline-block;background:var(--ink);color:var(--bg);border:1px solid var(--ink);padding:11px 24px;line-height:24px;font-weight:500;cursor:pointer;text-decoration:none;font-family:inherit;border-radius:0;-webkit-appearance:none;appearance:none}
+.btn[disabled]{cursor:default}
+.textbtn{background:none;border:0;padding:0;text-decoration:underline;text-underline-offset:2px;cursor:pointer;color:var(--ink)}
+
+.product{display:grid;gap:24px}
+@media (min-width:768px){.product{grid-template-columns:1fr 1fr;gap:48px}}
+.photos{display:grid;gap:16px;align-content:start}
+.photos .photo:has(img){aspect-ratio:auto}
+.photos .photo:has(img) img{position:static;height:auto}
+.photos .photo:has(img) span{display:none}
+.product h1{margin-bottom:8px}
+.swatches,.sizes{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+.swatch{display:inline-flex;align-items:center;gap:8px;padding:3px 12px 3px 3px;border:1px solid var(--bg);background:var(--bg);cursor:pointer}
+.swatch i{width:24px;height:24px;border:1px solid var(--rule);display:block}
+.swatch[aria-pressed="true"]{border-color:var(--ink)}
+.sizes button{min-width:48px;height:40px;padding:0 12px;border:1px solid var(--ink);background:var(--bg);cursor:pointer;border-radius:0}
+.sizes button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.sizes button[disabled]{color:var(--mute);border-color:var(--rule);text-decoration:line-through;cursor:default}
+.rangename{margin:0 0 8px}
+.row{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin:0 0 16px}
+.row label{display:inline;margin:0}
+.reviews ul{list-style:none;padding:0}
+.reviews li{margin:0 0 16px}
+.stars{white-space:nowrap}
+
+label{display:block;margin:0 0 4px;font-weight:500}
+input,select,textarea{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--ink);padding:8px;height:40px;width:100%;max-width:400px;border-radius:0}
+input,textarea{-webkit-appearance:none;appearance:none}
+textarea{height:auto;min-height:80px;display:block}
+select{width:auto;min-width:64px;padding-right:8px}
+input[type=radio],input[type=checkbox]{width:16px;height:16px;margin:4px 0 0;padding:0;-webkit-appearance:auto;appearance:auto;flex:none;accent-color:var(--ink)}
+input[type=number]{max-width:72px}
+input[type=date]{max-width:200px;-webkit-appearance:auto;appearance:auto}
+input[type=file]{border:0;padding:0;height:auto;-webkit-appearance:auto;appearance:auto}
+.field{margin:0 0 16px}
+.err{color:var(--err);margin:4px 0 0}
+input[aria-invalid="true"],textarea[aria-invalid="true"]{border-color:var(--err)}
+fieldset{border:0;padding:0;margin:0 0 16px;min-width:0}
+legend{font-weight:500;padding:0;margin:0 0 8px}
+.choice{display:flex;gap:8px;align-items:flex-start;margin:0 0 8px;font-weight:400;max-width:560px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.qtys{display:flex;flex-wrap:wrap;gap:8px 16px;margin:0 0 16px}
+.qtys label{display:flex;align-items:center;gap:8px;margin:0;font-weight:400}
+.qtys input{width:56px}
+.totals{width:100%;max-width:400px;border-collapse:collapse}
+.totals td{padding:4px 0;vertical-align:top}
+.totals td+td{text-align:right;white-space:nowrap}
+.totals tr.total td{border-top:1px solid var(--rule);padding-top:8px;font-weight:500}
+.line{padding:16px 0;border-top:1px solid var(--rule)}
+.lines{border-bottom:1px solid var(--rule);margin:0 0 16px}
+.line p{margin:0}
+.line .row{margin:8px 0 0}
+.faq h2{margin-top:32px}
+.faq h1+h2{margin-top:0}
+
+.medialist{list-style:none;padding:0;margin:0 0 16px;border-bottom:1px solid var(--rule)}
+.medialist li{padding:16px 0;border-top:1px solid var(--rule)}
+.medialist p{margin:0;max-width:640px}
+.medialist iframe{display:block;width:100%;max-width:640px;aspect-ratio:16/9;border:0;margin:8px 0 0}
+</style>
+<script>
+/* Apply a remembered theme before the page paints. */
+try{var qvTheme=localStorage.getItem('qivgu-theme');if(qvTheme==='dark'||qvTheme==='light')document.documentElement.setAttribute('data-theme',qvTheme)}catch(e){}
+</script>
+<!--/shared:head-->
+
+<!--shared:header-->
+<header><div class="wrap">
+  <a class="wordmark" href="#shop" id="wordmark">Qivgu</a>
+  <nav><a href="#shop">Shop</a><a href="#about">About</a><a href="#faq">FAQ</a><a href="media/">Media</a><a href="churches/">Churches</a></nav>
+  <a class="cartlink" href="#cart" id="cartLink">Cart (0)</a>
+</div></header>
+<div class="announce hidden" id="announce"><div class="wrap"><p id="announceText"></p></div></div>
+<!--/shared:header-->
+
+<main class="wrap" id="view"><p>Loading.</p></main>
+
+<!--shared:footer-->
+<footer><div class="wrap">
+  <p id="footEmail"></p>
+  <p id="footInstagram"></p>
+  <p><a href="#policies">Returns and exchanges</a><a href="#policies">Delivery and payment</a><a href="#policies">Privacy</a></p>
+  <p id="musicLine" class="hidden"><button type="button" class="textbtn" id="music">Play the song</button> <span id="musicCredit"></span></p>
+  <p><button type="button" class="textbtn" id="themeToggle">Dark</button></p>
+  <p id="footCopy"></p>
+</div></footer>
+<!--/shared:footer-->
+
+<!--shared:script-->
+<script>
+/* Shared by the shop, the Media page and the Churches page. index.html owns this block;
+   build.sh copies it into media.html and churches.html, so edit it here only. */
+(function () {
+'use strict';
+
+/* Site config. The handover swaps scriptUrl and token (and the CSV links if used). */
+var CONFIG = {
+  storeName: 'Qivgu',
+  siteUrl: 'https://qivgu.com/',
+  scriptUrl: '',          /* Apps Script web app URL ending in /exec. Empty: sample shop, nothing is recorded */
+  token: '',              /* same value as the token row in the Settings tab */
+  productsCsvUrl: '',     /* optional: the Products tab published to the web as CSV, used if scriptUrl is empty or fails */
+  reviewsCsvUrl: '',      /* optional: the Reviews tab published to the web as CSV */
+  mediaCsvUrl: '',        /* optional: the Media tab published to the web as CSV */
+  imageBase: 'img/',      /* image file names in the sheet resolve against docs/img/ */
+  mediaBase: 'media/',    /* PDF file names in the Media tab resolve against docs/media/ */
+  cfAnalyticsToken: '',   /* Cloudflare Web Analytics token. Empty: no beacon is loaded */
+  contactEmail: '',       /* fallbacks for the footer when the sheet's Settings are not loaded */
+  instagram: '',
+  musicUrl: '',
+  musicLabel: 'Play the song',
+  musicCredit: ''
+};
+
+var DEFAULTS = {
+  hook_line: "Don't just read the Word, wear it",
+  delivery_line: 'Free delivery in the GTA. Pay cash or e-Transfer at the door.',
+  gta_enabled: 'yes', pickup_enabled: 'yes', ship_enabled: 'no', ship_rate: 12, ship_free_over: 0, tax_rate: 0, max_qty: 10,
+  church_sizes_mens: 'S, M, L, XL, 2XL', church_sizes_womens: 'S, M, L, XL', church_sizes_youth: 'YS, YM, YL',
+  gta_instructions: 'We text you to arrange a delivery time. Have {total} in cash ready, or send an e-Transfer to {etransfer} with {number} in the message before we arrive.',
+  pickup_instructions: 'Bring {total} in cash, or send an e-Transfer to {etransfer} with {number} in the message.',
+  ship_instructions: 'Send an e-Transfer of {total} to {etransfer} with {number} in the message. We ship within a few days of it arriving and email you when it is on its way.'
+};
+
+/* Shown only when no sheet is configured. Every line here is a stand-in for the owners' own content.
+   The products are the four real designs under working names; the photos are in docs/img/, front first, back second. */
+var SAMPLE = {
+  announcement: 'Sample shop. The products, prices and reviews are examples.',
+  settings: {
+    store_name: 'Qivgu', contact_email: 'info@example.com', instagram: '@yourhandle', etransfer_email: 'info@example.com',
+    ship_enabled: 'yes', ship_rate: 12, ship_free_over: 150,
+    pickup_note: 'Pickup at the church after the Sunday service or at the rink on Tuesday evenings. We text you to confirm.',
+    story: 'Qivgu started at a Toronto skating rink, where two friends printed a few shirts for the people they skate with. We print in Toronto, hold our own stock and deliver it ourselves.',
+    giveback_line: 'Part of every order goes to our church.',
+    tryon_note: 'You can see and feel the shirts at the rink on Tuesday evenings.',
+    church_intro: "We print your church's own design on our shirts. Send the artwork and the sizes you need and we reply with a quote.",
+    church_terms: 'Sample terms: 12 shirts or more, about two weeks from approved artwork, half by e-Transfer to start and the rest on delivery.'
+  },
+  promos: { FAITH10: { code: 'FAITH10', type: 'percent', value: 10 } },
+  products: [
+    { id: 'poweredbygod', name: 'Powered by God', price: 35, youth_price: 28, verse: '', description: 'Front: "AI, Authentic Intelligence, Powered by God" around a smiling face and a cross. Back: "Living the Word" in bold comic lettering. Ring-spun cotton, regular fit, screen printed in Toronto. Machine wash cold, inside out. Hang to dry.', colours: 'White #f2f2f2', sizes_mens: 'S, M, L, XL', sizes_womens: 'S, M, L', sizes_youth: 'YS, YM, YL', sold_out_sizes: '', images: 'poweredbygod-front.jpg; poweredbygod-back.jpg', active: 'yes' },
+    { id: 'bestai', name: 'The best AI', price: 35, youth_price: 28, verse: '2 Corinthians 5:7', description: 'Front: "The best AI (Authentic Intelligence) is in my faith". Back: "Walk by faith, not by sight" over a mountain path, with 2 Corinthians 5:7. Ring-spun cotton, regular fit, screen printed in Toronto. Machine wash cold, inside out. Hang to dry.', colours: 'White #f2f2f2', sizes_mens: 'S, M, L, XL', sizes_womens: 'S, M, L', sizes_youth: 'YS, YM, YL', sold_out_sizes: '', images: 'bestai-front.jpg; bestai-back.jpg', active: 'yes' },
+    { id: 'bible', name: 'B.I.B.L.E.', price: 35, youth_price: 28, verse: '', description: 'Front: the acrostic "Basic Instructions Before Leaving Earth". Back: an open Bible under a rising sun, above the Earth. Ring-spun cotton, regular fit, screen printed in Toronto. Machine wash cold, inside out. Hang to dry.', colours: 'White #f2f2f2', sizes_mens: 'S, M, L, XL', sizes_womens: 'S, M, L', sizes_youth: 'YS, YM, YL', sold_out_sizes: '', images: 'bible-front.jpg; bible-back.jpg', active: 'yes' },
+    { id: 'garden', name: 'Garden of the Silicon Valley', price: 35, youth_price: 28, verse: '', description: 'Front: two robots at the tree with the serpent, and the words "In the Garden of the Silicon Valley, mankind said, Do not eat from the fruit of the tree. Satan said, Eat and you will be more powerful than mankind." The back is plain. Ring-spun cotton, regular fit, screen printed in Toronto. Machine wash cold, inside out. Hang to dry.', colours: 'White #f2f2f2', sizes_mens: 'S, M, L, XL', sizes_womens: 'S, M, L', sizes_youth: 'YS, YM, YL', sold_out_sizes: '', images: 'garden-front.jpg', active: 'yes' }
+  ],
+  reviews: [
+    { product: 'poweredbygod', order: 'QV-1001', name: 'Priya', stars: 5, text: 'Fits true to size and the print has not cracked after a dozen washes.' },
+    { product: 'bestai', order: 'QV-1002', name: 'Marcus', stars: 4, text: 'Runs a little large. I ordered a medium and it fits like a large.' }
+  ],
+  media: [
+    { title: 'Sample flyer', type: 'pdf', file: 'sample-flyer.pdf', date: '2026-11-04', note: 'An example entry. Flyers and videos are listed here once they are added to the Media tab.' }
+  ]
+};
+
+var DATA = { rawProducts: [], products: [], reviews: [], media: [], settings: {}, demo: false, loaded: false, error: false };
+var cart = loadCart();
+
+/* ---------- data ---------- */
+
+function loadData() {
+  if (!CONFIG.scriptUrl && !CONFIG.productsCsvUrl) {
+    DATA.demo = true;
+    DATA.rawProducts = SAMPLE.products.slice();
+    DATA.reviews = SAMPLE.reviews.slice();
+    DATA.media = SAMPLE.media.slice();
+    DATA.settings = SAMPLE.settings;
+    DATA.loaded = true;
+    return Promise.resolve();
+  }
+  var viaScript = CONFIG.scriptUrl
+    ? fetch(CONFIG.scriptUrl + '?action=catalog', { cache: 'no-store', redirect: 'follow' })
+      .then(function (r) { return r.json(); })
+      .then(function (j) {
+        if (!j || !j.ok || !j.products) throw new Error('bad catalog');
+        DATA.rawProducts = j.products;
+        DATA.reviews = (j.reviews || []).filter(function (r) { return r.text; });
+        DATA.media = j.media || [];
+        DATA.settings = j.settings || {};
+        DATA.loaded = true;
+      })
+    : Promise.reject(new Error('no script url'));
+  return viaScript.catch(function () {
+    if (!CONFIG.productsCsvUrl) throw new Error('no csv');
+    return fetchCsv(CONFIG.productsCsvUrl).then(function (rows) {
+      DATA.rawProducts = rows;
+      DATA.loaded = true;
+      var extra = [];
+      if (CONFIG.reviewsCsvUrl) extra.push(fetchCsv(CONFIG.reviewsCsvUrl).then(function (r) {
+        DATA.reviews = r.filter(function (x) { return yes(x.approved) && (x.text || x.review); }).map(function (x) {
+          return { product: x.product, order: x.order || x.order_number || '', name: x.name, stars: num(x.stars), text: x.text || x.review };
+        });
+      }).catch(function () { }));
+      if (CONFIG.mediaCsvUrl) extra.push(fetchCsv(CONFIG.mediaCsvUrl).then(function (r) {
+        DATA.media = r.filter(function (x) { return x.title && (x.file || x.url || x.link); }).map(function (x) {
+          return { title: x.title, type: String(x.type || '').toLowerCase(), file: x.file || x.url || x.link, date: x.date || '', note: x.note || '' };
+        });
+      }).catch(function () { }));
+      return Promise.all(extra);
+    });
+  }).catch(function () { DATA.error = true; DATA.loaded = true; });
+}
+
+function fetchCsv(url) {
+  return fetch(url, { cache: 'no-store' }).then(function (r) { return r.text(); }).then(csvRows);
+}
+
+function csvRows(text) {
+  var rows = [], row = [], field = '', q = false;
+  for (var i = 0; i < text.length; i++) {
+    var ch = text[i];
+    if (q) {
+      if (ch === '"') { if (text[i + 1] === '"') { field += '"'; i++; } else q = false; }
+      else field += ch;
+    } else if (ch === '"') q = true;
+    else if (ch === ',') { row.push(field); field = ''; }
+    else if (ch === '\n' || ch === '\r') { if (ch === '\r' && text[i + 1] === '\n') i++; row.push(field); rows.push(row); row = []; field = ''; }
+    else field += ch;
+  }
+  if (field !== '' || row.length) { row.push(field); rows.push(row); }
+  rows = rows.filter(function (r) { return r.some(function (c) { return c !== ''; }); });
+  if (!rows.length) return [];
+  var headers = rows[0].map(function (h) { return h.trim().toLowerCase().replace(/\s+/g, '_'); });
+  return rows.slice(1).map(function (r) { var o = {}; headers.forEach(function (h, c) { if (h) o[h] = r[c] === undefined ? '' : r[c]; }); return o; });
+}
+
+/* Sends an order or a church request to the script. A plain-text body is a simple request, so the browser
+   sends it without a preflight and can read the redirected JSON reply. If that fails, an opaque form post
+   still gets it there (the script ignores a repeat with the same ref), but the reply cannot be read. */
+function post(payload) {
+  var body = JSON.stringify(payload);
+  return fetch(CONFIG.scriptUrl, { method: 'POST', body: body, redirect: 'follow' })
+    .then(function (r) { return r.json(); })
+    .then(function (j) { if (j && typeof j.ok === 'boolean') return j; throw new Error('bad reply'); })
+    .catch(function () {
+      return fetch(CONFIG.scriptUrl, { method: 'POST', mode: 'no-cors', body: new URLSearchParams({ payload: body }) })
+        .then(function () { return { ok: true, number: '', opaque: true }; })
+        .catch(function () { return { ok: false, error: 'It could not be sent. Check your connection and try again' + (contactEmail() ? ', or email ' + contactEmail() : '') + '.' }; });
+    });
+}
+
+function settings() { return DATA.settings || {}; }
+function setting(k) { var v = settings()[k]; if (v === undefined || v === null || v === '') v = DEFAULTS[k]; return v === undefined ? '' : v; }
+function storeName() { return String(setting('store_name') || CONFIG.storeName); }
+function contactEmail() { return String(setting('contact_email') || CONFIG.contactEmail); }
+function on(k) { return yes(setting(k)); }
+
+/* ---------- cart (the header shows the count on every page) ---------- */
+
+function loadCart() {
+  try {
+    var s = JSON.parse(localStorage.getItem('qivgu-cart'));
+    if (s && Array.isArray(s.items)) return { items: s.items, promo: s.promo || null };
+  } catch (e) { }
+  return { items: [], promo: null };
+}
+function saveCart() { try { localStorage.setItem('qivgu-cart', JSON.stringify(cart)); } catch (e) { } }
+function cartCount() { return cart.items.reduce(function (a, l) { return a + (Number(l.qty) || 0); }, 0); }
+function renderCartCount() { var el = document.getElementById('cartLink'); if (el) el.textContent = 'Cart (' + cartCount() + ')'; }
+
+/* ---------- theme, analytics, music, header and footer ---------- */
+
+function currentTheme() {
+  var t = document.documentElement.getAttribute('data-theme');
+  if (t === 'dark' || t === 'light') return t;
+  return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+function paintTheme() {
+  var t = currentTheme();
+  var btn = document.getElementById('themeToggle');
+  if (btn) { btn.textContent = t === 'dark' ? 'Light' : 'Dark'; btn.setAttribute('aria-label', t === 'dark' ? 'Light theme' : 'Dark theme'); }
+  var meta = document.querySelector('meta[name="theme-color"]');
+  if (meta) meta.setAttribute('content', t === 'dark' ? '#111111' : '#ffffff');
+}
+
+function initTheme() {
+  paintTheme();
+  var btn = document.getElementById('themeToggle');
+  if (btn) btn.addEventListener('click', function () {
+    var next = currentTheme() === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('qivgu-theme', next); } catch (e) { }
+    paintTheme();
+  });
+  if (window.matchMedia) {
+    var mq = window.matchMedia('(prefers-color-scheme: dark)');
+    if (mq.addEventListener) mq.addEventListener('change', paintTheme);
+  }
+}
+
+function injectAnalytics() {
+  var token = String(CONFIG.cfAnalyticsToken || '').trim();
+  if (!token) return;
+  var s = document.createElement('script');
+  s.defer = true;
+  s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+  s.setAttribute('data-cf-beacon', JSON.stringify({ token: token }));
+  document.head.appendChild(s);
+}
+
+function applyChrome() {
+  var name = storeName();
+  document.getElementById('wordmark').textContent = name;
+  var ann = DATA.demo ? SAMPLE.announcement : String(setting('announcement') || '');
+  document.getElementById('announceText').textContent = ann;
+  document.getElementById('announce').classList.toggle('hidden', !ann);
+  var email = contactEmail(), ig = String(setting('instagram') || CONFIG.instagram);
+  document.getElementById('footEmail').textContent = email;
+  document.getElementById('footEmail').classList.toggle('hidden', !email);
+  document.getElementById('footInstagram').textContent = ig ? 'Instagram: ' + ig : '';
+  document.getElementById('footInstagram').classList.toggle('hidden', !ig);
+  document.getElementById('footCopy').textContent = '© ' + new Date().getFullYear() + ' ' + name;
+  var music = String(setting('music_url') || CONFIG.musicUrl);
+  if (music) {
+    document.getElementById('musicLine').classList.remove('hidden');
+    document.getElementById('music').textContent = String(setting('music_label') || CONFIG.musicLabel || 'Play the song');
+    document.getElementById('musicCredit').textContent = String(setting('music_credit') || CONFIG.musicCredit || '');
+    setupMusic(music);
+  }
+}
+
+function setupMusic(url) {
+  var btn = document.getElementById('music');
+  var label = btn.textContent;
+  var audio = null;
+  btn.addEventListener('click', function () {
+    if (audio && !audio.paused) { audio.pause(); audio.currentTime = 0; btn.textContent = label; return; }
+    if (!audio) { audio = new Audio(url); audio.loop = false; audio.addEventListener('ended', function () { btn.textContent = label; }); }
+    audio.play().then(function () { btn.textContent = 'Stop'; }).catch(function () { btn.textContent = label; });
+  });
+}
+
+/* ---------- forms ---------- */
+
+function field(id, label, type, auto, value) {
+  return '<div class="field"><label for="' + id + '">' + label + '</label><input id="' + id + '" type="' + type + '" autocomplete="' + auto + '" value="' + esc(value || '') + '"><p class="err" id="err-' + id + '"></p></div>';
+}
+
+function honeypot() {
+  return '<label class="hp" for="website">Leave this empty</label><input class="hp" type="text" id="website" tabindex="-1" autocomplete="off">';
+}
+
+/* Puts each message under its field (an element with id err-KEY), marks the field, and moves to the first one. */
+function showErrors(errors, keys) {
+  var first = null;
+  keys.forEach(function (k) {
+    var el = document.getElementById('err-' + k);
+    if (el) el.textContent = errors[k] || '';
+    var input = document.getElementById(k);
+    if (input && input.tagName !== 'FORM') {
+      if (errors[k]) input.setAttribute('aria-invalid', 'true'); else input.removeAttribute('aria-invalid');
+    }
+    if (errors[k] && !first) first = input || el;
+  });
+  if (first) { if (first.focus && first.tagName !== 'P') first.focus(); else if (first.scrollIntoView) first.scrollIntoView({ block: 'center' }); }
+}
+
+/* ---------- utilities ---------- */
+
+function esc(s) { return String(s === undefined || s === null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+function num(v) { var n = parseFloat(String(v === undefined || v === null ? '' : v).replace(/[^0-9.\-]/g, '')); return isFinite(n) ? n : 0; }
+function yes(v) { return v === true || /^(yes|y|true|1|x|on)$/i.test(String(v === undefined || v === null ? '' : v).trim()); }
+function list(v) { return String(v === undefined || v === null ? '' : v).split(/[,;\n]+/).map(function (s) { return s.trim(); }).filter(Boolean); }
+function slug(s) { return String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
+function round2(n) { return Math.round((n + Number.EPSILON) * 100) / 100; }
+function money(n) { return '$' + round2(num(n)).toFixed(2).replace(/\.00$/, ''); }
+function range1(n) { var out = []; for (var i = 1; i <= n; i++) out.push(i); return out; }
+function isEmail(s) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s); }
+
+/* ---------- start ---------- */
+
+/* Each page calls QV.start(render): the header and footer are filled in, then the page draws itself. */
+function start(render) {
+  renderCartCount();
+  initTheme();
+  injectAnalytics();
+  return loadData().then(function () { applyChrome(); if (render) render(); });
+}
+
+window.QV = {
+  CONFIG: CONFIG, DEFAULTS: DEFAULTS, SAMPLE: SAMPLE, DATA: DATA, cart: cart, standalone: window.QV_STANDALONE === true,
+  start: start, post: post, setting: setting, on: on, storeName: storeName, contactEmail: contactEmail,
+  saveCart: saveCart, cartCount: cartCount, renderCartCount: renderCartCount,
+  field: field, honeypot: honeypot, showErrors: showErrors,
+  esc: esc, num: num, yes: yes, list: list, slug: slug, round2: round2, money: money, range1: range1, isEmail: isEmail
+};
+})();
+</script>
+<!--/shared:script-->
+
+<script>
+/* The Churches page: a church sends its own artwork and the sizes it needs, and the owners reply with a quote.
+   The artwork is read in the browser and sent to the script, which files it in the owners' Drive. */
+(function () {
+'use strict';
+var QV = window.QV, CONFIG = QV.CONFIG, DATA = QV.DATA, esc = QV.esc, list = QV.list, num = QV.num, slug = QV.slug;
+var view = document.getElementById('view');
+var RANGES = [['mens', "Men's"], ['womens', "Women's"], ['youth', 'Youth']];
+var TYPES = ['png', 'jpg', 'jpeg', 'pdf', 'svg', 'ai', 'eps'];
+var MAX_BYTES = 10 * 1024 * 1024;
+var KEYS = ['church', 'contact', 'email', 'phone', 'colour', 'sizes', 'date', 'delivery', 'artwork', 'rights', 'form'];
+var ref = '';
+
+function today() {
+  var d = new Date(), p = function (n) { return (n < 10 ? '0' : '') + n; };
+  return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate());
+}
+
+function render() {
+  document.title = 'Shirts for your church, ' + QV.storeName();
+  var contact = QV.contactEmail();
+  if (DATA.error) { view.innerHTML = '<h1>Shirts for your church</h1><p>The page could not load. Try again in a minute' + (contact ? ', or email ' + esc(contact) : '') + '.</p>'; return; }
+  if (!ref) ref = 'c' + Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+  var intro = QV.setting('church_intro'), terms = QV.setting('church_terms');
+  var sizes = RANGES.map(function (r) {
+    var s = list(QV.setting('church_sizes_' + r[0]));
+    if (!s.length) return '';
+    return '<p class="rangename">' + r[1] + '</p><div class="qtys">' + s.map(function (size) {
+      var id = 'q-' + r[0] + '-' + slug(size);
+      return '<label for="' + id + '">' + esc(size) + '<input id="' + id + '" type="number" min="0" max="999" step="1" inputmode="numeric" data-range="' + r[0] + '" data-size="' + esc(size) + '"></label>';
+    }).join('') + '</div>';
+  }).join('');
+  view.innerHTML = '<div class="text"><h1>Shirts for your church</h1>' +
+    (DATA.demo ? '<p>Sample page. Nothing you send from here is recorded.</p>' : '') +
+    (intro ? '<p>' + esc(intro) + '</p>' : '') + (terms ? '<p>' + esc(terms) + '</p>' : '') + '</div>' +
+    '<form id="churchForm" novalidate>' +
+    QV.field('church', 'Church name', 'text', 'organization') + QV.field('contact', 'Contact person', 'text', 'name') +
+    QV.field('email', 'Email', 'email', 'email') + QV.field('phone', 'Phone', 'tel', 'tel') + QV.field('colour', 'Shirt colour', 'text', 'off') +
+    '<fieldset><legend>How many of each size</legend>' + sizes + '<p class="err" id="err-sizes"></p></fieldset>' +
+    '<div class="field"><label for="date">Date needed</label><input id="date" type="date" min="' + today() + '"><p class="err" id="err-date"></p></div>' +
+    '<fieldset><legend>Getting the shirts</legend>' +
+    '<label class="choice"><input type="radio" name="delivery" value="gta" checked><span>Delivery in the GTA</span></label>' +
+    '<label class="choice"><input type="radio" name="delivery" value="pickup"><span>Pickup</span></label>' +
+    '<p class="err" id="err-delivery"></p></fieldset>' +
+    '<div class="field"><label for="notes">Notes</label><textarea id="notes"></textarea></div>' +
+    '<div class="field"><label for="artwork">Artwork (PNG, JPG, PDF, SVG, AI or EPS, up to 10 MB)</label><input id="artwork" type="file" accept=".png,.jpg,.jpeg,.pdf,.svg,.ai,.eps"><p class="err" id="err-artwork"></p></div>' +
+    '<label class="choice"><input type="checkbox" id="rights"><span>We own this artwork or have permission to print it.</span></label><p class="err" id="err-rights"></p>' +
+    QV.honeypot() +
+    '<p><button type="submit" class="btn" id="send">Send request</button></p><p class="err" id="err-form"></p></form>';
+}
+
+function read() {
+  var g = function (id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; };
+  var sizes = { mens: {}, womens: {}, youth: {} }, total = 0;
+  Array.prototype.forEach.call(view.querySelectorAll('.qtys input'), function (el) {
+    var n = Math.min(999, Math.floor(num(el.value)));
+    if (n > 0) { sizes[el.dataset.range][el.dataset.size] = n; total += n; }
+  });
+  var d = view.querySelector('input[name="delivery"]:checked');
+  var f = document.getElementById('artwork');
+  return {
+    church: g('church'), contact: g('contact'), email: g('email'), phone: g('phone'), colour: g('colour'), sizes: sizes, total: total,
+    date: g('date'), delivery: d ? d.value : '', notes: g('notes'), rights: !!document.getElementById('rights').checked,
+    file: f && f.files && f.files[0] ? f.files[0] : null, website: g('website')
+  };
+}
+
+function validate(d) {
+  var e = {};
+  if (d.church.length < 2) e.church = 'Enter the name of the church.';
+  if (d.contact.length < 2) e.contact = 'Enter a contact person.';
+  if (!QV.isEmail(d.email)) e.email = 'Enter a valid email address.';
+  if (d.phone.replace(/\D/g, '').length < 10) e.phone = 'Enter a phone number with the area code.';
+  if (d.colour.length < 2) e.colour = 'Enter the shirt colour you want.';
+  if (d.total < 1) e.sizes = 'Enter how many shirts you need in at least one size.';
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(d.date)) e.date = 'Choose the date you need the shirts by.';
+  else if (d.date < today()) e.date = 'The date needed has already passed.';
+  if (d.delivery !== 'gta' && d.delivery !== 'pickup') e.delivery = 'Choose delivery in the GTA or pickup.';
+  if (!d.file) e.artwork = 'Attach the artwork file.';
+  else {
+    var ext = (d.file.name.match(/\.([A-Za-z0-9]+)$/) || [])[1];
+    if (!ext || TYPES.indexOf(ext.toLowerCase()) < 0) e.artwork = 'The artwork has to be a PNG, JPG, PDF, SVG, AI or EPS file.';
+    else if (d.file.size > MAX_BYTES) e.artwork = 'The artwork file is larger than 10 MB. Send a smaller version.';
+    else if (!d.file.size) e.artwork = 'The artwork file is empty. Attach it again.';
+  }
+  if (!d.rights) e.rights = 'Tick the box to confirm that you own the artwork or have permission to print it.';
+  return e;
+}
+
+function readFile(file) {
+  return new Promise(function (resolve, reject) {
+    var r = new FileReader();
+    r.onload = function () { var s = String(r.result || ''); resolve(s.slice(s.indexOf(',') + 1)); };
+    r.onerror = function () { reject(new Error('read failed')); };
+    r.readAsDataURL(file);
+  });
+}
+
+function send() {
+  var d = read();
+  var errors = validate(d);
+  QV.showErrors(errors, KEYS);
+  if (Object.keys(errors).length) return;
+  var btn = document.getElementById('send');
+  btn.disabled = true;
+  btn.textContent = 'Sending your request';
+  var finish = function (res) {
+    if (!res.ok) {
+      btn.disabled = false;
+      btn.textContent = 'Send request';
+      var e = {}; e[res.field && document.getElementById('err-' + res.field) ? res.field : 'form'] = res.error || 'The request could not be sent.';
+      QV.showErrors(e, KEYS);
+      return;
+    }
+    ref = '';
+    done(res, d);
+  };
+  if (DATA.demo) { finish({ ok: true, number: 'CH-1001', demo: true }); return; }
+  if (!CONFIG.scriptUrl) { finish({ ok: false, error: 'Requests are not switched on yet.' + (QV.contactEmail() ? ' Email ' + QV.contactEmail() + ' instead.' : '') }); return; }
+  readFile(d.file).then(function (data) {
+    return QV.post({
+      type: 'church', token: CONFIG.token, ref: ref, website: d.website, church: d.church, contact: d.contact, email: d.email, phone: d.phone,
+      colour: d.colour, sizes: d.sizes, date: d.date, delivery: d.delivery, notes: d.notes, rights: true,
+      file: { name: d.file.name, type: d.file.type, data: data }
+    });
+  }, function () { return { ok: false, field: 'artwork', error: 'The artwork file could not be read. Attach it again.' }; }).then(finish);
+}
+
+function done(res, d) {
+  window.scrollTo(0, 0);
+  view.innerHTML = '<div class="text"><h1>Request ' + (res.number ? esc(res.number) + ' ' : '') + 'received</h1>' +
+    '<p>' + d.total + (d.total === 1 ? ' shirt' : ' shirts') + ' in ' + esc(d.colour) + ', needed by ' + esc(d.date) + '.</p>' +
+    (res.demo ? '<p>Sample page: nothing was sent or recorded.</p>'
+      : '<p>We will look at the artwork and reply to ' + esc(d.email) + ' with a quote. A copy of the request is on its way to that address.</p>') +
+    '<p><a href="#shop">Back to the shop</a></p></div>';
+}
+
+view.addEventListener('submit', function (e) {
+  if (e.target.id === 'churchForm') { e.preventDefault(); send(); }
+});
+
+QV.start(render);
+})();
+</script>
+
+</html>

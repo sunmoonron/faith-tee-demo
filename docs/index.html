@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<script>window.QV_STANDALONE=true</script>
 <title>Qivgu</title>
 <meta name="description" content="Qivgu: scripture t-shirts from Toronto. Free delivery in the GTA, pay cash or e-Transfer at the door.">
 <meta property="og:title" content="Qivgu">
@@ -12,22 +13,28 @@
 <meta property="og:image" content="https://qivgu.com/img/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta name="theme-color" content="#ffffff">
 <link rel="canonical" href="https://qivgu.com/">
+<!--shared:head-->
+<meta name="theme-color" content="#ffffff">
 <link rel="icon" href="img/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600&display=swap">
 <style>
+/* One light and one dark set of six colours. Dark follows the system unless the footer toggle has been used. */
+:root{color-scheme:light;--bg:#fff;--ink:#111;--rule:#ddd;--tile:#eee;--mute:#767676;--err:#c00}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#111;--ink:#f2f2f2;--rule:#333;--tile:#222;--mute:#999;--err:#ff6b6b}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#111;--ink:#f2f2f2;--rule:#333;--tile:#222;--mute:#999;--err:#ff6b6b}
+
 *,*::before,*::after{box-sizing:border-box}
-html{background:#fff}
-body{margin:0;background:#fff;color:#111;font-family:"Schibsted Grotesk",Helvetica,Arial,sans-serif;font-size:16px;line-height:24px;-webkit-text-size-adjust:100%}
+html{background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Schibsted Grotesk",Helvetica,Arial,sans-serif;font-size:16px;line-height:24px;-webkit-text-size-adjust:100%}
 h1,h2{font-size:24px;line-height:32px;font-weight:500;margin:0 0 16px}
 h3{font-size:16px;line-height:24px;font-weight:500;margin:0}
 p,ul,ol,table{margin:0 0 16px}
 ul,ol{padding-left:24px}
-a{color:#111;text-decoration:underline;text-underline-offset:2px}
+a{color:var(--ink);text-decoration:underline;text-underline-offset:2px}
 nav a,.wordmark,.cartlink,.tile a{text-decoration:none}
 nav a:hover,.wordmark:hover,.cartlink:hover,.btn:hover,.textbtn:hover{text-decoration:underline}
 .tile a:hover h3{text-decoration:underline}
@@ -37,37 +44,37 @@ img{display:block;max-width:100%}
 @media (min-width:768px){.wrap{padding:0 24px}}
 .hidden{display:none!important}
 
-header{background:#fff;border-bottom:1px solid #ddd}
+header{background:var(--bg);border-bottom:1px solid var(--rule)}
 header .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:8px 24px;padding-top:16px;padding-bottom:16px}
 .wordmark{font-weight:600;margin-right:auto}
 nav{display:flex;gap:16px}
 @media (max-width:599px){nav{order:3;width:100%}}
-.announce{border-bottom:1px solid #ddd}
+.announce{border-bottom:1px solid var(--rule)}
 .announce p{margin:0;padding:8px 0}
 
 main.wrap{padding-top:24px;padding-bottom:48px}
 @media (min-width:768px){main.wrap{padding-top:32px;padding-bottom:64px}}
-hr{border:0;border-top:1px solid #ddd;margin:32px 0}
+hr{border:0;border-top:1px solid var(--rule);margin:32px 0}
 @media (min-width:768px){hr{margin:48px 0}}
+.text p,.about p{max-width:640px}
 
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
 @media (min-width:768px){.grid{grid-template-columns:repeat(4,1fr);gap:24px}}
 .tile a{display:block}
-.photo{position:relative;aspect-ratio:4/5;background:#eee;overflow:hidden}
+.photo{position:relative;aspect-ratio:4/5;background:var(--tile);overflow:hidden}
 .photo span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:16px;text-align:center}
 .photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .tile h3{margin-top:8px}
 .tile p{margin:0}
-.about p{max-width:640px}
 .about .hook{font-weight:500}
 
-footer{border-top:1px solid #ddd;padding:24px 0 32px}
+footer{border-top:1px solid var(--rule);padding:24px 0 32px}
 footer p{margin:0 0 8px}
 footer a{margin-right:16px}
 
-.btn{display:inline-block;background:#111;color:#fff;border:1px solid #111;padding:11px 24px;line-height:24px;font-weight:500;cursor:pointer;text-decoration:none;font-family:inherit;border-radius:0;-webkit-appearance:none;appearance:none}
+.btn{display:inline-block;background:var(--ink);color:var(--bg);border:1px solid var(--ink);padding:11px 24px;line-height:24px;font-weight:500;cursor:pointer;text-decoration:none;font-family:inherit;border-radius:0;-webkit-appearance:none;appearance:none}
 .btn[disabled]{cursor:default}
-.textbtn{background:none;border:0;padding:0;text-decoration:underline;text-underline-offset:2px;cursor:pointer;color:#111}
+.textbtn{background:none;border:0;padding:0;text-decoration:underline;text-underline-offset:2px;cursor:pointer;color:var(--ink)}
 
 .product{display:grid;gap:24px}
 @media (min-width:768px){.product{grid-template-columns:1fr 1fr;gap:48px}}
@@ -77,12 +84,12 @@ footer a{margin-right:16px}
 .photos .photo:has(img) span{display:none}
 .product h1{margin-bottom:8px}
 .swatches,.sizes{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
-.swatch{display:inline-flex;align-items:center;gap:8px;padding:3px 12px 3px 3px;border:1px solid #fff;background:#fff;cursor:pointer}
-.swatch i{width:24px;height:24px;border:1px solid #ddd;display:block}
-.swatch[aria-pressed="true"]{border-color:#111}
-.sizes button{min-width:48px;height:40px;padding:0 12px;border:1px solid #111;background:#fff;cursor:pointer;border-radius:0}
-.sizes button[aria-pressed="true"]{background:#111;color:#fff}
-.sizes button[disabled]{color:#767676;border-color:#ddd;text-decoration:line-through;cursor:default}
+.swatch{display:inline-flex;align-items:center;gap:8px;padding:3px 12px 3px 3px;border:1px solid var(--bg);background:var(--bg);cursor:pointer}
+.swatch i{width:24px;height:24px;border:1px solid var(--rule);display:block}
+.swatch[aria-pressed="true"]{border-color:var(--ink)}
+.sizes button{min-width:48px;height:40px;padding:0 12px;border:1px solid var(--ink);background:var(--bg);cursor:pointer;border-radius:0}
+.sizes button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.sizes button[disabled]{color:var(--mute);border-color:var(--rule);text-decoration:line-through;cursor:default}
 .rangename{margin:0 0 8px}
 .row{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin:0 0 16px}
 .row label{display:inline;margin:0}
@@ -91,49 +98,72 @@ footer a{margin-right:16px}
 .stars{white-space:nowrap}
 
 label{display:block;margin:0 0 4px;font-weight:500}
-input,select,textarea{font:inherit;color:#111;background:#fff;border:1px solid #111;padding:8px;height:40px;width:100%;max-width:400px;border-radius:0}
+input,select,textarea{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--ink);padding:8px;height:40px;width:100%;max-width:400px;border-radius:0}
 input,textarea{-webkit-appearance:none;appearance:none}
 textarea{height:auto;min-height:80px;display:block}
 select{width:auto;min-width:64px;padding-right:8px}
-input[type=radio],input[type=checkbox]{width:16px;height:16px;margin:4px 0 0;padding:0;-webkit-appearance:auto;appearance:auto;flex:none}
+input[type=radio],input[type=checkbox]{width:16px;height:16px;margin:4px 0 0;padding:0;-webkit-appearance:auto;appearance:auto;flex:none;accent-color:var(--ink)}
+input[type=number]{max-width:72px}
+input[type=date]{max-width:200px;-webkit-appearance:auto;appearance:auto}
+input[type=file]{border:0;padding:0;height:auto;-webkit-appearance:auto;appearance:auto}
 .field{margin:0 0 16px}
-.err{color:#c00;margin:4px 0 0}
-input[aria-invalid="true"],textarea[aria-invalid="true"]{border-color:#c00}
+.err{color:var(--err);margin:4px 0 0}
+input[aria-invalid="true"],textarea[aria-invalid="true"]{border-color:var(--err)}
 fieldset{border:0;padding:0;margin:0 0 16px;min-width:0}
 legend{font-weight:500;padding:0;margin:0 0 8px}
 .choice{display:flex;gap:8px;align-items:flex-start;margin:0 0 8px;font-weight:400;max-width:560px}
-.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.qtys{display:flex;flex-wrap:wrap;gap:8px 16px;margin:0 0 16px}
+.qtys label{display:flex;align-items:center;gap:8px;margin:0;font-weight:400}
+.qtys input{width:56px}
 .totals{width:100%;max-width:400px;border-collapse:collapse}
 .totals td{padding:4px 0;vertical-align:top}
 .totals td+td{text-align:right;white-space:nowrap}
-.totals tr.total td{border-top:1px solid #ddd;padding-top:8px;font-weight:500}
-.line{padding:16px 0;border-top:1px solid #ddd}
-.lines{border-bottom:1px solid #ddd;margin:0 0 16px}
+.totals tr.total td{border-top:1px solid var(--rule);padding-top:8px;font-weight:500}
+.line{padding:16px 0;border-top:1px solid var(--rule)}
+.lines{border-bottom:1px solid var(--rule);margin:0 0 16px}
 .line p{margin:0}
 .line .row{margin:8px 0 0}
 .faq h2{margin-top:32px}
-.faq h2:first-child{margin-top:0}
-.policies p,.faq p{max-width:640px}
-</style>
+.faq h1+h2{margin-top:0}
 
+.medialist{list-style:none;padding:0;margin:0 0 16px;border-bottom:1px solid var(--rule)}
+.medialist li{padding:16px 0;border-top:1px solid var(--rule)}
+.medialist p{margin:0;max-width:640px}
+.medialist iframe{display:block;width:100%;max-width:640px;aspect-ratio:16/9;border:0;margin:8px 0 0}
+</style>
+<script>
+/* Apply a remembered theme before the page paints. */
+try{var qvTheme=localStorage.getItem('qivgu-theme');if(qvTheme==='dark'||qvTheme==='light')document.documentElement.setAttribute('data-theme',qvTheme)}catch(e){}
+</script>
+<!--/shared:head-->
+
+<!--shared:header-->
 <header><div class="wrap">
   <a class="wordmark" href="#shop" id="wordmark">Qivgu</a>
-  <nav><a href="#shop">Shop</a><a href="#about">About</a><a href="#faq">FAQ</a></nav>
+  <nav><a href="#shop">Shop</a><a href="#about">About</a><a href="#faq">FAQ</a><a href="media/">Media</a><a href="churches/">Churches</a></nav>
   <a class="cartlink" href="#cart" id="cartLink">Cart (0)</a>
 </div></header>
 <div class="announce hidden" id="announce"><div class="wrap"><p id="announceText"></p></div></div>
+<!--/shared:header-->
 
 <main class="wrap" id="view"><p>Loading the shop.</p></main>
 
+<!--shared:footer-->
 <footer><div class="wrap">
   <p id="footEmail"></p>
   <p id="footInstagram"></p>
   <p><a href="#policies">Returns and exchanges</a><a href="#policies">Delivery and payment</a><a href="#policies">Privacy</a></p>
   <p id="musicLine" class="hidden"><button type="button" class="textbtn" id="music">Play the song</button> <span id="musicCredit"></span></p>
+  <p><button type="button" class="textbtn" id="themeToggle">Dark</button></p>
   <p id="footCopy"></p>
 </div></footer>
+<!--/shared:footer-->
 
+<!--shared:script-->
 <script>
+/* Shared by the shop, the Media page and the Churches page. index.html owns this block;
+   build.sh copies it into media.html and churches.html, so edit it here only. */
 (function () {
 'use strict';
 
@@ -141,12 +171,15 @@ legend{font-weight:500;padding:0;margin:0 0 8px}
 var CONFIG = {
   storeName: 'Qivgu',
   siteUrl: 'https://qivgu.com/',
-  scriptUrl: '',        /* Apps Script web app URL ending in /exec. Empty: sample shop, nothing is recorded */
-  token: '',            /* same value as the token row in the Settings tab */
-  productsCsvUrl: '',   /* optional: the Products tab published to the web as CSV, used if scriptUrl is empty or fails */
-  reviewsCsvUrl: '',    /* optional: the Reviews tab published to the web as CSV */
-  imageBase: 'img/',    /* image file names in the sheet resolve against docs/img/ */
-  contactEmail: '',     /* fallbacks for the footer when the sheet's Settings are not loaded */
+  scriptUrl: '',          /* Apps Script web app URL ending in /exec. Empty: sample shop, nothing is recorded */
+  token: '',              /* same value as the token row in the Settings tab */
+  productsCsvUrl: '',     /* optional: the Products tab published to the web as CSV, used if scriptUrl is empty or fails */
+  reviewsCsvUrl: '',      /* optional: the Reviews tab published to the web as CSV */
+  mediaCsvUrl: '',        /* optional: the Media tab published to the web as CSV */
+  imageBase: 'img/',      /* image file names in the sheet resolve against docs/img/ */
+  mediaBase: 'media/',    /* PDF file names in the Media tab resolve against docs/media/ */
+  cfAnalyticsToken: '',   /* Cloudflare Web Analytics token. Empty: no beacon is loaded */
+  contactEmail: '',       /* fallbacks for the footer when the sheet's Settings are not loaded */
   instagram: '',
   musicUrl: '',
   musicLabel: 'Play the song',
@@ -157,6 +190,7 @@ var DEFAULTS = {
   hook_line: "Don't just read the Word, wear it",
   delivery_line: 'Free delivery in the GTA. Pay cash or e-Transfer at the door.',
   gta_enabled: 'yes', pickup_enabled: 'yes', ship_enabled: 'no', ship_rate: 12, ship_free_over: 0, tax_rate: 0, max_qty: 10,
+  church_sizes_mens: 'S, M, L, XL, 2XL', church_sizes_womens: 'S, M, L, XL', church_sizes_youth: 'YS, YM, YL',
   gta_instructions: 'We text you to arrange a delivery time. Have {total} in cash ready, or send an e-Transfer to {etransfer} with {number} in the message before we arrive.',
   pickup_instructions: 'Bring {total} in cash, or send an e-Transfer to {etransfer} with {number} in the message.',
   ship_instructions: 'Send an e-Transfer of {total} to {etransfer} with {number} in the message. We ship within a few days of it arriving and email you when it is on its way.'
@@ -171,7 +205,10 @@ var SAMPLE = {
     ship_enabled: 'yes', ship_rate: 12, ship_free_over: 150,
     pickup_note: 'Pickup at the church after the Sunday service or at the rink on Tuesday evenings. We text you to confirm.',
     story: 'Qivgu started at a Toronto skating rink, where two friends printed a few shirts for the people they skate with. We print in Toronto, hold our own stock and deliver it ourselves.',
-    giveback_line: 'Part of every order goes to our church.'
+    giveback_line: 'Part of every order goes to our church.',
+    tryon_note: 'You can see and feel the shirts at the rink on Tuesday evenings.',
+    church_intro: "We print your church's own design on our shirts. Send the artwork and the sizes you need and we reply with a quote.",
+    church_terms: 'Sample terms: 12 shirts or more, about two weeks from approved artwork, half by e-Transfer to start and the rest on delivery.'
   },
   promos: { FAITH10: { code: 'FAITH10', type: 'percent', value: 10 } },
   products: [
@@ -183,24 +220,23 @@ var SAMPLE = {
   reviews: [
     { product: 'poweredbygod', order: 'QV-1001', name: 'Priya', stars: 5, text: 'Fits true to size and the print has not cracked after a dozen washes.' },
     { product: 'bestai', order: 'QV-1002', name: 'Marcus', stars: 4, text: 'Runs a little large. I ordered a medium and it fits like a large.' }
+  ],
+  media: [
+    { title: 'Sample flyer', type: 'pdf', file: 'sample-flyer.pdf', date: '2026-11-04', note: 'An example entry. Flyers and videos are listed here once they are added to the Media tab.' }
   ]
 };
 
-var DATA = { products: [], reviews: [], settings: {}, demo: false, loaded: false, error: false };
+var DATA = { rawProducts: [], products: [], reviews: [], media: [], settings: {}, demo: false, loaded: false, error: false };
 var cart = loadCart();
-var sel = { id: null, colour: '', range: '', size: '', qty: 1 };
-var draft = { name: '', phone: '', email: '', delivery: '', address: '', postal: '', promo: '', consent: false };
-var orderRef = '';
-var lastOrder = null;
-var view = document.getElementById('view');
 
 /* ---------- data ---------- */
 
 function loadData() {
   if (!CONFIG.scriptUrl && !CONFIG.productsCsvUrl) {
     DATA.demo = true;
-    DATA.products = SAMPLE.products.map(normalizeProduct);
+    DATA.rawProducts = SAMPLE.products.slice();
     DATA.reviews = SAMPLE.reviews.slice();
+    DATA.media = SAMPLE.media.slice();
     DATA.settings = SAMPLE.settings;
     DATA.loaded = true;
     return Promise.resolve();
@@ -210,25 +246,36 @@ function loadData() {
       .then(function (r) { return r.json(); })
       .then(function (j) {
         if (!j || !j.ok || !j.products) throw new Error('bad catalog');
-        DATA.products = j.products.map(normalizeProduct).filter(function (p) { return p.active && p.name; });
+        DATA.rawProducts = j.products;
         DATA.reviews = (j.reviews || []).filter(function (r) { return r.text; });
+        DATA.media = j.media || [];
         DATA.settings = j.settings || {};
         DATA.loaded = true;
       })
     : Promise.reject(new Error('no script url'));
   return viaScript.catch(function () {
     if (!CONFIG.productsCsvUrl) throw new Error('no csv');
-    return fetch(CONFIG.productsCsvUrl, { cache: 'no-store' }).then(function (r) { return r.text(); }).then(function (t) {
-      DATA.products = csvRows(t).map(normalizeProduct).filter(function (p) { return p.active && p.name; });
+    return fetchCsv(CONFIG.productsCsvUrl).then(function (rows) {
+      DATA.rawProducts = rows;
       DATA.loaded = true;
-      if (!CONFIG.reviewsCsvUrl) return;
-      return fetch(CONFIG.reviewsCsvUrl, { cache: 'no-store' }).then(function (r) { return r.text(); }).then(function (t2) {
-        DATA.reviews = csvRows(t2).filter(function (r) { return yes(r.approved) && (r.text || r.review); }).map(function (r) {
-          return { product: r.product, order: r.order || r.order_number || '', name: r.name, stars: num(r.stars), text: r.text || r.review };
+      var extra = [];
+      if (CONFIG.reviewsCsvUrl) extra.push(fetchCsv(CONFIG.reviewsCsvUrl).then(function (r) {
+        DATA.reviews = r.filter(function (x) { return yes(x.approved) && (x.text || x.review); }).map(function (x) {
+          return { product: x.product, order: x.order || x.order_number || '', name: x.name, stars: num(x.stars), text: x.text || x.review };
         });
-      }).catch(function () { });
+      }).catch(function () { }));
+      if (CONFIG.mediaCsvUrl) extra.push(fetchCsv(CONFIG.mediaCsvUrl).then(function (r) {
+        DATA.media = r.filter(function (x) { return x.title && (x.file || x.url || x.link); }).map(function (x) {
+          return { title: x.title, type: String(x.type || '').toLowerCase(), file: x.file || x.url || x.link, date: x.date || '', note: x.note || '' };
+        });
+      }).catch(function () { }));
+      return Promise.all(extra);
     });
   }).catch(function () { DATA.error = true; DATA.loaded = true; });
+}
+
+function fetchCsv(url) {
+  return fetch(url, { cache: 'no-store' }).then(function (r) { return r.text(); }).then(csvRows);
 }
 
 function csvRows(text) {
@@ -249,6 +296,188 @@ function csvRows(text) {
   var headers = rows[0].map(function (h) { return h.trim().toLowerCase().replace(/\s+/g, '_'); });
   return rows.slice(1).map(function (r) { var o = {}; headers.forEach(function (h, c) { if (h) o[h] = r[c] === undefined ? '' : r[c]; }); return o; });
 }
+
+/* Sends an order or a church request to the script. A plain-text body is a simple request, so the browser
+   sends it without a preflight and can read the redirected JSON reply. If that fails, an opaque form post
+   still gets it there (the script ignores a repeat with the same ref), but the reply cannot be read. */
+function post(payload) {
+  var body = JSON.stringify(payload);
+  return fetch(CONFIG.scriptUrl, { method: 'POST', body: body, redirect: 'follow' })
+    .then(function (r) { return r.json(); })
+    .then(function (j) { if (j && typeof j.ok === 'boolean') return j; throw new Error('bad reply'); })
+    .catch(function () {
+      return fetch(CONFIG.scriptUrl, { method: 'POST', mode: 'no-cors', body: new URLSearchParams({ payload: body }) })
+        .then(function () { return { ok: true, number: '', opaque: true }; })
+        .catch(function () { return { ok: false, error: 'It could not be sent. Check your connection and try again' + (contactEmail() ? ', or email ' + contactEmail() : '') + '.' }; });
+    });
+}
+
+function settings() { return DATA.settings || {}; }
+function setting(k) { var v = settings()[k]; if (v === undefined || v === null || v === '') v = DEFAULTS[k]; return v === undefined ? '' : v; }
+function storeName() { return String(setting('store_name') || CONFIG.storeName); }
+function contactEmail() { return String(setting('contact_email') || CONFIG.contactEmail); }
+function on(k) { return yes(setting(k)); }
+
+/* ---------- cart (the header shows the count on every page) ---------- */
+
+function loadCart() {
+  try {
+    var s = JSON.parse(localStorage.getItem('qivgu-cart'));
+    if (s && Array.isArray(s.items)) return { items: s.items, promo: s.promo || null };
+  } catch (e) { }
+  return { items: [], promo: null };
+}
+function saveCart() { try { localStorage.setItem('qivgu-cart', JSON.stringify(cart)); } catch (e) { } }
+function cartCount() { return cart.items.reduce(function (a, l) { return a + (Number(l.qty) || 0); }, 0); }
+function renderCartCount() { var el = document.getElementById('cartLink'); if (el) el.textContent = 'Cart (' + cartCount() + ')'; }
+
+/* ---------- theme, analytics, music, header and footer ---------- */
+
+function currentTheme() {
+  var t = document.documentElement.getAttribute('data-theme');
+  if (t === 'dark' || t === 'light') return t;
+  return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+function paintTheme() {
+  var t = currentTheme();
+  var btn = document.getElementById('themeToggle');
+  if (btn) { btn.textContent = t === 'dark' ? 'Light' : 'Dark'; btn.setAttribute('aria-label', t === 'dark' ? 'Light theme' : 'Dark theme'); }
+  var meta = document.querySelector('meta[name="theme-color"]');
+  if (meta) meta.setAttribute('content', t === 'dark' ? '#111111' : '#ffffff');
+}
+
+function initTheme() {
+  paintTheme();
+  var btn = document.getElementById('themeToggle');
+  if (btn) btn.addEventListener('click', function () {
+    var next = currentTheme() === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('qivgu-theme', next); } catch (e) { }
+    paintTheme();
+  });
+  if (window.matchMedia) {
+    var mq = window.matchMedia('(prefers-color-scheme: dark)');
+    if (mq.addEventListener) mq.addEventListener('change', paintTheme);
+  }
+}
+
+function injectAnalytics() {
+  var token = String(CONFIG.cfAnalyticsToken || '').trim();
+  if (!token) return;
+  var s = document.createElement('script');
+  s.defer = true;
+  s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+  s.setAttribute('data-cf-beacon', JSON.stringify({ token: token }));
+  document.head.appendChild(s);
+}
+
+function applyChrome() {
+  var name = storeName();
+  document.getElementById('wordmark').textContent = name;
+  var ann = DATA.demo ? SAMPLE.announcement : String(setting('announcement') || '');
+  document.getElementById('announceText').textContent = ann;
+  document.getElementById('announce').classList.toggle('hidden', !ann);
+  var email = contactEmail(), ig = String(setting('instagram') || CONFIG.instagram);
+  document.getElementById('footEmail').textContent = email;
+  document.getElementById('footEmail').classList.toggle('hidden', !email);
+  document.getElementById('footInstagram').textContent = ig ? 'Instagram: ' + ig : '';
+  document.getElementById('footInstagram').classList.toggle('hidden', !ig);
+  document.getElementById('footCopy').textContent = '© ' + new Date().getFullYear() + ' ' + name;
+  var music = String(setting('music_url') || CONFIG.musicUrl);
+  if (music) {
+    document.getElementById('musicLine').classList.remove('hidden');
+    document.getElementById('music').textContent = String(setting('music_label') || CONFIG.musicLabel || 'Play the song');
+    document.getElementById('musicCredit').textContent = String(setting('music_credit') || CONFIG.musicCredit || '');
+    setupMusic(music);
+  }
+}
+
+function setupMusic(url) {
+  var btn = document.getElementById('music');
+  var label = btn.textContent;
+  var audio = null;
+  btn.addEventListener('click', function () {
+    if (audio && !audio.paused) { audio.pause(); audio.currentTime = 0; btn.textContent = label; return; }
+    if (!audio) { audio = new Audio(url); audio.loop = false; audio.addEventListener('ended', function () { btn.textContent = label; }); }
+    audio.play().then(function () { btn.textContent = 'Stop'; }).catch(function () { btn.textContent = label; });
+  });
+}
+
+/* ---------- forms ---------- */
+
+function field(id, label, type, auto, value) {
+  return '<div class="field"><label for="' + id + '">' + label + '</label><input id="' + id + '" type="' + type + '" autocomplete="' + auto + '" value="' + esc(value || '') + '"><p class="err" id="err-' + id + '"></p></div>';
+}
+
+function honeypot() {
+  return '<label class="hp" for="website">Leave this empty</label><input class="hp" type="text" id="website" tabindex="-1" autocomplete="off">';
+}
+
+/* Puts each message under its field (an element with id err-KEY), marks the field, and moves to the first one. */
+function showErrors(errors, keys) {
+  var first = null;
+  keys.forEach(function (k) {
+    var el = document.getElementById('err-' + k);
+    if (el) el.textContent = errors[k] || '';
+    var input = document.getElementById(k);
+    if (input && input.tagName !== 'FORM') {
+      if (errors[k]) input.setAttribute('aria-invalid', 'true'); else input.removeAttribute('aria-invalid');
+    }
+    if (errors[k] && !first) first = input || el;
+  });
+  if (first) { if (first.focus && first.tagName !== 'P') first.focus(); else if (first.scrollIntoView) first.scrollIntoView({ block: 'center' }); }
+}
+
+/* ---------- utilities ---------- */
+
+function esc(s) { return String(s === undefined || s === null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+function num(v) { var n = parseFloat(String(v === undefined || v === null ? '' : v).replace(/[^0-9.\-]/g, '')); return isFinite(n) ? n : 0; }
+function yes(v) { return v === true || /^(yes|y|true|1|x|on)$/i.test(String(v === undefined || v === null ? '' : v).trim()); }
+function list(v) { return String(v === undefined || v === null ? '' : v).split(/[,;\n]+/).map(function (s) { return s.trim(); }).filter(Boolean); }
+function slug(s) { return String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
+function round2(n) { return Math.round((n + Number.EPSILON) * 100) / 100; }
+function money(n) { return '$' + round2(num(n)).toFixed(2).replace(/\.00$/, ''); }
+function range1(n) { var out = []; for (var i = 1; i <= n; i++) out.push(i); return out; }
+function isEmail(s) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s); }
+
+/* ---------- start ---------- */
+
+/* Each page calls QV.start(render): the header and footer are filled in, then the page draws itself. */
+function start(render) {
+  renderCartCount();
+  initTheme();
+  injectAnalytics();
+  return loadData().then(function () { applyChrome(); if (render) render(); });
+}
+
+window.QV = {
+  CONFIG: CONFIG, DEFAULTS: DEFAULTS, SAMPLE: SAMPLE, DATA: DATA, cart: cart, standalone: window.QV_STANDALONE === true,
+  start: start, post: post, setting: setting, on: on, storeName: storeName, contactEmail: contactEmail,
+  saveCart: saveCart, cartCount: cartCount, renderCartCount: renderCartCount,
+  field: field, honeypot: honeypot, showErrors: showErrors,
+  esc: esc, num: num, yes: yes, list: list, slug: slug, round2: round2, money: money, range1: range1, isEmail: isEmail
+};
+})();
+</script>
+<!--/shared:script-->
+
+<script>
+/* The shop: product grid, product view, cart, checkout, FAQ and policies. */
+(function () {
+'use strict';
+var QV = window.QV, CONFIG = QV.CONFIG, SAMPLE = QV.SAMPLE, DATA = QV.DATA, cart = QV.cart;
+var esc = QV.esc, num = QV.num, yes = QV.yes, list = QV.list, slug = QV.slug, round2 = QV.round2, money = QV.money, range1 = QV.range1;
+var setting = QV.setting, on = QV.on, storeName = QV.storeName, contactEmail = QV.contactEmail, saveCart = QV.saveCart, renderCartCount = QV.renderCartCount;
+
+var sel = { id: null, colour: '', range: '', size: '', qty: 1 };
+var draft = { name: '', phone: '', email: '', delivery: '', address: '', postal: '', promo: '', consent: false };
+var CHECKOUT_KEYS = ['name', 'phone', 'email', 'delivery', 'address', 'postal', 'form'];
+var orderRef = '';
+var lastOrder = null;
+var view = document.getElementById('view');
+
+/* ---------- products (the script repeats these rules in its own code) ---------- */
 
 function normalizeProduct(r) {
   var g = function (k) { return r[k] === undefined || r[k] === null ? '' : String(r[k]).trim(); };
@@ -271,12 +500,14 @@ function normalizeProduct(r) {
 }
 
 function parseSoldOut(text, names) {
-  var lower = names.map(function (n) { return n.toLowerCase(); });
+  /* Longest colour name first, so "Black Heather" is not read as "Black". */
+  var byLength = names.slice().sort(function (a, b) { return b.length - a.length; });
   return list(text).map(function (t) { return t.toLowerCase().replace(/['’.]/g, '').replace(/\s+/g, ' ').trim(); }).filter(Boolean).map(function (t) {
     if (t === 'all' || t === 'everything') return { all: true };
     var colour = '';
-    for (var i = 0; i < lower.length; i++) {
-      if (t.indexOf(lower[i] + ' ') === 0) { colour = names[i]; t = t.slice(lower[i].length + 1); break; }
+    for (var i = 0; i < byLength.length; i++) {
+      var lower = byLength[i].toLowerCase().replace(/['’.]/g, '');
+      if (t.indexOf(lower + ' ') === 0) { colour = byLength[i]; t = t.slice(lower.length + 1); break; }
     }
     var words = t.split(' ');
     var range = rangeKey(words[0]);
@@ -296,18 +527,17 @@ function isSoldOut(p, colour, range, size) {
   return false;
 }
 
+/* True when no size of any colour can be bought: the tile then says Sold out. */
 function isAllSoldOut(p) {
   var colours = p.colours.length ? p.colours.map(function (c) { return c.name; }) : [''];
-  var any = false;
   for (var r in p.sizes) {
     for (var i = 0; i < p.sizes[r].length; i++) {
       for (var c = 0; c < colours.length; c++) {
-        any = true;
         if (!isSoldOut(p, colours[c], r, p.sizes[r][i])) return false;
       }
     }
   }
-  return any ? true : true;
+  return true;
 }
 
 function parseImages(text, names) {
@@ -359,29 +589,14 @@ function findProduct(id) {
   return null;
 }
 
-function settings() { return DATA.settings || {}; }
-function setting(k) { var v = settings()[k]; if (v === undefined || v === null || v === '') v = DEFAULTS[k]; return v === undefined ? '' : v; }
-function storeName() { return String(setting('store_name') || CONFIG.storeName); }
-function contactEmail() { return String(setting('contact_email') || CONFIG.contactEmail); }
 function maxQty() { return Math.max(1, Math.floor(num(setting('max_qty')) || 10)); }
-function on(k) { return yes(setting(k)); }
 
 /* ---------- cart ---------- */
 
-function loadCart() {
-  try {
-    var s = JSON.parse(localStorage.getItem('qivgu-cart'));
-    if (s && Array.isArray(s.items)) return { items: s.items, promo: s.promo || null };
-  } catch (e) { }
-  return { items: [], promo: null };
-}
-function saveCart() { try { localStorage.setItem('qivgu-cart', JSON.stringify(cart)); } catch (e) { } }
 function pruneCart() {
   cart.items = cart.items.filter(function (l) { var p = findProduct(l.id); return p && p.sizes[l.range] && p.sizes[l.range].indexOf(l.size) >= 0; });
   saveCart();
 }
-function cartCount() { return cart.items.reduce(function (a, l) { return a + l.qty; }, 0); }
-function renderCartCount() { document.getElementById('cartLink').textContent = 'Cart (' + cartCount() + ')'; }
 
 function linePrice(l) {
   var p = findProduct(l.id);
@@ -470,9 +685,10 @@ function renderProduct(id) {
     var n = Math.max(0, Math.min(5, Math.round(num(r.stars))));
     return '<li><span class="stars" aria-label="' + n + ' out of 5">' + '★'.repeat(n) + '☆'.repeat(5 - n) + '</span> ' + esc(r.name || 'A customer') + (r.order ? ', order ' + esc(r.order) : '') + '<br>' + esc(r.text) + '</li>';
   }).join('') + '</ul>' : '<p>No reviews yet.</p>') + (reviewUrl ? '<p><a href="' + esc(reviewUrl) + '" target="_blank" rel="noopener">Leave a review</a></p>' : '') + '</div>';
-  view.innerHTML = '<div class="product"><div class="photos">' + photos + '</div><div>' +
+  view.innerHTML = '<div class="product"><div class="photos">' + photos + '</div><div class="text">' +
     '<h1>' + esc(p.name) + '</h1>' + (p.verse ? '<p>' + esc(p.verse) + '</p>' : '') + '<p>' + price + '</p>' + buy +
     (p.description ? '<p>' + esc(p.description) + '</p>' : '') + (setting('delivery_line') ? '<p>' + esc(setting('delivery_line')) + '</p>' : '') +
+    (setting('tryon_note') ? '<p>' + esc(setting('tryon_note')) + '</p>' : '') +
     reviewHtml + '</div></div>';
 }
 
@@ -514,7 +730,7 @@ function renderCheckout() {
   var needsAddress = draft.delivery === 'gta' || draft.delivery === 'ship';
   var lines = cart.items.map(function (l) { var p = findProduct(l.id); return '<tr><td>' + l.qty + ' x ' + esc(p.name) + (l.colour ? ', ' + esc(l.colour) : '') + ', ' + rangeLabel(l.range) + ' ' + esc(l.size) + '</td><td>' + money(linePrice(l) * l.qty) + '</td></tr>'; }).join('');
   view.innerHTML = '<h1>Checkout</h1><form id="checkout" novalidate>' +
-    field('name', 'Name', 'text', 'name') + field('phone', 'Phone', 'tel', 'tel') + field('email', 'Email', 'email', 'email') +
+    QV.field('name', 'Name', 'text', 'name', draft.name) + QV.field('phone', 'Phone', 'tel', 'tel', draft.phone) + QV.field('email', 'Email', 'email', 'email', draft.email) +
     '<fieldset><legend>Delivery</legend>' + opts.map(function (o) {
       return '<label class="choice"><input type="radio" name="delivery" value="' + o.value + '"' + (draft.delivery === o.value ? ' checked' : '') + '><span>' + esc(o.text) + '</span></label>';
     }).join('') + '<p class="err" id="err-delivery"></p></fieldset>' +
@@ -522,7 +738,7 @@ function renderCheckout() {
     '<div class="field"><label for="postal">Postal code</label><input id="postal" autocomplete="postal-code" style="max-width:160px" value="' + esc(draft.postal) + '"><p class="err" id="err-postal"></p></div></div>' +
     '<div class="field"><label for="promo">Promo code</label><div class="row"><input id="promo" style="max-width:200px" value="' + esc(cart.promo ? cart.promo.code : draft.promo) + '" autocomplete="off"><button type="button" class="textbtn" id="applyPromo">Apply</button></div><p id="promoMsg"' + (cart.promo ? '' : ' class="err"') + '>' + (cart.promo ? esc(cart.promo.code) + ' applied.' : '') + '</p></div>' +
     '<label class="choice"><input type="checkbox" id="consent"' + (draft.consent ? ' checked' : '') + '><span>Email me when new designs come out.</span></label>' +
-    '<label class="hp" for="website">Leave this empty</label><input class="hp" type="text" id="website" tabindex="-1" autocomplete="off">' +
+    QV.honeypot() +
     '<h2>Your order</h2><table class="totals">' + lines +
     '<tr><td>Subtotal</td><td>' + money(t.subtotal) + '</td></tr>' +
     (t.discount ? '<tr><td>Discount (' + esc(cart.promo.code) + ')</td><td>-' + money(t.discount) + '</td></tr>' : '') +
@@ -530,10 +746,6 @@ function renderCheckout() {
     (t.tax ? '<tr><td>Tax</td><td>' + money(t.tax) + '</td></tr>' : '') +
     '<tr class="total"><td>Total</td><td>' + money(t.total) + '</td></tr></table>' +
     '<p><button type="submit" class="btn" id="place">Place order</button></p><p class="err" id="err-form"></p></form>';
-}
-
-function field(id, label, type, auto) {
-  return '<div class="field"><label for="' + id + '">' + label + '</label><input id="' + id + '" type="' + type + '" autocomplete="' + auto + '" value="' + esc(draft[id]) + '"><p class="err" id="err-' + id + '"></p></div>';
 }
 
 function readDraft() {
@@ -547,7 +759,7 @@ function validateDraft(d) {
   var errors = {};
   if (d.name.length < 2) errors.name = 'Enter your name.';
   if (d.phone.replace(/\D/g, '').length < 10) errors.phone = 'Enter a phone number with the area code.';
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)) errors.email = 'Enter a valid email address.';
+  if (!QV.isEmail(d.email)) errors.email = 'Enter a valid email address.';
   var postal = d.postal.toUpperCase().replace(/[^A-Z0-9]/g, '');
   if (!d.delivery) errors.delivery = 'Choose how you want to get your order.';
   if (d.delivery === 'gta') {
@@ -560,17 +772,6 @@ function validateDraft(d) {
     if (d.address.length < 5) errors.address = 'Enter the shipping address.';
   }
   return errors;
-}
-
-function showErrors(errors) {
-  ['name', 'phone', 'email', 'delivery', 'address', 'postal', 'form'].forEach(function (k) {
-    var el = document.getElementById('err-' + k);
-    if (el) el.textContent = errors[k] || '';
-    var input = document.getElementById(k);
-    if (input && input.tagName !== 'FORM') { if (errors[k]) input.setAttribute('aria-invalid', 'true'); else input.removeAttribute('aria-invalid'); }
-  });
-  var first = Object.keys(errors)[0];
-  if (first) { var f = document.getElementById(first); if (f && f.focus) f.focus(); }
 }
 
 function applyPromo() {
@@ -597,7 +798,7 @@ function applyPromo() {
 function placeOrder() {
   var d = readDraft();
   var errors = validateDraft(d);
-  showErrors(errors);
+  QV.showErrors(errors, CHECKOUT_KEYS);
   if (Object.keys(errors).length) return;
   var payload = {
     token: CONFIG.token, ref: orderRef, name: d.name, phone: d.phone, email: d.email, delivery: d.delivery, postal: d.postal, address: d.address,
@@ -612,13 +813,13 @@ function placeOrder() {
       btn.disabled = false;
       btn.textContent = 'Place order';
       var e = {}; e[res.field && document.getElementById('err-' + res.field) ? res.field : 'form'] = res.error || 'The order could not be placed.';
-      showErrors(e);
+      QV.showErrors(e, CHECKOUT_KEYS);
       return;
     }
     lastOrder = res;
     lastOrder.email = d.email;
-    lastOrder.productId = cart.items[0].id;
-    cart = { items: [], promo: null };
+    cart.items = [];
+    cart.promo = null;
     saveCart();
     renderCartCount();
     orderRef = '';
@@ -626,21 +827,7 @@ function placeOrder() {
     location.hash = 'order/' + encodeURIComponent(res.number || 'received');
   };
   if (DATA.demo) { finish(demoOrder(payload)); return; }
-  sendOrder(payload).then(finish);
-}
-
-function sendOrder(payload) {
-  var body = JSON.stringify(payload);
-  /* A plain-text body is a simple request, so the browser sends it without a preflight and can read the redirected JSON reply. */
-  return fetch(CONFIG.scriptUrl, { method: 'POST', body: body, redirect: 'follow' })
-    .then(function (r) { return r.json(); })
-    .then(function (j) { if (j && typeof j.ok === 'boolean') return j; throw new Error('bad reply'); })
-    .catch(function () {
-      /* Fallback: an opaque form post. The order still lands and the emails still go out, but the reply cannot be read. */
-      return fetch(CONFIG.scriptUrl, { method: 'POST', mode: 'no-cors', body: new URLSearchParams({ payload: body }) })
-        .then(function () { return { ok: true, number: '', opaque: true }; })
-        .catch(function () { return { ok: false, error: 'The order could not be sent. Check your connection and try again' + (contactEmail() ? ', or email ' + contactEmail() : '') + '.' }; });
-    });
+  QV.post(payload).then(finish);
 }
 
 function demoOrder(payload) {
@@ -661,11 +848,11 @@ function renderConfirmation() {
   var o = lastOrder;
   document.title = 'Order received, ' + storeName();
   if (!o) { view.innerHTML = '<h1>Order received</h1><p>Check your email for the order number and what to have ready.</p><p><a href="#shop">Back to the shop</a></p>'; return; }
-  var html = '<h1>Order ' + (o.number ? esc(o.number) + ' ' : '') + 'received</h1>';
+  var html = '<div class="text"><h1>Order ' + (o.number ? esc(o.number) + ' ' : '') + 'received</h1>';
   if (o.opaque) html += '<p>We emailed the order number and what to have ready to ' + esc(o.email) + '.</p>';
   else html += '<p>Total ' + money(o.total) + '.</p><p>' + esc(o.instructions) + '</p>' + (o.demo ? '<p>Sample shop: nothing was recorded and no email was sent.</p>' : '<p>We emailed a copy to ' + esc(o.email) + '.</p>');
   if (o.reviewUrl) html += '<p>Once it is in your hands, <a href="' + esc(o.reviewUrl) + '" target="_blank" rel="noopener">leave a review</a>.</p>';
-  html += '<p><a href="#shop">Back to the shop</a></p>';
+  html += '<p><a href="#shop">Back to the shop</a></p></div>';
   view.innerHTML = html;
 }
 
@@ -676,17 +863,18 @@ function renderFaq() {
     ['How do I pay?', 'Cash or e-Transfer when we hand you the shirt.' + (on('ship_enabled') ? ' For shipping within Ontario we ask for the e-Transfer first.' : '')],
     ['Where do you deliver?', 'Free delivery to postal codes starting with M or L. We text you to arrange a time.'],
     on('pickup_enabled') ? ['Can I pick up instead?', 'Yes. ' + (setting('pickup_note') || 'Choose pickup at checkout and we text you to arrange it.')] : null,
+    setting('tryon_note') ? ['Can I see the shirts in person?', String(setting('tryon_note'))] : null,
     ['Do you ship?', on('ship_enabled') ? 'Within Ontario, ' + money(rate) + ' per order' + (free > 0 ? ', free over ' + money(free) : '') + '. Send the e-Transfer first and we ship when it arrives.' : 'Not yet. Delivery and pickup are in the GTA only.'],
     ['What if the size is wrong?', 'Exchange or store credit within 30 days for unworn shirts with the tags on.' + (contact ? ' Email ' + contact + ' with your order number.' : '')],
     ['Which Bible version is on the shirts?', 'King James Version.']
   ].filter(Boolean);
-  view.innerHTML = '<div class="faq"><h1>FAQ</h1>' + qa.map(function (q) { return '<h2>' + esc(q[0]) + '</h2><p>' + esc(q[1]) + '</p>'; }).join('') + '</div>';
+  view.innerHTML = '<div class="faq text"><h1>FAQ</h1>' + qa.map(function (q) { return '<h2>' + esc(q[0]) + '</h2><p>' + esc(q[1]) + '</p>'; }).join('') + '</div>';
 }
 
 function renderPolicies() {
   document.title = 'Policies, ' + storeName();
   var contact = contactEmail(), rate = num(setting('ship_rate')), free = num(setting('ship_free_over'));
-  view.innerHTML = '<div class="policies"><h1>Policies</h1>' +
+  view.innerHTML = '<div class="text"><h1>Policies</h1>' +
     '<h2>Returns and exchanges</h2><p>Returns within 30 days of delivery or pickup for shirts in new, unworn, resalable condition with the tags on, for an exchange or store credit. No cash refunds except for a defect or an error on our side, in which case we replace the shirt or refund in full.' + (contact ? ' Email ' + esc(contact) + ' with your order number to start a return.' : '') + ' Return shipping is the customer\'s cost except for defects.</p>' +
     '<h2>Delivery and payment</h2><p>Prices are in Canadian dollars. Delivery is free to postal codes starting with M or L; we text you to arrange a time and you pay cash or e-Transfer at the door.' + (on('pickup_enabled') && setting('pickup_note') ? ' ' + esc(setting('pickup_note')) : '') + (on('ship_enabled') ? ' Shipping within Ontario is ' + money(rate) + ' per order' + (free > 0 ? ', free over ' + money(free) : '') + ', paid by e-Transfer before we ship.' : '') + '</p>' +
     '<h2>Privacy</h2><p>We keep your name, phone number, email and address to deliver your order and to send you the order emails. If you tick the box at checkout we email you when new designs come out; reply to any email to stop. We do not share or sell your details.</p></div>';
@@ -732,40 +920,7 @@ function addToCart() {
   msg.innerHTML = 'Added to the cart. <a href="#cart">View cart</a>';
 }
 
-/* ---------- chrome, music, structured data ---------- */
-
-function applyChrome() {
-  var name = storeName();
-  document.getElementById('wordmark').textContent = name;
-  document.title = name;
-  var ann = DATA.demo ? SAMPLE.announcement : String(setting('announcement') || '');
-  document.getElementById('announceText').textContent = ann;
-  document.getElementById('announce').classList.toggle('hidden', !ann);
-  var email = contactEmail(), ig = String(setting('instagram') || CONFIG.instagram);
-  document.getElementById('footEmail').textContent = email;
-  document.getElementById('footEmail').classList.toggle('hidden', !email);
-  document.getElementById('footInstagram').textContent = ig ? 'Instagram: ' + ig : '';
-  document.getElementById('footInstagram').classList.toggle('hidden', !ig);
-  document.getElementById('footCopy').textContent = '© ' + new Date().getFullYear() + ' ' + name;
-  var music = String(setting('music_url') || CONFIG.musicUrl);
-  if (music) {
-    document.getElementById('musicLine').classList.remove('hidden');
-    document.getElementById('music').textContent = String(setting('music_label') || CONFIG.musicLabel || 'Play the song');
-    document.getElementById('musicCredit').textContent = String(setting('music_credit') || CONFIG.musicCredit || '');
-    setupMusic(music);
-  }
-}
-
-function setupMusic(url) {
-  var btn = document.getElementById('music');
-  var label = btn.textContent;
-  var audio = null;
-  btn.addEventListener('click', function () {
-    if (audio && !audio.paused) { audio.pause(); audio.currentTime = 0; btn.textContent = label; return; }
-    if (!audio) { audio = new Audio(url); audio.loop = false; audio.addEventListener('ended', function () { btn.textContent = label; }); }
-    audio.play().then(function () { btn.textContent = 'Stop'; }).catch(function () { btn.textContent = label; });
-  });
-}
+/* ---------- structured data, review link ---------- */
 
 function injectJsonLd() {
   if (DATA.demo || !DATA.products.length) return;
@@ -792,22 +947,16 @@ function reviewLink(productId, number) {
   return t.replace(/\{product\}/g, encodeURIComponent(productId)).replace(/\{order\}/g, encodeURIComponent(number || ''));
 }
 
-/* ---------- utilities ---------- */
-
-function esc(s) { return String(s === undefined || s === null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
-function num(v) { var n = parseFloat(String(v === undefined || v === null ? '' : v).replace(/[^0-9.\-]/g, '')); return isFinite(n) ? n : 0; }
-function yes(v) { return /^(yes|y|true|1|x|on)$/i.test(String(v === undefined || v === null ? '' : v).trim()); }
-function list(v) { return String(v === undefined || v === null ? '' : v).split(/[,;\n]+/).map(function (s) { return s.trim(); }).filter(Boolean); }
-function slug(s) { return String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
-function round2(n) { return Math.round((n + Number.EPSILON) * 100) / 100; }
-function money(n) { return '$' + round2(num(n)).toFixed(2).replace(/\.00$/, ''); }
-function range1(n) { var out = []; for (var i = 1; i <= n; i++) out.push(i); return out; }
-
 /* ---------- start ---------- */
 
-renderCartCount();
 window.addEventListener('hashchange', route);
-loadData().then(function () { pruneCart(); applyChrome(); route(); injectJsonLd(); });
+QV.start(function () {
+  DATA.products = DATA.rawProducts.map(normalizeProduct).filter(function (p) { return p.active && p.name; });
+  pruneCart();
+  renderCartCount();
+  route();
+  injectJsonLd();
+});
 })();
 </script>
 
